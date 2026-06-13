@@ -12,6 +12,7 @@ produced by the existing model and adds the harness layer around it:
 from __future__ import annotations
 
 import argparse
+import os
 from pathlib import Path
 from typing import Any, Dict, List
 
@@ -142,21 +143,28 @@ def flatten_findings_for_csv(
     return pd.DataFrame(rows)
 
 
-def run_harness(args: argparse.Namespace) -> None:
-    rules = load_rules(args.rules)
-    run_id = args.run_id or now_run_id()
-    run_dir = Path(args.runs_dir) / run_id
+def execute_harness_pipeline(
+    scored_csv_path: str,
+    rules_path: str,
+    runs_dir: str,
+    outputs_dir: str,
+    run_id: str | None = None
+) -> Dict[str, Any]:
+    """Programmatic execution engine used directly by web endpoints / containers."""
+    rules = load_rules(rules_path)
+    run_id = run_id or now_run_id()
+    run_dir = Path(runs_dir) / run_id
     run_dir.mkdir(parents=True, exist_ok=True)
-    outputs_dir = Path(args.outputs_dir)
-    outputs_dir.mkdir(parents=True, exist_ok=True)
+    out_dir = Path(outputs_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
 
     alarms = AlarmDispatcher()
     store = CheckpointStore(run_dir)
 
-    df = load_scored_events(args.scored_csv)
+    df = load_scored_events(scored_csv_path)
     write_json(run_dir / "00_raw_input_summary.json", {
         "run_id": run_id,
-        "scored_csv": str(args.scored_csv),
+        "scored_csv": str(scored_csv_path),
         "row_count": int(len(df)),
         "columns": list(df.columns),
     })
@@ -253,18 +261,29 @@ def run_harness(args: argparse.Namespace) -> None:
         "run_dir": str(run_dir),
     }
     write_json(run_dir / "14_final_report.json", final_report)
-    write_json(outputs_dir / "harness_final_report.json", final_report)
-    write_json(outputs_dir / "harness_alarms.json", alarms.all())
-    write_json(outputs_dir / "human_review_package.json", review_package)
+    write_json(out_dir / "harness_final_report.json", final_report)
+    write_json(out_dir / "harness_alarms.json", alarms.all())
+    write_json(out_dir / "human_review_package.json", review_package)
+    
     findings_df = flatten_findings_for_csv(ueba_findings, threat_hunts, compliance_results)
-    findings_df.to_csv(outputs_dir / "harness_findings.csv", index=False)
+    findings_df.to_csv(out_dir / "harness_findings.csv", index=False)
 
-    print(f"Harness run_id={run_id}")
-    print(f"Run artifacts: {run_dir}")
-    print(f"Final report: {outputs_dir / 'harness_final_report.json'}")
-    print(f"Findings CSV: {outputs_dir / 'harness_findings.csv'}")
-    print(f"Human review status: {review_package['status']} ({len(review_package.get('items', []))} items)")
-    print(f"Alarms: {len(alarms.all())}")
+    return final_report
+
+
+def run_harness(args: argparse.Namespace) -> None:
+    """Retains standard argparse execution path for local terminal compatibility."""
+    report = execute_harness_pipeline(
+        scored_csv_path=args.scored_csv,
+        rules_path=args.rules,
+        runs_dir=args.runs_dir,
+        outputs_dir=args.outputs_dir,
+        run_id=args.run_id
+    )
+    print(f"Harness run_id={report['run_id']}")
+    print(f"Run artifacts: {report['run_dir']}")
+    print(f"Human review status: {report['human_review_package']['status']}")
+    print(f"Alarms: {len(report['alarms'])}")
 
 
 def main() -> None:
