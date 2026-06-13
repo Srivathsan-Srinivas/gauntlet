@@ -1,0 +1,14 @@
+{
+  "created_at": "2026-06-13T12:21:34.691516+00:00",
+  "criteria": {
+    "high_or_critical_alarms_create_human_review_package": true,
+    "review_package_has_items_when_required": true
+  },
+  "details": {
+    "high_alarm_count": 85,
+    "review_item_count": 28,
+    "review_required": true
+  },
+  "name": "human_escalation_checkpoint",
+  "passed": true
+}

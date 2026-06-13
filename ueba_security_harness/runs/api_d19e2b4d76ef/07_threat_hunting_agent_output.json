@@ -1,0 +1,1344 @@
+[
+  {
+    "agent": "threat_hunting_agent",
+    "attack_stage": "initial_access",
+    "confidence": "high",
+    "event_id": "evt_test_00276",
+    "evidence": [
+      {
+        "details": {
+          "normal_values": [
+            "Chicago"
+          ],
+          "value": "Moscow"
+        },
+        "reason": "unusual_city"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "RU"
+        },
+        "reason": "unusual_country"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "Windows",
+            "macOS"
+          ],
+          "value": "Linux"
+        },
+        "reason": "unusual_os"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "TLS1.2",
+            "TLS1.3"
+          ],
+          "value": "TLS1.0"
+        },
+        "reason": "unusual_tls_version"
+      }
+    ],
+    "hypothesis": "Possible credential misuse or suspicious login context",
+    "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+    "user_id": "u_normal_sql_001"
+  },
+  {
+    "agent": "threat_hunting_agent",
+    "attack_stage": "collection_or_exfiltration",
+    "confidence": "high",
+    "event_id": "evt_test_00277",
+    "evidence": [
+      {
+        "details": {
+          "normal_mean": 117.7,
+          "normal_p95": 349.4,
+          "normal_std": 116.0,
+          "value": 6300.0,
+          "z_score": 53.3
+        },
+        "reason": "high_records_accessed"
+      },
+      {
+        "details": {
+          "ratio": 6.35,
+          "threshold": 0.167078,
+          "value": 1.061713
+        },
+        "reason": "model_reconstruction_error"
+      }
+    ],
+    "hypothesis": "Possible data staging or exfiltration through Salesforce export activity",
+    "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+    "user_id": "u_normal_sql_001"
+  },
+  {
+    "agent": "threat_hunting_agent",
+    "attack_stage": "credential_access",
+    "confidence": "high",
+    "event_id": "evt_test_00278",
+    "evidence": [
+      {
+        "details": {
+          "normal_values": [
+            "Chicago"
+          ],
+          "value": "Unknown"
+        },
+        "reason": "unusual_city"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "Unknown"
+        },
+        "reason": "unusual_country"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "login.salesforce.com",
+            "mycompany.my.salesforce.com"
+          ],
+          "value": "evil-connected-app.example"
+        },
+        "reason": "unusual_domain_name"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "Password",
+            "SSO"
+          ],
+          "value": "OAuth"
+        },
+        "reason": "unusual_login_type"
+      }
+    ],
+    "hypothesis": "Possible malicious OAuth consent or connected-app abuse",
+    "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+    "user_id": "u_normal_sql_001"
+  },
+  {
+    "agent": "threat_hunting_agent",
+    "attack_stage": "initial_access",
+    "confidence": "high",
+    "event_id": "evt_test_00279",
+    "evidence": [
+      {
+        "details": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "45.83.12.44"
+        },
+        "reason": "public_or_unfamiliar_ip"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "Chicago"
+          ],
+          "value": "Moscow"
+        },
+        "reason": "unusual_city"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "RU"
+        },
+        "reason": "unusual_country"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "Windows",
+            "macOS"
+          ],
+          "value": "Linux"
+        },
+        "reason": "unusual_os"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "TLS1.2",
+            "TLS1.3"
+          ],
+          "value": "TLS1.0"
+        },
+        "reason": "unusual_tls_version"
+      }
+    ],
+    "hypothesis": "Possible credential misuse or suspicious login context",
+    "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+    "user_id": "u_normal_sql_001"
+  },
+  {
+    "agent": "threat_hunting_agent",
+    "attack_stage": "collection_or_exfiltration",
+    "confidence": "high",
+    "event_id": "evt_test_00280",
+    "evidence": [
+      {
+        "details": {
+          "normal_mean": 117.7,
+          "normal_p95": 349.4,
+          "normal_std": 116.0,
+          "value": 6300.0,
+          "z_score": 53.3
+        },
+        "reason": "high_records_accessed"
+      },
+      {
+        "details": {
+          "ratio": 6.45,
+          "threshold": 0.167078,
+          "value": 1.077637
+        },
+        "reason": "model_reconstruction_error"
+      }
+    ],
+    "hypothesis": "Possible data staging or exfiltration through Salesforce export activity",
+    "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+    "user_id": "u_normal_sql_001"
+  },
+  {
+    "agent": "threat_hunting_agent",
+    "attack_stage": "credential_access",
+    "confidence": "high",
+    "event_id": "evt_test_00281",
+    "evidence": [
+      {
+        "details": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "185.199.108.77"
+        },
+        "reason": "public_or_unfamiliar_ip"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "Chicago"
+          ],
+          "value": "Unknown"
+        },
+        "reason": "unusual_city"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "Unknown"
+        },
+        "reason": "unusual_country"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "login.salesforce.com",
+            "mycompany.my.salesforce.com"
+          ],
+          "value": "evil-connected-app.example"
+        },
+        "reason": "unusual_domain_name"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "Password",
+            "SSO"
+          ],
+          "value": "OAuth"
+        },
+        "reason": "unusual_login_type"
+      }
+    ],
+    "hypothesis": "Possible malicious OAuth consent or connected-app abuse",
+    "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+    "user_id": "u_normal_sql_001"
+  },
+  {
+    "agent": "threat_hunting_agent",
+    "attack_stage": "initial_access",
+    "confidence": "high",
+    "event_id": "evt_test_00282",
+    "evidence": [
+      {
+        "details": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "185.199.108.77"
+        },
+        "reason": "public_or_unfamiliar_ip"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "Chicago"
+          ],
+          "value": "Moscow"
+        },
+        "reason": "unusual_city"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "RU"
+        },
+        "reason": "unusual_country"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "Windows",
+            "macOS"
+          ],
+          "value": "Linux"
+        },
+        "reason": "unusual_os"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "TLS1.2",
+            "TLS1.3"
+          ],
+          "value": "TLS1.0"
+        },
+        "reason": "unusual_tls_version"
+      }
+    ],
+    "hypothesis": "Possible credential misuse or suspicious login context",
+    "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+    "user_id": "u_normal_sql_001"
+  },
+  {
+    "agent": "threat_hunting_agent",
+    "attack_stage": "collection_or_exfiltration",
+    "confidence": "high",
+    "event_id": "evt_test_00283",
+    "evidence": [
+      {
+        "details": {
+          "normal_mean": 117.7,
+          "normal_p95": 349.4,
+          "normal_std": 116.0,
+          "value": 6300.0,
+          "z_score": 53.3
+        },
+        "reason": "high_records_accessed"
+      },
+      {
+        "details": {
+          "ratio": 6.45,
+          "threshold": 0.167078,
+          "value": 1.078165
+        },
+        "reason": "model_reconstruction_error"
+      }
+    ],
+    "hypothesis": "Possible data staging or exfiltration through Salesforce export activity",
+    "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+    "user_id": "u_normal_sql_001"
+  },
+  {
+    "agent": "threat_hunting_agent",
+    "attack_stage": "initial_access",
+    "confidence": "high",
+    "event_id": "evt_test_00559",
+    "evidence": [
+      {
+        "details": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "185.199.108.77"
+        },
+        "reason": "public_or_unfamiliar_ip"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "Austin",
+            "Boston",
+            "New York",
+            "San Francisco"
+          ],
+          "value": "Singapore"
+        },
+        "reason": "unusual_city"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "SG"
+        },
+        "reason": "unusual_country"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "laptop",
+            "mobile"
+          ],
+          "value": "desktop"
+        },
+        "reason": "unusual_device_type"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "iOS",
+            "macOS"
+          ],
+          "value": "Windows"
+        },
+        "reason": "unusual_os"
+      }
+    ],
+    "hypothesis": "Possible credential misuse or suspicious login context",
+    "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+    "user_id": "u_sales_traveler_002"
+  },
+  {
+    "agent": "threat_hunting_agent",
+    "attack_stage": "collection_or_exfiltration",
+    "confidence": "high",
+    "event_id": "evt_test_00561",
+    "evidence": [
+      {
+        "details": {
+          "normal_mean": 34.75,
+          "normal_p95": 111.35,
+          "normal_std": 37.14,
+          "value": 9500.0,
+          "z_score": 254.88
+        },
+        "reason": "high_records_accessed"
+      },
+      {
+        "details": {
+          "circular_hour_distance": 7.11,
+          "normal_mean_hour": 13.89,
+          "value": 21
+        },
+        "reason": "login_hour_deviation"
+      },
+      {
+        "details": {
+          "ratio": 14.53,
+          "threshold": 0.167078,
+          "value": 2.427783
+        },
+        "reason": "model_reconstruction_error"
+      }
+    ],
+    "hypothesis": "Possible data staging or exfiltration through Salesforce export activity",
+    "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+    "user_id": "u_sales_traveler_002"
+  },
+  {
+    "agent": "threat_hunting_agent",
+    "attack_stage": "initial_access",
+    "confidence": "high",
+    "event_id": "evt_test_00562",
+    "evidence": [
+      {
+        "details": {
+          "circular_hour_distance": 7.89,
+          "normal_mean_hour": 13.89,
+          "value": 6
+        },
+        "reason": "login_hour_deviation"
+      },
+      {
+        "details": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "185.199.108.77"
+        },
+        "reason": "public_or_unfamiliar_ip"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "Austin",
+            "Boston",
+            "New York",
+            "San Francisco"
+          ],
+          "value": "Singapore"
+        },
+        "reason": "unusual_city"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "SG"
+        },
+        "reason": "unusual_country"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "laptop",
+            "mobile"
+          ],
+          "value": "desktop"
+        },
+        "reason": "unusual_device_type"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "iOS",
+            "macOS"
+          ],
+          "value": "Windows"
+        },
+        "reason": "unusual_os"
+      }
+    ],
+    "hypothesis": "Possible credential misuse or suspicious login context",
+    "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+    "user_id": "u_sales_traveler_002"
+  },
+  {
+    "agent": "threat_hunting_agent",
+    "attack_stage": "collection_or_exfiltration",
+    "confidence": "high",
+    "event_id": "evt_test_00564",
+    "evidence": [
+      {
+        "details": {
+          "normal_mean": 34.75,
+          "normal_p95": 111.35,
+          "normal_std": 37.14,
+          "value": 9500.0,
+          "z_score": 254.88
+        },
+        "reason": "high_records_accessed"
+      },
+      {
+        "details": {
+          "ratio": 14.8,
+          "threshold": 0.167078,
+          "value": 2.472111
+        },
+        "reason": "model_reconstruction_error"
+      }
+    ],
+    "hypothesis": "Possible data staging or exfiltration through Salesforce export activity",
+    "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+    "user_id": "u_sales_traveler_002"
+  },
+  {
+    "agent": "threat_hunting_agent",
+    "attack_stage": "initial_access",
+    "confidence": "high",
+    "event_id": "evt_test_00565",
+    "evidence": [
+      {
+        "details": {
+          "circular_hour_distance": 6.11,
+          "normal_mean_hour": 13.89,
+          "value": 20
+        },
+        "reason": "login_hour_deviation"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "Austin",
+            "Boston",
+            "New York",
+            "San Francisco"
+          ],
+          "value": "Singapore"
+        },
+        "reason": "unusual_city"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "SG"
+        },
+        "reason": "unusual_country"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "laptop",
+            "mobile"
+          ],
+          "value": "desktop"
+        },
+        "reason": "unusual_device_type"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "iOS",
+            "macOS"
+          ],
+          "value": "Windows"
+        },
+        "reason": "unusual_os"
+      }
+    ],
+    "hypothesis": "Possible credential misuse or suspicious login context",
+    "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+    "user_id": "u_sales_traveler_002"
+  },
+  {
+    "agent": "threat_hunting_agent",
+    "attack_stage": "collection_or_exfiltration",
+    "confidence": "medium",
+    "event_id": "evt_test_00808",
+    "evidence": [
+      {
+        "details": {
+          "normal_mean": 296.39,
+          "normal_p95": 770.85,
+          "normal_std": 252.02,
+          "value": 1472.0,
+          "z_score": 4.66
+        },
+        "reason": "high_records_accessed"
+      },
+      {
+        "details": {
+          "circular_hour_distance": 7.57,
+          "normal_mean_hour": 11.57,
+          "value": 4
+        },
+        "reason": "login_hour_deviation"
+      }
+    ],
+    "hypothesis": "Possible data staging or exfiltration through Salesforce export activity",
+    "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+    "user_id": "u_nightowl_noah_003"
+  },
+  {
+    "agent": "threat_hunting_agent",
+    "attack_stage": "initial_access",
+    "confidence": "high",
+    "event_id": "evt_test_00843",
+    "evidence": [
+      {
+        "details": {
+          "circular_hour_distance": 9.57,
+          "normal_mean_hour": 11.57,
+          "value": 2
+        },
+        "reason": "login_hour_deviation"
+      },
+      {
+        "details": {
+          "ratio": 1.11,
+          "threshold": 0.167078,
+          "value": 0.185368
+        },
+        "reason": "model_reconstruction_error"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "Seattle"
+          ],
+          "value": "Moscow"
+        },
+        "reason": "unusual_city"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "RU"
+        },
+        "reason": "unusual_country"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "TLS1.2",
+            "TLS1.3"
+          ],
+          "value": "TLS1.0"
+        },
+        "reason": "unusual_tls_version"
+      }
+    ],
+    "hypothesis": "Possible credential misuse or suspicious login context",
+    "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+    "user_id": "u_nightowl_noah_003"
+  },
+  {
+    "agent": "threat_hunting_agent",
+    "attack_stage": "credential_access",
+    "confidence": "high",
+    "event_id": "evt_test_00844",
+    "evidence": [
+      {
+        "details": {
+          "circular_hour_distance": 9.57,
+          "normal_mean_hour": 11.57,
+          "value": 2
+        },
+        "reason": "login_hour_deviation"
+      },
+      {
+        "details": {
+          "ratio": 1.17,
+          "threshold": 0.167078,
+          "value": 0.195876
+        },
+        "reason": "model_reconstruction_error"
+      },
+      {
+        "details": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "45.83.12.44"
+        },
+        "reason": "public_or_unfamiliar_ip"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "Seattle"
+          ],
+          "value": "Unknown"
+        },
+        "reason": "unusual_city"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "Unknown"
+        },
+        "reason": "unusual_country"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "login.salesforce.com",
+            "mycompany.my.salesforce.com"
+          ],
+          "value": "evil-connected-app.example"
+        },
+        "reason": "unusual_domain_name"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "Password",
+            "SSO"
+          ],
+          "value": "OAuth"
+        },
+        "reason": "unusual_login_type"
+      }
+    ],
+    "hypothesis": "Possible malicious OAuth consent or connected-app abuse",
+    "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+    "user_id": "u_nightowl_noah_003"
+  },
+  {
+    "agent": "threat_hunting_agent",
+    "attack_stage": "initial_access",
+    "confidence": "high",
+    "event_id": "evt_test_00846",
+    "evidence": [
+      {
+        "details": {
+          "circular_hour_distance": 11.43,
+          "normal_mean_hour": 11.57,
+          "value": 23
+        },
+        "reason": "login_hour_deviation"
+      },
+      {
+        "details": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "185.199.108.77"
+        },
+        "reason": "public_or_unfamiliar_ip"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "Seattle"
+          ],
+          "value": "Moscow"
+        },
+        "reason": "unusual_city"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "RU"
+        },
+        "reason": "unusual_country"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "TLS1.2",
+            "TLS1.3"
+          ],
+          "value": "TLS1.0"
+        },
+        "reason": "unusual_tls_version"
+      }
+    ],
+    "hypothesis": "Possible credential misuse or suspicious login context",
+    "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+    "user_id": "u_nightowl_noah_003"
+  },
+  {
+    "agent": "threat_hunting_agent",
+    "attack_stage": "credential_access",
+    "confidence": "high",
+    "event_id": "evt_test_00847",
+    "evidence": [
+      {
+        "details": {
+          "circular_hour_distance": 8.43,
+          "normal_mean_hour": 11.57,
+          "value": 20
+        },
+        "reason": "login_hour_deviation"
+      },
+      {
+        "details": {
+          "ratio": 1.1,
+          "threshold": 0.167078,
+          "value": 0.183762
+        },
+        "reason": "model_reconstruction_error"
+      },
+      {
+        "details": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "45.83.12.44"
+        },
+        "reason": "public_or_unfamiliar_ip"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "Seattle"
+          ],
+          "value": "Unknown"
+        },
+        "reason": "unusual_city"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "Unknown"
+        },
+        "reason": "unusual_country"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "login.salesforce.com",
+            "mycompany.my.salesforce.com"
+          ],
+          "value": "evil-connected-app.example"
+        },
+        "reason": "unusual_domain_name"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "Password",
+            "SSO"
+          ],
+          "value": "OAuth"
+        },
+        "reason": "unusual_login_type"
+      }
+    ],
+    "hypothesis": "Possible malicious OAuth consent or connected-app abuse",
+    "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+    "user_id": "u_nightowl_noah_003"
+  },
+  {
+    "agent": "threat_hunting_agent",
+    "attack_stage": "initial_access",
+    "confidence": "high",
+    "event_id": "evt_test_00849",
+    "evidence": [
+      {
+        "details": {
+          "circular_hour_distance": 11.57,
+          "normal_mean_hour": 11.57,
+          "value": 0
+        },
+        "reason": "login_hour_deviation"
+      },
+      {
+        "details": {
+          "ratio": 1.33,
+          "threshold": 0.167078,
+          "value": 0.221582
+        },
+        "reason": "model_reconstruction_error"
+      },
+      {
+        "details": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "91.207.174.9"
+        },
+        "reason": "public_or_unfamiliar_ip"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "Seattle"
+          ],
+          "value": "Moscow"
+        },
+        "reason": "unusual_city"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "RU"
+        },
+        "reason": "unusual_country"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "TLS1.2",
+            "TLS1.3"
+          ],
+          "value": "TLS1.0"
+        },
+        "reason": "unusual_tls_version"
+      }
+    ],
+    "hypothesis": "Possible credential misuse or suspicious login context",
+    "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+    "user_id": "u_nightowl_noah_003"
+  },
+  {
+    "agent": "threat_hunting_agent",
+    "attack_stage": "unknown",
+    "confidence": "low",
+    "event_id": "evt_test_01088",
+    "evidence": [
+      {
+        "details": {
+          "ratio": 1.51,
+          "threshold": 0.167078,
+          "value": 0.251633
+        },
+        "reason": "model_reconstruction_error"
+      }
+    ],
+    "hypothesis": "Unusual Salesforce behavior requiring review",
+    "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+    "user_id": "u_complex_query_004"
+  },
+  {
+    "agent": "threat_hunting_agent",
+    "attack_stage": "collection_or_exfiltration",
+    "confidence": "high",
+    "event_id": "evt_test_01125",
+    "evidence": [
+      {
+        "details": {
+          "normal_mean": 1510.46,
+          "normal_p95": 3080.2,
+          "normal_std": 914.88,
+          "value": 65000.0,
+          "z_score": 69.4
+        },
+        "reason": "high_records_accessed"
+      },
+      {
+        "details": {
+          "ratio": 684.38,
+          "threshold": 0.167078,
+          "value": 114.344261
+        },
+        "reason": "model_reconstruction_error"
+      },
+      {
+        "details": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "185.199.108.77"
+        },
+        "reason": "public_or_unfamiliar_ip"
+      }
+    ],
+    "hypothesis": "Possible data staging or exfiltration through Salesforce export activity",
+    "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+    "user_id": "u_complex_query_004"
+  },
+  {
+    "agent": "threat_hunting_agent",
+    "attack_stage": "collection_or_exfiltration",
+    "confidence": "high",
+    "event_id": "evt_test_01126",
+    "evidence": [
+      {
+        "details": {
+          "normal_mean": 1510.46,
+          "normal_p95": 3080.2,
+          "normal_std": 914.88,
+          "value": 18000.0,
+          "z_score": 18.02
+        },
+        "reason": "high_records_accessed"
+      },
+      {
+        "details": {
+          "ratio": 48.38,
+          "threshold": 0.167078,
+          "value": 8.082987
+        },
+        "reason": "model_reconstruction_error"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "Denver"
+          ],
+          "value": "Sao Paulo"
+        },
+        "reason": "unusual_city"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "BR"
+        },
+        "reason": "unusual_country"
+      }
+    ],
+    "hypothesis": "Possible data staging or exfiltration through Salesforce export activity",
+    "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+    "user_id": "u_complex_query_004"
+  },
+  {
+    "agent": "threat_hunting_agent",
+    "attack_stage": "collection_or_exfiltration",
+    "confidence": "high",
+    "event_id": "evt_test_01128",
+    "evidence": [
+      {
+        "details": {
+          "normal_mean": 1510.46,
+          "normal_p95": 3080.2,
+          "normal_std": 914.88,
+          "value": 65000.0,
+          "z_score": 69.4
+        },
+        "reason": "high_records_accessed"
+      },
+      {
+        "details": {
+          "ratio": 685.23,
+          "threshold": 0.167078,
+          "value": 114.486465
+        },
+        "reason": "model_reconstruction_error"
+      },
+      {
+        "details": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "91.207.174.9"
+        },
+        "reason": "public_or_unfamiliar_ip"
+      }
+    ],
+    "hypothesis": "Possible data staging or exfiltration through Salesforce export activity",
+    "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+    "user_id": "u_complex_query_004"
+  },
+  {
+    "agent": "threat_hunting_agent",
+    "attack_stage": "collection_or_exfiltration",
+    "confidence": "high",
+    "event_id": "evt_test_01129",
+    "evidence": [
+      {
+        "details": {
+          "normal_mean": 1510.46,
+          "normal_p95": 3080.2,
+          "normal_std": 914.88,
+          "value": 18000.0,
+          "z_score": 18.02
+        },
+        "reason": "high_records_accessed"
+      },
+      {
+        "details": {
+          "ratio": 48.31,
+          "threshold": 0.167078,
+          "value": 8.071365
+        },
+        "reason": "model_reconstruction_error"
+      },
+      {
+        "details": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "45.83.12.44"
+        },
+        "reason": "public_or_unfamiliar_ip"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "Denver"
+          ],
+          "value": "Sao Paulo"
+        },
+        "reason": "unusual_city"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "BR"
+        },
+        "reason": "unusual_country"
+      }
+    ],
+    "hypothesis": "Possible data staging or exfiltration through Salesforce export activity",
+    "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+    "user_id": "u_complex_query_004"
+  },
+  {
+    "agent": "threat_hunting_agent",
+    "attack_stage": "collection_or_exfiltration",
+    "confidence": "high",
+    "event_id": "evt_test_01131",
+    "evidence": [
+      {
+        "details": {
+          "normal_mean": 1510.46,
+          "normal_p95": 3080.2,
+          "normal_std": 914.88,
+          "value": 65000.0,
+          "z_score": 69.4
+        },
+        "reason": "high_records_accessed"
+      },
+      {
+        "details": {
+          "ratio": 684.72,
+          "threshold": 0.167078,
+          "value": 114.401321
+        },
+        "reason": "model_reconstruction_error"
+      },
+      {
+        "details": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "45.83.12.44"
+        },
+        "reason": "public_or_unfamiliar_ip"
+      }
+    ],
+    "hypothesis": "Possible data staging or exfiltration through Salesforce export activity",
+    "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+    "user_id": "u_complex_query_004"
+  },
+  {
+    "agent": "threat_hunting_agent",
+    "attack_stage": "collection_or_exfiltration",
+    "confidence": "high",
+    "event_id": "evt_test_01132",
+    "evidence": [
+      {
+        "details": {
+          "normal_mean": 1510.46,
+          "normal_p95": 3080.2,
+          "normal_std": 914.88,
+          "value": 18000.0,
+          "z_score": 18.02
+        },
+        "reason": "high_records_accessed"
+      },
+      {
+        "details": {
+          "ratio": 48.16,
+          "threshold": 0.167078,
+          "value": 8.046175
+        },
+        "reason": "model_reconstruction_error"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "Denver"
+          ],
+          "value": "Sao Paulo"
+        },
+        "reason": "unusual_city"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "BR"
+        },
+        "reason": "unusual_country"
+      }
+    ],
+    "hypothesis": "Possible data staging or exfiltration through Salesforce export activity",
+    "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+    "user_id": "u_complex_query_004"
+  },
+  {
+    "agent": "threat_hunting_agent",
+    "attack_stage": "collection_or_exfiltration",
+    "confidence": "high",
+    "event_id": "evt_test_01410",
+    "evidence": [
+      {
+        "details": {
+          "normal_mean": 114.85,
+          "normal_p95": 413.6,
+          "normal_std": 159.39,
+          "value": 120000.0,
+          "z_score": 752.15
+        },
+        "reason": "high_records_accessed"
+      },
+      {
+        "details": {
+          "circular_hour_distance": 6.08,
+          "normal_mean_hour": 12.92,
+          "value": 19
+        },
+        "reason": "login_hour_deviation"
+      },
+      {
+        "details": {
+          "ratio": 2374.03,
+          "threshold": 0.167078,
+          "value": 396.648071
+        },
+        "reason": "model_reconstruction_error"
+      },
+      {
+        "details": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "185.199.108.77"
+        },
+        "reason": "public_or_unfamiliar_ip"
+      }
+    ],
+    "hypothesis": "Possible data staging or exfiltration through Salesforce export activity",
+    "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+    "user_id": "u_admin_005"
+  },
+  {
+    "agent": "threat_hunting_agent",
+    "attack_stage": "privilege_escalation_or_defense_evasion",
+    "confidence": "high",
+    "event_id": "evt_test_01413",
+    "evidence": [
+      {
+        "details": {
+          "normal_mean": 114.85,
+          "normal_p95": 413.6,
+          "normal_std": 159.39,
+          "value": 120000.0,
+          "z_score": 752.15
+        },
+        "reason": "high_records_accessed"
+      },
+      {
+        "details": {
+          "ratio": 2373.11,
+          "threshold": 0.167078,
+          "value": 396.493774
+        },
+        "reason": "model_reconstruction_error"
+      },
+      {
+        "details": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "45.83.12.44"
+        },
+        "reason": "public_or_unfamiliar_ip"
+      }
+    ],
+    "hypothesis": "Possible privilege misuse or unauthorized admin change",
+    "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+    "user_id": "u_admin_005"
+  },
+  {
+    "agent": "threat_hunting_agent",
+    "attack_stage": "credential_access",
+    "confidence": "medium",
+    "event_id": "evt_test_01415",
+    "evidence": [
+      {
+        "details": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "91.207.174.9"
+        },
+        "reason": "public_or_unfamiliar_ip"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "login.salesforce.com",
+            "mycompany.my.salesforce.com"
+          ],
+          "value": "setup.salesforce.com"
+        },
+        "reason": "unusual_domain_name"
+      },
+      {
+        "details": {
+          "normal_values": [
+            "TLS1.2",
+            "TLS1.3"
+          ],
+          "value": "TLS1.0"
+        },
+        "reason": "unusual_tls_version"
+      }
+    ],
+    "hypothesis": "Possible malicious OAuth consent or connected-app abuse",
+    "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+    "user_id": "u_admin_005"
+  }
+]

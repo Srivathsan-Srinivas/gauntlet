@@ -1,0 +1,1075 @@
+[
+  {
+    "alarm_type": "WEAK_TLS_OBSERVED",
+    "context": {
+      "weak_tls_versions": [
+        "TLS1.0"
+      ]
+    },
+    "created_at": "2026-06-13T16:31:46.320784+00:00",
+    "recommended_action": "Route affected events to compliance review and require human approval before closure.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "SUSPICIOUS_CONNECTED_APP_DOMAIN",
+    "context": {
+      "domains": [
+        "evil-connected-app.example"
+      ]
+    },
+    "created_at": "2026-06-13T16:31:46.320790+00:00",
+    "recommended_action": "Investigate OAuth application context and require analyst review.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "FOREIGN_OR_UNEXPECTED_COUNTRY_OBSERVED",
+    "context": {
+      "countries": [
+        "BR",
+        "RU",
+        "SG",
+        "Unknown"
+      ]
+    },
+    "created_at": "2026-06-13T16:31:46.320793+00:00",
+    "recommended_action": "Let UEBA and threat-hunting agents evaluate whether behavior is normal for the persona.",
+    "severity": "medium"
+  },
+  {
+    "alarm_type": "UEBA_CRITICAL_RISK_BEHAVIOR",
+    "context": {
+      "event_id": "evt_test_00276",
+      "persona": "normal_sql_user",
+      "score": 100.0,
+      "user_id": "u_normal_sql_001"
+    },
+    "created_at": "2026-06-13T16:31:46.327651+00:00",
+    "recommended_action": "Stop autonomous closure and create a human review item.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "FOREIGN_COUNTRY_LOGIN_OR_ACCESS",
+    "context": {
+      "city": "Moscow",
+      "country": "RU",
+      "event_id": "evt_test_00276",
+      "persona": "normal_sql_user",
+      "score": 100.0,
+      "user_id": "u_normal_sql_001"
+    },
+    "created_at": "2026-06-13T16:31:46.327657+00:00",
+    "recommended_action": "Validate user travel/VPN context and correlate with identity-provider logs.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "WEAK_TLS_USED",
+    "context": {
+      "event_id": "evt_test_00276",
+      "persona": "normal_sql_user",
+      "score": 100.0,
+      "tls_version": "TLS1.0",
+      "user_id": "u_normal_sql_001"
+    },
+    "created_at": "2026-06-13T16:31:46.327659+00:00",
+    "recommended_action": "Review auth/session context and enforce modern TLS policy.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "UEBA_CRITICAL_RISK_BEHAVIOR",
+    "context": {
+      "event_id": "evt_test_00277",
+      "persona": "normal_sql_user",
+      "score": 99.95,
+      "user_id": "u_normal_sql_001"
+    },
+    "created_at": "2026-06-13T16:31:46.327662+00:00",
+    "recommended_action": "Stop autonomous closure and create a human review item.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "UEBA_CRITICAL_RISK_BEHAVIOR",
+    "context": {
+      "event_id": "evt_test_00278",
+      "persona": "normal_sql_user",
+      "score": 100.0,
+      "user_id": "u_normal_sql_001"
+    },
+    "created_at": "2026-06-13T16:31:46.327665+00:00",
+    "recommended_action": "Stop autonomous closure and create a human review item.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "FOREIGN_COUNTRY_LOGIN_OR_ACCESS",
+    "context": {
+      "city": "Unknown",
+      "country": "Unknown",
+      "event_id": "evt_test_00278",
+      "persona": "normal_sql_user",
+      "score": 100.0,
+      "user_id": "u_normal_sql_001"
+    },
+    "created_at": "2026-06-13T16:31:46.327667+00:00",
+    "recommended_action": "Validate user travel/VPN context and correlate with identity-provider logs.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "SUSPICIOUS_CONNECTED_APP",
+    "context": {
+      "domain_name": "evil-connected-app.example",
+      "event_id": "evt_test_00278",
+      "persona": "normal_sql_user",
+      "score": 100.0,
+      "user_id": "u_normal_sql_001"
+    },
+    "created_at": "2026-06-13T16:31:46.327669+00:00",
+    "recommended_action": "Investigate connected app authorization and user consent history.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "UEBA_CRITICAL_RISK_BEHAVIOR",
+    "context": {
+      "event_id": "evt_test_00279",
+      "persona": "normal_sql_user",
+      "score": 100.0,
+      "user_id": "u_normal_sql_001"
+    },
+    "created_at": "2026-06-13T16:31:46.327671+00:00",
+    "recommended_action": "Stop autonomous closure and create a human review item.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "FOREIGN_COUNTRY_LOGIN_OR_ACCESS",
+    "context": {
+      "city": "Moscow",
+      "country": "RU",
+      "event_id": "evt_test_00279",
+      "persona": "normal_sql_user",
+      "score": 100.0,
+      "user_id": "u_normal_sql_001"
+    },
+    "created_at": "2026-06-13T16:31:46.327673+00:00",
+    "recommended_action": "Validate user travel/VPN context and correlate with identity-provider logs.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "WEAK_TLS_USED",
+    "context": {
+      "event_id": "evt_test_00279",
+      "persona": "normal_sql_user",
+      "score": 100.0,
+      "tls_version": "TLS1.0",
+      "user_id": "u_normal_sql_001"
+    },
+    "created_at": "2026-06-13T16:31:46.327675+00:00",
+    "recommended_action": "Review auth/session context and enforce modern TLS policy.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "UEBA_CRITICAL_RISK_BEHAVIOR",
+    "context": {
+      "event_id": "evt_test_00280",
+      "persona": "normal_sql_user",
+      "score": 99.96,
+      "user_id": "u_normal_sql_001"
+    },
+    "created_at": "2026-06-13T16:31:46.327677+00:00",
+    "recommended_action": "Stop autonomous closure and create a human review item.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "UEBA_CRITICAL_RISK_BEHAVIOR",
+    "context": {
+      "event_id": "evt_test_00281",
+      "persona": "normal_sql_user",
+      "score": 100.0,
+      "user_id": "u_normal_sql_001"
+    },
+    "created_at": "2026-06-13T16:31:46.327680+00:00",
+    "recommended_action": "Stop autonomous closure and create a human review item.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "FOREIGN_COUNTRY_LOGIN_OR_ACCESS",
+    "context": {
+      "city": "Unknown",
+      "country": "Unknown",
+      "event_id": "evt_test_00281",
+      "persona": "normal_sql_user",
+      "score": 100.0,
+      "user_id": "u_normal_sql_001"
+    },
+    "created_at": "2026-06-13T16:31:46.327682+00:00",
+    "recommended_action": "Validate user travel/VPN context and correlate with identity-provider logs.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "SUSPICIOUS_CONNECTED_APP",
+    "context": {
+      "domain_name": "evil-connected-app.example",
+      "event_id": "evt_test_00281",
+      "persona": "normal_sql_user",
+      "score": 100.0,
+      "user_id": "u_normal_sql_001"
+    },
+    "created_at": "2026-06-13T16:31:46.327684+00:00",
+    "recommended_action": "Investigate connected app authorization and user consent history.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "UEBA_CRITICAL_RISK_BEHAVIOR",
+    "context": {
+      "event_id": "evt_test_00282",
+      "persona": "normal_sql_user",
+      "score": 100.0,
+      "user_id": "u_normal_sql_001"
+    },
+    "created_at": "2026-06-13T16:31:46.327685+00:00",
+    "recommended_action": "Stop autonomous closure and create a human review item.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "FOREIGN_COUNTRY_LOGIN_OR_ACCESS",
+    "context": {
+      "city": "Moscow",
+      "country": "RU",
+      "event_id": "evt_test_00282",
+      "persona": "normal_sql_user",
+      "score": 100.0,
+      "user_id": "u_normal_sql_001"
+    },
+    "created_at": "2026-06-13T16:31:46.327687+00:00",
+    "recommended_action": "Validate user travel/VPN context and correlate with identity-provider logs.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "WEAK_TLS_USED",
+    "context": {
+      "event_id": "evt_test_00282",
+      "persona": "normal_sql_user",
+      "score": 100.0,
+      "tls_version": "TLS1.0",
+      "user_id": "u_normal_sql_001"
+    },
+    "created_at": "2026-06-13T16:31:46.327689+00:00",
+    "recommended_action": "Review auth/session context and enforce modern TLS policy.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "UEBA_CRITICAL_RISK_BEHAVIOR",
+    "context": {
+      "event_id": "evt_test_00283",
+      "persona": "normal_sql_user",
+      "score": 99.96,
+      "user_id": "u_normal_sql_001"
+    },
+    "created_at": "2026-06-13T16:31:46.327691+00:00",
+    "recommended_action": "Stop autonomous closure and create a human review item.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "UEBA_CRITICAL_RISK_BEHAVIOR",
+    "context": {
+      "event_id": "evt_test_00559",
+      "persona": "traveling_sales_rep",
+      "score": 100.0,
+      "user_id": "u_sales_traveler_002"
+    },
+    "created_at": "2026-06-13T16:31:46.327693+00:00",
+    "recommended_action": "Stop autonomous closure and create a human review item.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "FOREIGN_COUNTRY_LOGIN_OR_ACCESS",
+    "context": {
+      "city": "Singapore",
+      "country": "SG",
+      "event_id": "evt_test_00559",
+      "persona": "traveling_sales_rep",
+      "score": 100.0,
+      "user_id": "u_sales_traveler_002"
+    },
+    "created_at": "2026-06-13T16:31:46.327695+00:00",
+    "recommended_action": "Validate user travel/VPN context and correlate with identity-provider logs.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "UEBA_CRITICAL_RISK_BEHAVIOR",
+    "context": {
+      "event_id": "evt_test_00561",
+      "persona": "traveling_sales_rep",
+      "score": 100.0,
+      "user_id": "u_sales_traveler_002"
+    },
+    "created_at": "2026-06-13T16:31:46.327696+00:00",
+    "recommended_action": "Stop autonomous closure and create a human review item.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "UEBA_CRITICAL_RISK_BEHAVIOR",
+    "context": {
+      "event_id": "evt_test_00562",
+      "persona": "traveling_sales_rep",
+      "score": 100.0,
+      "user_id": "u_sales_traveler_002"
+    },
+    "created_at": "2026-06-13T16:31:46.327698+00:00",
+    "recommended_action": "Stop autonomous closure and create a human review item.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "FOREIGN_COUNTRY_LOGIN_OR_ACCESS",
+    "context": {
+      "city": "Singapore",
+      "country": "SG",
+      "event_id": "evt_test_00562",
+      "persona": "traveling_sales_rep",
+      "score": 100.0,
+      "user_id": "u_sales_traveler_002"
+    },
+    "created_at": "2026-06-13T16:31:46.327700+00:00",
+    "recommended_action": "Validate user travel/VPN context and correlate with identity-provider logs.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "UEBA_CRITICAL_RISK_BEHAVIOR",
+    "context": {
+      "event_id": "evt_test_00564",
+      "persona": "traveling_sales_rep",
+      "score": 100.0,
+      "user_id": "u_sales_traveler_002"
+    },
+    "created_at": "2026-06-13T16:31:46.327702+00:00",
+    "recommended_action": "Stop autonomous closure and create a human review item.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "UEBA_CRITICAL_RISK_BEHAVIOR",
+    "context": {
+      "event_id": "evt_test_00565",
+      "persona": "traveling_sales_rep",
+      "score": 100.0,
+      "user_id": "u_sales_traveler_002"
+    },
+    "created_at": "2026-06-13T16:31:46.327704+00:00",
+    "recommended_action": "Stop autonomous closure and create a human review item.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "FOREIGN_COUNTRY_LOGIN_OR_ACCESS",
+    "context": {
+      "city": "Singapore",
+      "country": "SG",
+      "event_id": "evt_test_00565",
+      "persona": "traveling_sales_rep",
+      "score": 100.0,
+      "user_id": "u_sales_traveler_002"
+    },
+    "created_at": "2026-06-13T16:31:46.327706+00:00",
+    "recommended_action": "Validate user travel/VPN context and correlate with identity-provider logs.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "UEBA_HIGH_RISK_BEHAVIOR",
+    "context": {
+      "event_id": "evt_test_00808",
+      "persona": "nightowl_engineer",
+      "score": 80.0,
+      "user_id": "u_nightowl_noah_003"
+    },
+    "created_at": "2026-06-13T16:31:46.327708+00:00",
+    "recommended_action": "Send to threat-hunting and require analyst review before closure.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "UEBA_CRITICAL_RISK_BEHAVIOR",
+    "context": {
+      "event_id": "evt_test_00843",
+      "persona": "nightowl_engineer",
+      "score": 100.0,
+      "user_id": "u_nightowl_noah_003"
+    },
+    "created_at": "2026-06-13T16:31:46.327710+00:00",
+    "recommended_action": "Stop autonomous closure and create a human review item.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "FOREIGN_COUNTRY_LOGIN_OR_ACCESS",
+    "context": {
+      "city": "Moscow",
+      "country": "RU",
+      "event_id": "evt_test_00843",
+      "persona": "nightowl_engineer",
+      "score": 100.0,
+      "user_id": "u_nightowl_noah_003"
+    },
+    "created_at": "2026-06-13T16:31:46.327712+00:00",
+    "recommended_action": "Validate user travel/VPN context and correlate with identity-provider logs.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "WEAK_TLS_USED",
+    "context": {
+      "event_id": "evt_test_00843",
+      "persona": "nightowl_engineer",
+      "score": 100.0,
+      "tls_version": "TLS1.0",
+      "user_id": "u_nightowl_noah_003"
+    },
+    "created_at": "2026-06-13T16:31:46.327713+00:00",
+    "recommended_action": "Review auth/session context and enforce modern TLS policy.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "UEBA_CRITICAL_RISK_BEHAVIOR",
+    "context": {
+      "event_id": "evt_test_00844",
+      "persona": "nightowl_engineer",
+      "score": 100.0,
+      "user_id": "u_nightowl_noah_003"
+    },
+    "created_at": "2026-06-13T16:31:46.327715+00:00",
+    "recommended_action": "Stop autonomous closure and create a human review item.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "FOREIGN_COUNTRY_LOGIN_OR_ACCESS",
+    "context": {
+      "city": "Unknown",
+      "country": "Unknown",
+      "event_id": "evt_test_00844",
+      "persona": "nightowl_engineer",
+      "score": 100.0,
+      "user_id": "u_nightowl_noah_003"
+    },
+    "created_at": "2026-06-13T16:31:46.327717+00:00",
+    "recommended_action": "Validate user travel/VPN context and correlate with identity-provider logs.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "SUSPICIOUS_CONNECTED_APP",
+    "context": {
+      "domain_name": "evil-connected-app.example",
+      "event_id": "evt_test_00844",
+      "persona": "nightowl_engineer",
+      "score": 100.0,
+      "user_id": "u_nightowl_noah_003"
+    },
+    "created_at": "2026-06-13T16:31:46.327719+00:00",
+    "recommended_action": "Investigate connected app authorization and user consent history.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "UEBA_CRITICAL_RISK_BEHAVIOR",
+    "context": {
+      "event_id": "evt_test_00846",
+      "persona": "nightowl_engineer",
+      "score": 100.0,
+      "user_id": "u_nightowl_noah_003"
+    },
+    "created_at": "2026-06-13T16:31:46.327720+00:00",
+    "recommended_action": "Stop autonomous closure and create a human review item.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "FOREIGN_COUNTRY_LOGIN_OR_ACCESS",
+    "context": {
+      "city": "Moscow",
+      "country": "RU",
+      "event_id": "evt_test_00846",
+      "persona": "nightowl_engineer",
+      "score": 100.0,
+      "user_id": "u_nightowl_noah_003"
+    },
+    "created_at": "2026-06-13T16:31:46.327722+00:00",
+    "recommended_action": "Validate user travel/VPN context and correlate with identity-provider logs.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "WEAK_TLS_USED",
+    "context": {
+      "event_id": "evt_test_00846",
+      "persona": "nightowl_engineer",
+      "score": 100.0,
+      "tls_version": "TLS1.0",
+      "user_id": "u_nightowl_noah_003"
+    },
+    "created_at": "2026-06-13T16:31:46.327724+00:00",
+    "recommended_action": "Review auth/session context and enforce modern TLS policy.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "UEBA_CRITICAL_RISK_BEHAVIOR",
+    "context": {
+      "event_id": "evt_test_00847",
+      "persona": "nightowl_engineer",
+      "score": 100.0,
+      "user_id": "u_nightowl_noah_003"
+    },
+    "created_at": "2026-06-13T16:31:46.327726+00:00",
+    "recommended_action": "Stop autonomous closure and create a human review item.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "FOREIGN_COUNTRY_LOGIN_OR_ACCESS",
+    "context": {
+      "city": "Unknown",
+      "country": "Unknown",
+      "event_id": "evt_test_00847",
+      "persona": "nightowl_engineer",
+      "score": 100.0,
+      "user_id": "u_nightowl_noah_003"
+    },
+    "created_at": "2026-06-13T16:31:46.327727+00:00",
+    "recommended_action": "Validate user travel/VPN context and correlate with identity-provider logs.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "SUSPICIOUS_CONNECTED_APP",
+    "context": {
+      "domain_name": "evil-connected-app.example",
+      "event_id": "evt_test_00847",
+      "persona": "nightowl_engineer",
+      "score": 100.0,
+      "user_id": "u_nightowl_noah_003"
+    },
+    "created_at": "2026-06-13T16:31:46.327729+00:00",
+    "recommended_action": "Investigate connected app authorization and user consent history.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "UEBA_CRITICAL_RISK_BEHAVIOR",
+    "context": {
+      "event_id": "evt_test_00849",
+      "persona": "nightowl_engineer",
+      "score": 100.0,
+      "user_id": "u_nightowl_noah_003"
+    },
+    "created_at": "2026-06-13T16:31:46.327732+00:00",
+    "recommended_action": "Stop autonomous closure and create a human review item.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "FOREIGN_COUNTRY_LOGIN_OR_ACCESS",
+    "context": {
+      "city": "Moscow",
+      "country": "RU",
+      "event_id": "evt_test_00849",
+      "persona": "nightowl_engineer",
+      "score": 100.0,
+      "user_id": "u_nightowl_noah_003"
+    },
+    "created_at": "2026-06-13T16:31:46.327733+00:00",
+    "recommended_action": "Validate user travel/VPN context and correlate with identity-provider logs.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "WEAK_TLS_USED",
+    "context": {
+      "event_id": "evt_test_00849",
+      "persona": "nightowl_engineer",
+      "score": 100.0,
+      "tls_version": "TLS1.0",
+      "user_id": "u_nightowl_noah_003"
+    },
+    "created_at": "2026-06-13T16:31:46.327735+00:00",
+    "recommended_action": "Review auth/session context and enforce modern TLS policy.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "UEBA_CRITICAL_RISK_BEHAVIOR",
+    "context": {
+      "event_id": "evt_test_01125",
+      "persona": "complex_query_engineer",
+      "score": 100.0,
+      "user_id": "u_complex_query_004"
+    },
+    "created_at": "2026-06-13T16:31:46.327737+00:00",
+    "recommended_action": "Stop autonomous closure and create a human review item.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "LARGE_DATA_EXPORT_OR_ACCESS",
+    "context": {
+      "event_id": "evt_test_01125",
+      "event_name": "BulkDataExport",
+      "persona": "complex_query_engineer",
+      "records_accessed": 65000.0,
+      "score": 100.0,
+      "user_id": "u_complex_query_004"
+    },
+    "created_at": "2026-06-13T16:31:46.327739+00:00",
+    "recommended_action": "Require human review for data-access justification and possible containment.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "UEBA_CRITICAL_RISK_BEHAVIOR",
+    "context": {
+      "event_id": "evt_test_01126",
+      "persona": "complex_query_engineer",
+      "score": 100.0,
+      "user_id": "u_complex_query_004"
+    },
+    "created_at": "2026-06-13T16:31:46.327741+00:00",
+    "recommended_action": "Stop autonomous closure and create a human review item.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "FOREIGN_COUNTRY_LOGIN_OR_ACCESS",
+    "context": {
+      "city": "Sao Paulo",
+      "country": "BR",
+      "event_id": "evt_test_01126",
+      "persona": "complex_query_engineer",
+      "score": 100.0,
+      "user_id": "u_complex_query_004"
+    },
+    "created_at": "2026-06-13T16:31:46.327743+00:00",
+    "recommended_action": "Validate user travel/VPN context and correlate with identity-provider logs.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "LARGE_DATA_EXPORT_OR_ACCESS",
+    "context": {
+      "event_id": "evt_test_01126",
+      "event_name": "SOQLQuery",
+      "persona": "complex_query_engineer",
+      "records_accessed": 18000.0,
+      "score": 100.0,
+      "user_id": "u_complex_query_004"
+    },
+    "created_at": "2026-06-13T16:31:46.327745+00:00",
+    "recommended_action": "Require human review for data-access justification and possible containment.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "UEBA_CRITICAL_RISK_BEHAVIOR",
+    "context": {
+      "event_id": "evt_test_01128",
+      "persona": "complex_query_engineer",
+      "score": 100.0,
+      "user_id": "u_complex_query_004"
+    },
+    "created_at": "2026-06-13T16:31:46.327746+00:00",
+    "recommended_action": "Stop autonomous closure and create a human review item.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "LARGE_DATA_EXPORT_OR_ACCESS",
+    "context": {
+      "event_id": "evt_test_01128",
+      "event_name": "BulkDataExport",
+      "persona": "complex_query_engineer",
+      "records_accessed": 65000.0,
+      "score": 100.0,
+      "user_id": "u_complex_query_004"
+    },
+    "created_at": "2026-06-13T16:31:46.327748+00:00",
+    "recommended_action": "Require human review for data-access justification and possible containment.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "UEBA_CRITICAL_RISK_BEHAVIOR",
+    "context": {
+      "event_id": "evt_test_01129",
+      "persona": "complex_query_engineer",
+      "score": 100.0,
+      "user_id": "u_complex_query_004"
+    },
+    "created_at": "2026-06-13T16:31:46.327750+00:00",
+    "recommended_action": "Stop autonomous closure and create a human review item.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "FOREIGN_COUNTRY_LOGIN_OR_ACCESS",
+    "context": {
+      "city": "Sao Paulo",
+      "country": "BR",
+      "event_id": "evt_test_01129",
+      "persona": "complex_query_engineer",
+      "score": 100.0,
+      "user_id": "u_complex_query_004"
+    },
+    "created_at": "2026-06-13T16:31:46.327752+00:00",
+    "recommended_action": "Validate user travel/VPN context and correlate with identity-provider logs.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "LARGE_DATA_EXPORT_OR_ACCESS",
+    "context": {
+      "event_id": "evt_test_01129",
+      "event_name": "SOQLQuery",
+      "persona": "complex_query_engineer",
+      "records_accessed": 18000.0,
+      "score": 100.0,
+      "user_id": "u_complex_query_004"
+    },
+    "created_at": "2026-06-13T16:31:46.327754+00:00",
+    "recommended_action": "Require human review for data-access justification and possible containment.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "UEBA_CRITICAL_RISK_BEHAVIOR",
+    "context": {
+      "event_id": "evt_test_01131",
+      "persona": "complex_query_engineer",
+      "score": 100.0,
+      "user_id": "u_complex_query_004"
+    },
+    "created_at": "2026-06-13T16:31:46.327756+00:00",
+    "recommended_action": "Stop autonomous closure and create a human review item.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "LARGE_DATA_EXPORT_OR_ACCESS",
+    "context": {
+      "event_id": "evt_test_01131",
+      "event_name": "BulkDataExport",
+      "persona": "complex_query_engineer",
+      "records_accessed": 65000.0,
+      "score": 100.0,
+      "user_id": "u_complex_query_004"
+    },
+    "created_at": "2026-06-13T16:31:46.327758+00:00",
+    "recommended_action": "Require human review for data-access justification and possible containment.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "UEBA_CRITICAL_RISK_BEHAVIOR",
+    "context": {
+      "event_id": "evt_test_01132",
+      "persona": "complex_query_engineer",
+      "score": 100.0,
+      "user_id": "u_complex_query_004"
+    },
+    "created_at": "2026-06-13T16:31:46.327759+00:00",
+    "recommended_action": "Stop autonomous closure and create a human review item.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "FOREIGN_COUNTRY_LOGIN_OR_ACCESS",
+    "context": {
+      "city": "Sao Paulo",
+      "country": "BR",
+      "event_id": "evt_test_01132",
+      "persona": "complex_query_engineer",
+      "score": 100.0,
+      "user_id": "u_complex_query_004"
+    },
+    "created_at": "2026-06-13T16:31:46.327761+00:00",
+    "recommended_action": "Validate user travel/VPN context and correlate with identity-provider logs.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "LARGE_DATA_EXPORT_OR_ACCESS",
+    "context": {
+      "event_id": "evt_test_01132",
+      "event_name": "SOQLQuery",
+      "persona": "complex_query_engineer",
+      "records_accessed": 18000.0,
+      "score": 100.0,
+      "user_id": "u_complex_query_004"
+    },
+    "created_at": "2026-06-13T16:31:46.327763+00:00",
+    "recommended_action": "Require human review for data-access justification and possible containment.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "UEBA_CRITICAL_RISK_BEHAVIOR",
+    "context": {
+      "event_id": "evt_test_01410",
+      "persona": "salesforce_admin",
+      "score": 100.0,
+      "user_id": "u_admin_005"
+    },
+    "created_at": "2026-06-13T16:31:46.327764+00:00",
+    "recommended_action": "Stop autonomous closure and create a human review item.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "LARGE_DATA_EXPORT_OR_ACCESS",
+    "context": {
+      "event_id": "evt_test_01410",
+      "event_name": "BulkDataExport",
+      "persona": "salesforce_admin",
+      "records_accessed": 120000.0,
+      "score": 100.0,
+      "user_id": "u_admin_005"
+    },
+    "created_at": "2026-06-13T16:31:46.327766+00:00",
+    "recommended_action": "Require human review for data-access justification and possible containment.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "UEBA_CRITICAL_RISK_BEHAVIOR",
+    "context": {
+      "event_id": "evt_test_01413",
+      "persona": "salesforce_admin",
+      "score": 100.0,
+      "user_id": "u_admin_005"
+    },
+    "created_at": "2026-06-13T16:31:46.327768+00:00",
+    "recommended_action": "Stop autonomous closure and create a human review item.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "LARGE_DATA_EXPORT_OR_ACCESS",
+    "context": {
+      "event_id": "evt_test_01413",
+      "event_name": "BulkDataExport",
+      "persona": "salesforce_admin",
+      "records_accessed": 120000.0,
+      "score": 100.0,
+      "user_id": "u_admin_005"
+    },
+    "created_at": "2026-06-13T16:31:46.327770+00:00",
+    "recommended_action": "Require human review for data-access justification and possible containment.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "ANOMALOUS_ADMIN_ACTION",
+    "context": {
+      "event_id": "evt_test_01413",
+      "event_name": "BulkDataExport",
+      "persona": "salesforce_admin",
+      "score": 100.0,
+      "user_id": "u_admin_005"
+    },
+    "created_at": "2026-06-13T16:31:46.327772+00:00",
+    "recommended_action": "Privileged activity in anomalous context requires immediate analyst review.",
+    "severity": "critical"
+  },
+  {
+    "alarm_type": "UEBA_HIGH_RISK_BEHAVIOR",
+    "context": {
+      "event_id": "evt_test_01415",
+      "persona": "salesforce_admin",
+      "score": 83.0,
+      "user_id": "u_admin_005"
+    },
+    "created_at": "2026-06-13T16:31:46.327774+00:00",
+    "recommended_action": "Send to threat-hunting and require analyst review before closure.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "WEAK_TLS_USED",
+    "context": {
+      "event_id": "evt_test_01415",
+      "persona": "salesforce_admin",
+      "score": 83.0,
+      "tls_version": "TLS1.0",
+      "user_id": "u_admin_005"
+    },
+    "created_at": "2026-06-13T16:31:46.327776+00:00",
+    "recommended_action": "Review auth/session context and enforce modern TLS policy.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "COMPLIANCE_VIOLATION",
+    "context": {
+      "control_id": "SF-AUTH-002",
+      "event_id": "evt_test_00276",
+      "status": "non_compliant"
+    },
+    "created_at": "2026-06-13T16:31:46.331814+00:00",
+    "recommended_action": "Create a human review package and require analyst decision before closure.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "COMPLIANCE_VIOLATION",
+    "context": {
+      "control_id": "SF-AUTH-002",
+      "event_id": "evt_test_00278",
+      "status": "non_compliant"
+    },
+    "created_at": "2026-06-13T16:31:46.331818+00:00",
+    "recommended_action": "Create a human review package and require analyst decision before closure.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "COMPLIANCE_VIOLATION",
+    "context": {
+      "control_id": "SF-AUTH-002",
+      "event_id": "evt_test_00279",
+      "status": "non_compliant"
+    },
+    "created_at": "2026-06-13T16:31:46.331820+00:00",
+    "recommended_action": "Create a human review package and require analyst decision before closure.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "COMPLIANCE_VIOLATION",
+    "context": {
+      "control_id": "SF-AUTH-002",
+      "event_id": "evt_test_00281",
+      "status": "non_compliant"
+    },
+    "created_at": "2026-06-13T16:31:46.331822+00:00",
+    "recommended_action": "Create a human review package and require analyst decision before closure.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "COMPLIANCE_VIOLATION",
+    "context": {
+      "control_id": "SF-AUTH-002",
+      "event_id": "evt_test_00282",
+      "status": "non_compliant"
+    },
+    "created_at": "2026-06-13T16:31:46.331823+00:00",
+    "recommended_action": "Create a human review package and require analyst decision before closure.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "COMPLIANCE_VIOLATION",
+    "context": {
+      "control_id": "SF-AUTH-002",
+      "event_id": "evt_test_00843",
+      "status": "non_compliant"
+    },
+    "created_at": "2026-06-13T16:31:46.331825+00:00",
+    "recommended_action": "Create a human review package and require analyst decision before closure.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "COMPLIANCE_VIOLATION",
+    "context": {
+      "control_id": "SF-AUTH-002",
+      "event_id": "evt_test_00844",
+      "status": "non_compliant"
+    },
+    "created_at": "2026-06-13T16:31:46.331827+00:00",
+    "recommended_action": "Create a human review package and require analyst decision before closure.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "COMPLIANCE_VIOLATION",
+    "context": {
+      "control_id": "SF-AUTH-002",
+      "event_id": "evt_test_00846",
+      "status": "non_compliant"
+    },
+    "created_at": "2026-06-13T16:31:46.331828+00:00",
+    "recommended_action": "Create a human review package and require analyst decision before closure.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "COMPLIANCE_VIOLATION",
+    "context": {
+      "control_id": "SF-AUTH-002",
+      "event_id": "evt_test_00847",
+      "status": "non_compliant"
+    },
+    "created_at": "2026-06-13T16:31:46.331830+00:00",
+    "recommended_action": "Create a human review package and require analyst decision before closure.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "COMPLIANCE_VIOLATION",
+    "context": {
+      "control_id": "SF-AUTH-002",
+      "event_id": "evt_test_00849",
+      "status": "non_compliant"
+    },
+    "created_at": "2026-06-13T16:31:46.331831+00:00",
+    "recommended_action": "Create a human review package and require analyst decision before closure.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "COMPLIANCE_VIOLATION",
+    "context": {
+      "control_id": "SF-DATA-003",
+      "event_id": "evt_test_01125",
+      "status": "non_compliant"
+    },
+    "created_at": "2026-06-13T16:31:46.331833+00:00",
+    "recommended_action": "Create a human review package and require analyst decision before closure.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "COMPLIANCE_VIOLATION",
+    "context": {
+      "control_id": "SF-DATA-003",
+      "event_id": "evt_test_01126",
+      "status": "non_compliant"
+    },
+    "created_at": "2026-06-13T16:31:46.331835+00:00",
+    "recommended_action": "Create a human review package and require analyst decision before closure.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "COMPLIANCE_VIOLATION",
+    "context": {
+      "control_id": "SF-DATA-003",
+      "event_id": "evt_test_01128",
+      "status": "non_compliant"
+    },
+    "created_at": "2026-06-13T16:31:46.331836+00:00",
+    "recommended_action": "Create a human review package and require analyst decision before closure.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "COMPLIANCE_VIOLATION",
+    "context": {
+      "control_id": "SF-DATA-003",
+      "event_id": "evt_test_01129",
+      "status": "non_compliant"
+    },
+    "created_at": "2026-06-13T16:31:46.331838+00:00",
+    "recommended_action": "Create a human review package and require analyst decision before closure.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "COMPLIANCE_VIOLATION",
+    "context": {
+      "control_id": "SF-DATA-003",
+      "event_id": "evt_test_01131",
+      "status": "non_compliant"
+    },
+    "created_at": "2026-06-13T16:31:46.331839+00:00",
+    "recommended_action": "Create a human review package and require analyst decision before closure.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "COMPLIANCE_VIOLATION",
+    "context": {
+      "control_id": "SF-DATA-003",
+      "event_id": "evt_test_01132",
+      "status": "non_compliant"
+    },
+    "created_at": "2026-06-13T16:31:46.331841+00:00",
+    "recommended_action": "Create a human review package and require analyst decision before closure.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "COMPLIANCE_VIOLATION",
+    "context": {
+      "control_id": "SF-DATA-003",
+      "event_id": "evt_test_01410",
+      "status": "non_compliant"
+    },
+    "created_at": "2026-06-13T16:31:46.331842+00:00",
+    "recommended_action": "Create a human review package and require analyst decision before closure.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "COMPLIANCE_VIOLATION",
+    "context": {
+      "control_id": "SF-DATA-003",
+      "event_id": "evt_test_01413",
+      "status": "non_compliant"
+    },
+    "created_at": "2026-06-13T16:31:46.331844+00:00",
+    "recommended_action": "Create a human review package and require analyst decision before closure.",
+    "severity": "high"
+  },
+  {
+    "alarm_type": "COMPLIANCE_VIOLATION",
+    "context": {
+      "control_id": "SF-AUTH-002",
+      "event_id": "evt_test_01415",
+      "status": "non_compliant"
+    },
+    "created_at": "2026-06-13T16:31:46.331846+00:00",
+    "recommended_action": "Create a human review package and require analyst decision before closure.",
+    "severity": "high"
+  }
+]

@@ -1,0 +1,17 @@
+services:
+  ueba-harness-api:
+    build: .
+    ports:
+      - "10000:10000"
+    environment:
+      PORT: "10000"
+      APP_ROOT: /app
+      DATA_DIR: /app/data
+      MODEL_DIR: /app/models
+      OUTPUTS_DIR: /app/outputs
+      RUNS_DIR: /app/runs
+      RULES_PATH: /app/config/declared_rules.json
+      MAX_UPLOAD_BYTES: "10485760"
+    volumes:
+      - ./outputs:/app/outputs
+      - ./runs:/app/runs

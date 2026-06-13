@@ -1,0 +1,1573 @@
+{
+  "allowed_agent_actions": [
+    "analyze",
+    "summarize",
+    "assign_risk_score",
+    "create_hunt_hypothesis",
+    "evaluate_compliance",
+    "recommend_human_review"
+  ],
+  "blocked_agent_actions": [
+    "disable_account",
+    "delete_logs",
+    "change_permissions",
+    "approve_exception",
+    "close_incident",
+    "claim_confirmed_breach_without_evidence"
+  ],
+  "created_at": "2026-06-13T12:21:34.685067+00:00",
+  "events": [
+    {
+      "city": "Moscow",
+      "country": "RU",
+      "device_type": "desktop",
+      "domain_name": "mycompany.my.salesforce.com",
+      "event_id": "evt_test_00276",
+      "event_name": "Login",
+      "event_type": "auth",
+      "interestingness_score": 89.0,
+      "is_admin_action": false,
+      "is_interesting": true,
+      "label": 1,
+      "login_type": "Password",
+      "os": "Linux",
+      "persona": "normal_sql_user",
+      "query_complexity": 3,
+      "reasons": "{\"unusual_city\": {\"normal_values\": [\"Chicago\"], \"value\": \"Moscow\"}, \"unusual_country\": {\"normal_values\": [\"US\"], \"value\": \"RU\"}, \"unusual_os\": {\"normal_values\": [\"Windows\", \"macOS\"], \"value\": \"Linux\"}, \"unusual_tls_version\": {\"normal_values\": [\"TLS1.2\", \"TLS1.3\"], \"value\": \"TLS1.0\"}}",
+      "reasons_dict": {
+        "unusual_city": {
+          "normal_values": [
+            "Chicago"
+          ],
+          "value": "Moscow"
+        },
+        "unusual_country": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "RU"
+        },
+        "unusual_os": {
+          "normal_values": [
+            "Windows",
+            "macOS"
+          ],
+          "value": "Linux"
+        },
+        "unusual_tls_version": {
+          "normal_values": [
+            "TLS1.2",
+            "TLS1.3"
+          ],
+          "value": "TLS1.0"
+        }
+      },
+      "reconstruction_error": 0.12027705,
+      "records_accessed": 167,
+      "scenario": "foreign_country_login",
+      "src_ip": "203.0.113.42",
+      "src_ip_redacted": "203.0.x.x",
+      "timestamp": "2026-03-30T17:16:20+00:00",
+      "tls_version": "TLS1.0",
+      "user_agent": "Mozilla/5.0 Linux Firefox",
+      "user_agent_redacted": "Mozilla/x.y Linux Firefox",
+      "user_id": "u_normal_sql_001"
+    },
+    {
+      "city": "Chicago",
+      "country": "US",
+      "device_type": "laptop",
+      "domain_name": "login.salesforce.com",
+      "event_id": "evt_test_00277",
+      "event_name": "BulkDataExport",
+      "event_type": "data_export",
+      "interestingness_score": 99.38,
+      "is_admin_action": false,
+      "is_interesting": true,
+      "label": 1,
+      "login_type": "SSO",
+      "os": "Windows",
+      "persona": "normal_sql_user",
+      "query_complexity": 2,
+      "reasons": "{\"high_records_accessed\": {\"normal_mean\": 117.7, \"normal_p95\": 349.4, \"normal_std\": 116.0, \"value\": 6300.0, \"z_score\": 53.3}, \"model_reconstruction_error\": {\"ratio\": 6.35, \"threshold\": 0.167078, \"value\": 1.061713}}",
+      "reasons_dict": {
+        "high_records_accessed": {
+          "normal_mean": 117.7,
+          "normal_p95": 349.4,
+          "normal_std": 116.0,
+          "value": 6300.0,
+          "z_score": 53.3
+        },
+        "model_reconstruction_error": {
+          "ratio": 6.35,
+          "threshold": 0.167078,
+          "value": 1.061713
+        }
+      },
+      "reconstruction_error": 1.0617132,
+      "records_accessed": 6300,
+      "scenario": "mass_export",
+      "src_ip": "203.0.113.42",
+      "src_ip_redacted": "203.0.x.x",
+      "timestamp": "2026-03-31T10:36:37+00:00",
+      "tls_version": "TLS1.3",
+      "user_agent": "Mozilla/5.0 Windows Chrome",
+      "user_agent_redacted": "Mozilla/x.y Windows Chrome",
+      "user_id": "u_normal_sql_001"
+    },
+    {
+      "city": "Unknown",
+      "country": "Unknown",
+      "device_type": "laptop",
+      "domain_name": "evil-connected-app.example",
+      "event_id": "evt_test_00278",
+      "event_name": "ConnectedAppOAuth",
+      "event_type": "auth",
+      "interestingness_score": 100.0,
+      "is_admin_action": false,
+      "is_interesting": true,
+      "label": 1,
+      "login_type": "OAuth",
+      "os": "macOS",
+      "persona": "normal_sql_user",
+      "query_complexity": 0,
+      "reasons": "{\"unusual_city\": {\"normal_values\": [\"Chicago\"], \"value\": \"Unknown\"}, \"unusual_country\": {\"normal_values\": [\"US\"], \"value\": \"Unknown\"}, \"unusual_domain_name\": {\"normal_values\": [\"login.salesforce.com\", \"mycompany.my.salesforce.com\"], \"value\": \"evil-connected-app.example\"}, \"unusual_login_type\": {\"normal_values\": [\"Password\", \"SSO\"], \"value\": \"OAuth\"}}",
+      "reasons_dict": {
+        "unusual_city": {
+          "normal_values": [
+            "Chicago"
+          ],
+          "value": "Unknown"
+        },
+        "unusual_country": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "Unknown"
+        },
+        "unusual_domain_name": {
+          "normal_values": [
+            "login.salesforce.com",
+            "mycompany.my.salesforce.com"
+          ],
+          "value": "evil-connected-app.example"
+        },
+        "unusual_login_type": {
+          "normal_values": [
+            "Password",
+            "SSO"
+          ],
+          "value": "OAuth"
+        }
+      },
+      "reconstruction_error": 0.101438716,
+      "records_accessed": 3,
+      "scenario": "suspicious_oauth",
+      "src_ip": "203.0.113.42",
+      "src_ip_redacted": "203.0.x.x",
+      "timestamp": "2026-04-01T10:17:25+00:00",
+      "tls_version": "TLS1.3",
+      "user_agent": "Mozilla/5.0 macOS Safari",
+      "user_agent_redacted": "Mozilla/x.y macOS Safari",
+      "user_id": "u_normal_sql_001"
+    },
+    {
+      "city": "Moscow",
+      "country": "RU",
+      "device_type": "desktop",
+      "domain_name": "mycompany.my.salesforce.com",
+      "event_id": "evt_test_00279",
+      "event_name": "Login",
+      "event_type": "auth",
+      "interestingness_score": 100.0,
+      "is_admin_action": false,
+      "is_interesting": true,
+      "label": 1,
+      "login_type": "Password",
+      "os": "Linux",
+      "persona": "normal_sql_user",
+      "query_complexity": 0,
+      "reasons": "{\"public_or_unfamiliar_ip\": {\"normal_private_ip_rate\": 1.0, \"src_ip\": \"45.83.12.44\"}, \"unusual_city\": {\"normal_values\": [\"Chicago\"], \"value\": \"Moscow\"}, \"unusual_country\": {\"normal_values\": [\"US\"], \"value\": \"RU\"}, \"unusual_os\": {\"normal_values\": [\"Windows\", \"macOS\"], \"value\": \"Linux\"}, \"unusual_tls_version\": {\"normal_values\": [\"TLS1.2\", \"TLS1.3\"], \"value\": \"TLS1.0\"}}",
+      "reasons_dict": {
+        "public_or_unfamiliar_ip": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "45.83.12.44"
+        },
+        "unusual_city": {
+          "normal_values": [
+            "Chicago"
+          ],
+          "value": "Moscow"
+        },
+        "unusual_country": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "RU"
+        },
+        "unusual_os": {
+          "normal_values": [
+            "Windows",
+            "macOS"
+          ],
+          "value": "Linux"
+        },
+        "unusual_tls_version": {
+          "normal_values": [
+            "TLS1.2",
+            "TLS1.3"
+          ],
+          "value": "TLS1.0"
+        }
+      },
+      "reconstruction_error": 0.14624043,
+      "records_accessed": 2,
+      "scenario": "foreign_country_login",
+      "src_ip": "45.83.12.44",
+      "src_ip_redacted": "45.83.x.x",
+      "timestamp": "2026-04-02T13:52:50+00:00",
+      "tls_version": "TLS1.0",
+      "user_agent": "Mozilla/5.0 Linux Firefox",
+      "user_agent_redacted": "Mozilla/x.y Linux Firefox",
+      "user_id": "u_normal_sql_001"
+    },
+    {
+      "city": "Chicago",
+      "country": "US",
+      "device_type": "laptop",
+      "domain_name": "mycompany.my.salesforce.com",
+      "event_id": "evt_test_00280",
+      "event_name": "BulkDataExport",
+      "event_type": "data_export",
+      "interestingness_score": 99.43,
+      "is_admin_action": false,
+      "is_interesting": true,
+      "label": 1,
+      "login_type": "Password",
+      "os": "macOS",
+      "persona": "normal_sql_user",
+      "query_complexity": 2,
+      "reasons": "{\"high_records_accessed\": {\"normal_mean\": 117.7, \"normal_p95\": 349.4, \"normal_std\": 116.0, \"value\": 6300.0, \"z_score\": 53.3}, \"model_reconstruction_error\": {\"ratio\": 6.45, \"threshold\": 0.167078, \"value\": 1.077637}}",
+      "reasons_dict": {
+        "high_records_accessed": {
+          "normal_mean": 117.7,
+          "normal_p95": 349.4,
+          "normal_std": 116.0,
+          "value": 6300.0,
+          "z_score": 53.3
+        },
+        "model_reconstruction_error": {
+          "ratio": 6.45,
+          "threshold": 0.167078,
+          "value": 1.077637
+        }
+      },
+      "reconstruction_error": 1.0776368,
+      "records_accessed": 6300,
+      "scenario": "mass_export",
+      "src_ip": "198.51.100.19",
+      "src_ip_redacted": "198.51.x.x",
+      "timestamp": "2026-04-03T12:46:26+00:00",
+      "tls_version": "TLS1.3",
+      "user_agent": "Mozilla/5.0 macOS Safari",
+      "user_agent_redacted": "Mozilla/x.y macOS Safari",
+      "user_id": "u_normal_sql_001"
+    },
+    {
+      "city": "Unknown",
+      "country": "Unknown",
+      "device_type": "desktop",
+      "domain_name": "evil-connected-app.example",
+      "event_id": "evt_test_00281",
+      "event_name": "ConnectedAppOAuth",
+      "event_type": "auth",
+      "interestingness_score": 100.0,
+      "is_admin_action": false,
+      "is_interesting": true,
+      "label": 1,
+      "login_type": "OAuth",
+      "os": "Windows",
+      "persona": "normal_sql_user",
+      "query_complexity": 0,
+      "reasons": "{\"public_or_unfamiliar_ip\": {\"normal_private_ip_rate\": 1.0, \"src_ip\": \"185.199.108.77\"}, \"unusual_city\": {\"normal_values\": [\"Chicago\"], \"value\": \"Unknown\"}, \"unusual_country\": {\"normal_values\": [\"US\"], \"value\": \"Unknown\"}, \"unusual_domain_name\": {\"normal_values\": [\"login.salesforce.com\", \"mycompany.my.salesforce.com\"], \"value\": \"evil-connected-app.example\"}, \"unusual_login_type\": {\"normal_values\": [\"Password\", \"SSO\"], \"value\": \"OAuth\"}}",
+      "reasons_dict": {
+        "public_or_unfamiliar_ip": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "185.199.108.77"
+        },
+        "unusual_city": {
+          "normal_values": [
+            "Chicago"
+          ],
+          "value": "Unknown"
+        },
+        "unusual_country": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "Unknown"
+        },
+        "unusual_domain_name": {
+          "normal_values": [
+            "login.salesforce.com",
+            "mycompany.my.salesforce.com"
+          ],
+          "value": "evil-connected-app.example"
+        },
+        "unusual_login_type": {
+          "normal_values": [
+            "Password",
+            "SSO"
+          ],
+          "value": "OAuth"
+        }
+      },
+      "reconstruction_error": 0.14291349,
+      "records_accessed": 20,
+      "scenario": "suspicious_oauth",
+      "src_ip": "185.199.108.77",
+      "src_ip_redacted": "185.199.x.x",
+      "timestamp": "2026-04-04T16:25:08+00:00",
+      "tls_version": "TLS1.3",
+      "user_agent": "Mozilla/5.0 Windows Chrome",
+      "user_agent_redacted": "Mozilla/x.y Windows Chrome",
+      "user_id": "u_normal_sql_001"
+    },
+    {
+      "city": "Moscow",
+      "country": "RU",
+      "device_type": "desktop",
+      "domain_name": "mycompany.my.salesforce.com",
+      "event_id": "evt_test_00282",
+      "event_name": "Login",
+      "event_type": "auth",
+      "interestingness_score": 100.0,
+      "is_admin_action": false,
+      "is_interesting": true,
+      "label": 1,
+      "login_type": "Password",
+      "os": "Linux",
+      "persona": "normal_sql_user",
+      "query_complexity": 4,
+      "reasons": "{\"public_or_unfamiliar_ip\": {\"normal_private_ip_rate\": 1.0, \"src_ip\": \"185.199.108.77\"}, \"unusual_city\": {\"normal_values\": [\"Chicago\"], \"value\": \"Moscow\"}, \"unusual_country\": {\"normal_values\": [\"US\"], \"value\": \"RU\"}, \"unusual_os\": {\"normal_values\": [\"Windows\", \"macOS\"], \"value\": \"Linux\"}, \"unusual_tls_version\": {\"normal_values\": [\"TLS1.2\", \"TLS1.3\"], \"value\": \"TLS1.0\"}}",
+      "reasons_dict": {
+        "public_or_unfamiliar_ip": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "185.199.108.77"
+        },
+        "unusual_city": {
+          "normal_values": [
+            "Chicago"
+          ],
+          "value": "Moscow"
+        },
+        "unusual_country": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "RU"
+        },
+        "unusual_os": {
+          "normal_values": [
+            "Windows",
+            "macOS"
+          ],
+          "value": "Linux"
+        },
+        "unusual_tls_version": {
+          "normal_values": [
+            "TLS1.2",
+            "TLS1.3"
+          ],
+          "value": "TLS1.0"
+        }
+      },
+      "reconstruction_error": 0.14244941,
+      "records_accessed": 155,
+      "scenario": "foreign_country_login",
+      "src_ip": "185.199.108.77",
+      "src_ip_redacted": "185.199.x.x",
+      "timestamp": "2026-04-05T12:23:52+00:00",
+      "tls_version": "TLS1.0",
+      "user_agent": "Mozilla/5.0 Linux Firefox",
+      "user_agent_redacted": "Mozilla/x.y Linux Firefox",
+      "user_id": "u_normal_sql_001"
+    },
+    {
+      "city": "Chicago",
+      "country": "US",
+      "device_type": "laptop",
+      "domain_name": "mycompany.my.salesforce.com",
+      "event_id": "evt_test_00283",
+      "event_name": "BulkDataExport",
+      "event_type": "data_export",
+      "interestingness_score": 99.43,
+      "is_admin_action": false,
+      "is_interesting": true,
+      "label": 1,
+      "login_type": "Password",
+      "os": "Windows",
+      "persona": "normal_sql_user",
+      "query_complexity": 2,
+      "reasons": "{\"high_records_accessed\": {\"normal_mean\": 117.7, \"normal_p95\": 349.4, \"normal_std\": 116.0, \"value\": 6300.0, \"z_score\": 53.3}, \"model_reconstruction_error\": {\"ratio\": 6.45, \"threshold\": 0.167078, \"value\": 1.078165}}",
+      "reasons_dict": {
+        "high_records_accessed": {
+          "normal_mean": 117.7,
+          "normal_p95": 349.4,
+          "normal_std": 116.0,
+          "value": 6300.0,
+          "z_score": 53.3
+        },
+        "model_reconstruction_error": {
+          "ratio": 6.45,
+          "threshold": 0.167078,
+          "value": 1.078165
+        }
+      },
+      "reconstruction_error": 1.0781648,
+      "records_accessed": 6300,
+      "scenario": "mass_export",
+      "src_ip": "198.51.100.19",
+      "src_ip_redacted": "198.51.x.x",
+      "timestamp": "2026-04-06T17:35:22+00:00",
+      "tls_version": "TLS1.3",
+      "user_agent": "Mozilla/5.0 Windows Chrome",
+      "user_agent_redacted": "Mozilla/x.y Windows Chrome",
+      "user_id": "u_normal_sql_001"
+    },
+    {
+      "city": "Singapore",
+      "country": "SG",
+      "device_type": "desktop",
+      "domain_name": "mycompany.my.salesforce.com",
+      "event_id": "evt_test_00559",
+      "event_name": "Login",
+      "event_type": "auth",
+      "interestingness_score": 100.0,
+      "is_admin_action": false,
+      "is_interesting": true,
+      "label": 1,
+      "login_type": "SSO",
+      "os": "Windows",
+      "persona": "traveling_sales_rep",
+      "query_complexity": 0,
+      "reasons": "{\"public_or_unfamiliar_ip\": {\"normal_private_ip_rate\": 1.0, \"src_ip\": \"185.199.108.77\"}, \"unusual_city\": {\"normal_values\": [\"Austin\", \"Boston\", \"New York\", \"San Francisco\"], \"value\": \"Singapore\"}, \"unusual_country\": {\"normal_values\": [\"US\"], \"value\": \"SG\"}, \"unusual_device_type\": {\"normal_values\": [\"laptop\", \"mobile\"], \"value\": \"desktop\"}, \"unusual_os\": {\"normal_values\": [\"iOS\", \"macOS\"], \"value\": \"Windows\"}}",
+      "reasons_dict": {
+        "public_or_unfamiliar_ip": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "185.199.108.77"
+        },
+        "unusual_city": {
+          "normal_values": [
+            "Austin",
+            "Boston",
+            "New York",
+            "San Francisco"
+          ],
+          "value": "Singapore"
+        },
+        "unusual_country": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "SG"
+        },
+        "unusual_device_type": {
+          "normal_values": [
+            "laptop",
+            "mobile"
+          ],
+          "value": "desktop"
+        },
+        "unusual_os": {
+          "normal_values": [
+            "iOS",
+            "macOS"
+          ],
+          "value": "Windows"
+        }
+      },
+      "reconstruction_error": 0.12655257,
+      "records_accessed": 16,
+      "scenario": "impossible_travel",
+      "src_ip": "185.199.108.77",
+      "src_ip_redacted": "185.199.x.x",
+      "timestamp": "2026-03-30T14:35:24+00:00",
+      "tls_version": "TLS1.3",
+      "user_agent": "Mozilla/5.0 Windows Chrome",
+      "user_agent_redacted": "Mozilla/x.y Windows Chrome",
+      "user_id": "u_sales_traveler_002"
+    },
+    {
+      "city": "New York",
+      "country": "US",
+      "device_type": "mobile",
+      "domain_name": "mycompany.my.salesforce.com",
+      "event_id": "evt_test_00561",
+      "event_name": "ReportExport",
+      "event_type": "data_access",
+      "interestingness_score": 100.0,
+      "is_admin_action": false,
+      "is_interesting": true,
+      "label": 1,
+      "login_type": "SSO",
+      "os": "macOS",
+      "persona": "traveling_sales_rep",
+      "query_complexity": 1,
+      "reasons": "{\"high_records_accessed\": {\"normal_mean\": 34.75, \"normal_p95\": 111.35, \"normal_std\": 37.14, \"value\": 9500.0, \"z_score\": 254.88}, \"login_hour_deviation\": {\"circular_hour_distance\": 7.11, \"normal_mean_hour\": 13.89, \"value\": 21}, \"model_reconstruction_error\": {\"ratio\": 14.53, \"threshold\": 0.167078, \"value\": 2.427783}}",
+      "reasons_dict": {
+        "high_records_accessed": {
+          "normal_mean": 34.75,
+          "normal_p95": 111.35,
+          "normal_std": 37.14,
+          "value": 9500.0,
+          "z_score": 254.88
+        },
+        "login_hour_deviation": {
+          "circular_hour_distance": 7.11,
+          "normal_mean_hour": 13.89,
+          "value": 21
+        },
+        "model_reconstruction_error": {
+          "ratio": 14.53,
+          "threshold": 0.167078,
+          "value": 2.427783
+        }
+      },
+      "reconstruction_error": 2.427783,
+      "records_accessed": 9500,
+      "scenario": "large_data_export",
+      "src_ip": "10.20.1.188",
+      "src_ip_redacted": "10.20.x.x",
+      "timestamp": "2026-04-01T21:47:26+00:00",
+      "tls_version": "TLS1.3",
+      "user_agent": "Mozilla/5.0 macOS Safari",
+      "user_agent_redacted": "Mozilla/x.y macOS Safari",
+      "user_id": "u_sales_traveler_002"
+    },
+    {
+      "city": "Singapore",
+      "country": "SG",
+      "device_type": "desktop",
+      "domain_name": "login.salesforce.com",
+      "event_id": "evt_test_00562",
+      "event_name": "Login",
+      "event_type": "auth",
+      "interestingness_score": 100.0,
+      "is_admin_action": false,
+      "is_interesting": true,
+      "label": 1,
+      "login_type": "OAuth",
+      "os": "Windows",
+      "persona": "traveling_sales_rep",
+      "query_complexity": 0,
+      "reasons": "{\"login_hour_deviation\": {\"circular_hour_distance\": 7.89, \"normal_mean_hour\": 13.89, \"value\": 6}, \"public_or_unfamiliar_ip\": {\"normal_private_ip_rate\": 1.0, \"src_ip\": \"185.199.108.77\"}, \"unusual_city\": {\"normal_values\": [\"Austin\", \"Boston\", \"New York\", \"San Francisco\"], \"value\": \"Singapore\"}, \"unusual_country\": {\"normal_values\": [\"US\"], \"value\": \"SG\"}, \"unusual_device_type\": {\"normal_values\": [\"laptop\", \"mobile\"], \"value\": \"desktop\"}, \"unusual_os\": {\"normal_values\": [\"iOS\", \"macOS\"], \"value\": \"Windows\"}}",
+      "reasons_dict": {
+        "login_hour_deviation": {
+          "circular_hour_distance": 7.89,
+          "normal_mean_hour": 13.89,
+          "value": 6
+        },
+        "public_or_unfamiliar_ip": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "185.199.108.77"
+        },
+        "unusual_city": {
+          "normal_values": [
+            "Austin",
+            "Boston",
+            "New York",
+            "San Francisco"
+          ],
+          "value": "Singapore"
+        },
+        "unusual_country": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "SG"
+        },
+        "unusual_device_type": {
+          "normal_values": [
+            "laptop",
+            "mobile"
+          ],
+          "value": "desktop"
+        },
+        "unusual_os": {
+          "normal_values": [
+            "iOS",
+            "macOS"
+          ],
+          "value": "Windows"
+        }
+      },
+      "reconstruction_error": 0.14966702,
+      "records_accessed": 30,
+      "scenario": "impossible_travel",
+      "src_ip": "185.199.108.77",
+      "src_ip_redacted": "185.199.x.x",
+      "timestamp": "2026-04-02T06:48:03+00:00",
+      "tls_version": "TLS1.3",
+      "user_agent": "Mozilla/5.0 Windows Chrome",
+      "user_agent_redacted": "Mozilla/x.y Windows Chrome",
+      "user_id": "u_sales_traveler_002"
+    },
+    {
+      "city": "Boston",
+      "country": "US",
+      "device_type": "mobile",
+      "domain_name": "mycompany.my.salesforce.com",
+      "event_id": "evt_test_00564",
+      "event_name": "ReportExport",
+      "event_type": "data_access",
+      "interestingness_score": 100.0,
+      "is_admin_action": false,
+      "is_interesting": true,
+      "label": 1,
+      "login_type": "OAuth",
+      "os": "macOS",
+      "persona": "traveling_sales_rep",
+      "query_complexity": 1,
+      "reasons": "{\"high_records_accessed\": {\"normal_mean\": 34.75, \"normal_p95\": 111.35, \"normal_std\": 37.14, \"value\": 9500.0, \"z_score\": 254.88}, \"model_reconstruction_error\": {\"ratio\": 14.8, \"threshold\": 0.167078, \"value\": 2.472111}}",
+      "reasons_dict": {
+        "high_records_accessed": {
+          "normal_mean": 34.75,
+          "normal_p95": 111.35,
+          "normal_std": 37.14,
+          "value": 9500.0,
+          "z_score": 254.88
+        },
+        "model_reconstruction_error": {
+          "ratio": 14.8,
+          "threshold": 0.167078,
+          "value": 2.472111
+        }
+      },
+      "reconstruction_error": 2.4721115,
+      "records_accessed": 9500,
+      "scenario": "large_data_export",
+      "src_ip": "10.20.0.26",
+      "src_ip_redacted": "10.20.x.x",
+      "timestamp": "2026-04-04T16:51:18+00:00",
+      "tls_version": "TLS1.2",
+      "user_agent": "Mozilla/5.0 macOS Safari",
+      "user_agent_redacted": "Mozilla/x.y macOS Safari",
+      "user_id": "u_sales_traveler_002"
+    },
+    {
+      "city": "Singapore",
+      "country": "SG",
+      "device_type": "desktop",
+      "domain_name": "login.salesforce.com",
+      "event_id": "evt_test_00565",
+      "event_name": "Login",
+      "event_type": "auth",
+      "interestingness_score": 100.0,
+      "is_admin_action": false,
+      "is_interesting": true,
+      "label": 1,
+      "login_type": "SSO",
+      "os": "Windows",
+      "persona": "traveling_sales_rep",
+      "query_complexity": 0,
+      "reasons": "{\"login_hour_deviation\": {\"circular_hour_distance\": 6.11, \"normal_mean_hour\": 13.89, \"value\": 20}, \"unusual_city\": {\"normal_values\": [\"Austin\", \"Boston\", \"New York\", \"San Francisco\"], \"value\": \"Singapore\"}, \"unusual_country\": {\"normal_values\": [\"US\"], \"value\": \"SG\"}, \"unusual_device_type\": {\"normal_values\": [\"laptop\", \"mobile\"], \"value\": \"desktop\"}, \"unusual_os\": {\"normal_values\": [\"iOS\", \"macOS\"], \"value\": \"Windows\"}}",
+      "reasons_dict": {
+        "login_hour_deviation": {
+          "circular_hour_distance": 6.11,
+          "normal_mean_hour": 13.89,
+          "value": 20
+        },
+        "unusual_city": {
+          "normal_values": [
+            "Austin",
+            "Boston",
+            "New York",
+            "San Francisco"
+          ],
+          "value": "Singapore"
+        },
+        "unusual_country": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "SG"
+        },
+        "unusual_device_type": {
+          "normal_values": [
+            "laptop",
+            "mobile"
+          ],
+          "value": "desktop"
+        },
+        "unusual_os": {
+          "normal_values": [
+            "iOS",
+            "macOS"
+          ],
+          "value": "Windows"
+        }
+      },
+      "reconstruction_error": 0.14097562,
+      "records_accessed": 6,
+      "scenario": "impossible_travel",
+      "src_ip": "198.51.100.19",
+      "src_ip_redacted": "198.51.x.x",
+      "timestamp": "2026-04-05T20:12:16+00:00",
+      "tls_version": "TLS1.3",
+      "user_agent": "Mozilla/5.0 Windows Chrome",
+      "user_agent_redacted": "Mozilla/x.y Windows Chrome",
+      "user_id": "u_sales_traveler_002"
+    },
+    {
+      "city": "Seattle",
+      "country": "US",
+      "device_type": "laptop",
+      "domain_name": "mycompany.my.salesforce.com",
+      "event_id": "evt_test_00808",
+      "event_name": "SOQLQuery",
+      "event_type": "query",
+      "interestingness_score": 80.0,
+      "is_admin_action": false,
+      "is_interesting": true,
+      "label": 0,
+      "login_type": "SSO",
+      "os": "Linux",
+      "persona": "nightowl_engineer",
+      "query_complexity": 5,
+      "reasons": "{\"high_records_accessed\": {\"normal_mean\": 296.39, \"normal_p95\": 770.85, \"normal_std\": 252.02, \"value\": 1472.0, \"z_score\": 4.66}, \"login_hour_deviation\": {\"circular_hour_distance\": 7.57, \"normal_mean_hour\": 11.57, \"value\": 4}}",
+      "reasons_dict": {
+        "high_records_accessed": {
+          "normal_mean": 296.39,
+          "normal_p95": 770.85,
+          "normal_std": 252.02,
+          "value": 1472.0,
+          "z_score": 4.66
+        },
+        "login_hour_deviation": {
+          "circular_hour_distance": 7.57,
+          "normal_mean_hour": 11.57,
+          "value": 4
+        }
+      },
+      "reconstruction_error": 0.13328569,
+      "records_accessed": 1472,
+      "scenario": "benign",
+      "src_ip": "10.44.5.175",
+      "src_ip_redacted": "10.44.x.x",
+      "timestamp": "2026-03-22T04:39:09+00:00",
+      "tls_version": "TLS1.2",
+      "user_agent": "Mozilla/5.0 Linux Firefox",
+      "user_agent_redacted": "Mozilla/x.y Linux Firefox",
+      "user_id": "u_nightowl_noah_003"
+    },
+    {
+      "city": "Moscow",
+      "country": "RU",
+      "device_type": "desktop",
+      "domain_name": "mycompany.my.salesforce.com",
+      "event_id": "evt_test_00843",
+      "event_name": "Login",
+      "event_type": "auth",
+      "interestingness_score": 100.0,
+      "is_admin_action": false,
+      "is_interesting": true,
+      "label": 1,
+      "login_type": "Password",
+      "os": "Linux",
+      "persona": "nightowl_engineer",
+      "query_complexity": 0,
+      "reasons": "{\"login_hour_deviation\": {\"circular_hour_distance\": 9.57, \"normal_mean_hour\": 11.57, \"value\": 2}, \"model_reconstruction_error\": {\"ratio\": 1.11, \"threshold\": 0.167078, \"value\": 0.185368}, \"unusual_city\": {\"normal_values\": [\"Seattle\"], \"value\": \"Moscow\"}, \"unusual_country\": {\"normal_values\": [\"US\"], \"value\": \"RU\"}, \"unusual_tls_version\": {\"normal_values\": [\"TLS1.2\", \"TLS1.3\"], \"value\": \"TLS1.0\"}}",
+      "reasons_dict": {
+        "login_hour_deviation": {
+          "circular_hour_distance": 9.57,
+          "normal_mean_hour": 11.57,
+          "value": 2
+        },
+        "model_reconstruction_error": {
+          "ratio": 1.11,
+          "threshold": 0.167078,
+          "value": 0.185368
+        },
+        "unusual_city": {
+          "normal_values": [
+            "Seattle"
+          ],
+          "value": "Moscow"
+        },
+        "unusual_country": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "RU"
+        },
+        "unusual_tls_version": {
+          "normal_values": [
+            "TLS1.2",
+            "TLS1.3"
+          ],
+          "value": "TLS1.0"
+        }
+      },
+      "reconstruction_error": 0.18536836,
+      "records_accessed": 25,
+      "scenario": "foreign_country_login",
+      "src_ip": "198.51.100.19",
+      "src_ip_redacted": "198.51.x.x",
+      "timestamp": "2026-03-31T02:55:39+00:00",
+      "tls_version": "TLS1.0",
+      "user_agent": "Mozilla/5.0 Linux Firefox",
+      "user_agent_redacted": "Mozilla/x.y Linux Firefox",
+      "user_id": "u_nightowl_noah_003"
+    },
+    {
+      "city": "Unknown",
+      "country": "Unknown",
+      "device_type": "laptop",
+      "domain_name": "evil-connected-app.example",
+      "event_id": "evt_test_00844",
+      "event_name": "ConnectedAppOAuth",
+      "event_type": "auth",
+      "interestingness_score": 100.0,
+      "is_admin_action": false,
+      "is_interesting": true,
+      "label": 1,
+      "login_type": "OAuth",
+      "os": "Linux",
+      "persona": "nightowl_engineer",
+      "query_complexity": 5,
+      "reasons": "{\"login_hour_deviation\": {\"circular_hour_distance\": 9.57, \"normal_mean_hour\": 11.57, \"value\": 2}, \"model_reconstruction_error\": {\"ratio\": 1.17, \"threshold\": 0.167078, \"value\": 0.195876}, \"public_or_unfamiliar_ip\": {\"normal_private_ip_rate\": 1.0, \"src_ip\": \"45.83.12.44\"}, \"unusual_city\": {\"normal_values\": [\"Seattle\"], \"value\": \"Unknown\"}, \"unusual_country\": {\"normal_values\": [\"US\"], \"value\": \"Unknown\"}, \"unusual_domain_name\": {\"normal_values\": [\"login.salesforce.com\", \"mycompany.my.salesforce.com\"], \"value\": \"evil-connected-app.example\"}, \"unusual_login_type\": {\"normal_values\": [\"Password\", \"SSO\"], \"value\": \"OAuth\"}}",
+      "reasons_dict": {
+        "login_hour_deviation": {
+          "circular_hour_distance": 9.57,
+          "normal_mean_hour": 11.57,
+          "value": 2
+        },
+        "model_reconstruction_error": {
+          "ratio": 1.17,
+          "threshold": 0.167078,
+          "value": 0.195876
+        },
+        "public_or_unfamiliar_ip": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "45.83.12.44"
+        },
+        "unusual_city": {
+          "normal_values": [
+            "Seattle"
+          ],
+          "value": "Unknown"
+        },
+        "unusual_country": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "Unknown"
+        },
+        "unusual_domain_name": {
+          "normal_values": [
+            "login.salesforce.com",
+            "mycompany.my.salesforce.com"
+          ],
+          "value": "evil-connected-app.example"
+        },
+        "unusual_login_type": {
+          "normal_values": [
+            "Password",
+            "SSO"
+          ],
+          "value": "OAuth"
+        }
+      },
+      "reconstruction_error": 0.19587585,
+      "records_accessed": 383,
+      "scenario": "suspicious_oauth",
+      "src_ip": "45.83.12.44",
+      "src_ip_redacted": "45.83.x.x",
+      "timestamp": "2026-04-01T02:56:06+00:00",
+      "tls_version": "TLS1.2",
+      "user_agent": "Mozilla/5.0 Linux Firefox",
+      "user_agent_redacted": "Mozilla/x.y Linux Firefox",
+      "user_id": "u_nightowl_noah_003"
+    },
+    {
+      "city": "Moscow",
+      "country": "RU",
+      "device_type": "desktop",
+      "domain_name": "mycompany.my.salesforce.com",
+      "event_id": "evt_test_00846",
+      "event_name": "Login",
+      "event_type": "auth",
+      "interestingness_score": 100.0,
+      "is_admin_action": false,
+      "is_interesting": true,
+      "label": 1,
+      "login_type": "Password",
+      "os": "Linux",
+      "persona": "nightowl_engineer",
+      "query_complexity": 6,
+      "reasons": "{\"login_hour_deviation\": {\"circular_hour_distance\": 11.43, \"normal_mean_hour\": 11.57, \"value\": 23}, \"public_or_unfamiliar_ip\": {\"normal_private_ip_rate\": 1.0, \"src_ip\": \"185.199.108.77\"}, \"unusual_city\": {\"normal_values\": [\"Seattle\"], \"value\": \"Moscow\"}, \"unusual_country\": {\"normal_values\": [\"US\"], \"value\": \"RU\"}, \"unusual_tls_version\": {\"normal_values\": [\"TLS1.2\", \"TLS1.3\"], \"value\": \"TLS1.0\"}}",
+      "reasons_dict": {
+        "login_hour_deviation": {
+          "circular_hour_distance": 11.43,
+          "normal_mean_hour": 11.57,
+          "value": 23
+        },
+        "public_or_unfamiliar_ip": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "185.199.108.77"
+        },
+        "unusual_city": {
+          "normal_values": [
+            "Seattle"
+          ],
+          "value": "Moscow"
+        },
+        "unusual_country": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "RU"
+        },
+        "unusual_tls_version": {
+          "normal_values": [
+            "TLS1.2",
+            "TLS1.3"
+          ],
+          "value": "TLS1.0"
+        }
+      },
+      "reconstruction_error": 0.16396178,
+      "records_accessed": 282,
+      "scenario": "foreign_country_login",
+      "src_ip": "185.199.108.77",
+      "src_ip_redacted": "185.199.x.x",
+      "timestamp": "2026-04-03T23:23:06+00:00",
+      "tls_version": "TLS1.0",
+      "user_agent": "Mozilla/5.0 Linux Firefox",
+      "user_agent_redacted": "Mozilla/x.y Linux Firefox",
+      "user_id": "u_nightowl_noah_003"
+    },
+    {
+      "city": "Unknown",
+      "country": "Unknown",
+      "device_type": "desktop",
+      "domain_name": "evil-connected-app.example",
+      "event_id": "evt_test_00847",
+      "event_name": "ConnectedAppOAuth",
+      "event_type": "auth",
+      "interestingness_score": 100.0,
+      "is_admin_action": false,
+      "is_interesting": true,
+      "label": 1,
+      "login_type": "OAuth",
+      "os": "macOS",
+      "persona": "nightowl_engineer",
+      "query_complexity": 7,
+      "reasons": "{\"login_hour_deviation\": {\"circular_hour_distance\": 8.43, \"normal_mean_hour\": 11.57, \"value\": 20}, \"model_reconstruction_error\": {\"ratio\": 1.1, \"threshold\": 0.167078, \"value\": 0.183762}, \"public_or_unfamiliar_ip\": {\"normal_private_ip_rate\": 1.0, \"src_ip\": \"45.83.12.44\"}, \"unusual_city\": {\"normal_values\": [\"Seattle\"], \"value\": \"Unknown\"}, \"unusual_country\": {\"normal_values\": [\"US\"], \"value\": \"Unknown\"}, \"unusual_domain_name\": {\"normal_values\": [\"login.salesforce.com\", \"mycompany.my.salesforce.com\"], \"value\": \"evil-connected-app.example\"}, \"unusual_login_type\": {\"normal_values\": [\"Password\", \"SSO\"], \"value\": \"OAuth\"}}",
+      "reasons_dict": {
+        "login_hour_deviation": {
+          "circular_hour_distance": 8.43,
+          "normal_mean_hour": 11.57,
+          "value": 20
+        },
+        "model_reconstruction_error": {
+          "ratio": 1.1,
+          "threshold": 0.167078,
+          "value": 0.183762
+        },
+        "public_or_unfamiliar_ip": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "45.83.12.44"
+        },
+        "unusual_city": {
+          "normal_values": [
+            "Seattle"
+          ],
+          "value": "Unknown"
+        },
+        "unusual_country": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "Unknown"
+        },
+        "unusual_domain_name": {
+          "normal_values": [
+            "login.salesforce.com",
+            "mycompany.my.salesforce.com"
+          ],
+          "value": "evil-connected-app.example"
+        },
+        "unusual_login_type": {
+          "normal_values": [
+            "Password",
+            "SSO"
+          ],
+          "value": "OAuth"
+        }
+      },
+      "reconstruction_error": 0.18376164,
+      "records_accessed": 190,
+      "scenario": "suspicious_oauth",
+      "src_ip": "45.83.12.44",
+      "src_ip_redacted": "45.83.x.x",
+      "timestamp": "2026-04-04T20:43:03+00:00",
+      "tls_version": "TLS1.2",
+      "user_agent": "Mozilla/5.0 macOS Safari",
+      "user_agent_redacted": "Mozilla/x.y macOS Safari",
+      "user_id": "u_nightowl_noah_003"
+    },
+    {
+      "city": "Moscow",
+      "country": "RU",
+      "device_type": "desktop",
+      "domain_name": "login.salesforce.com",
+      "event_id": "evt_test_00849",
+      "event_name": "Login",
+      "event_type": "auth",
+      "interestingness_score": 100.0,
+      "is_admin_action": false,
+      "is_interesting": true,
+      "label": 1,
+      "login_type": "Password",
+      "os": "Linux",
+      "persona": "nightowl_engineer",
+      "query_complexity": 0,
+      "reasons": "{\"login_hour_deviation\": {\"circular_hour_distance\": 11.57, \"normal_mean_hour\": 11.57, \"value\": 0}, \"model_reconstruction_error\": {\"ratio\": 1.33, \"threshold\": 0.167078, \"value\": 0.221582}, \"public_or_unfamiliar_ip\": {\"normal_private_ip_rate\": 1.0, \"src_ip\": \"91.207.174.9\"}, \"unusual_city\": {\"normal_values\": [\"Seattle\"], \"value\": \"Moscow\"}, \"unusual_country\": {\"normal_values\": [\"US\"], \"value\": \"RU\"}, \"unusual_tls_version\": {\"normal_values\": [\"TLS1.2\", \"TLS1.3\"], \"value\": \"TLS1.0\"}}",
+      "reasons_dict": {
+        "login_hour_deviation": {
+          "circular_hour_distance": 11.57,
+          "normal_mean_hour": 11.57,
+          "value": 0
+        },
+        "model_reconstruction_error": {
+          "ratio": 1.33,
+          "threshold": 0.167078,
+          "value": 0.221582
+        },
+        "public_or_unfamiliar_ip": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "91.207.174.9"
+        },
+        "unusual_city": {
+          "normal_values": [
+            "Seattle"
+          ],
+          "value": "Moscow"
+        },
+        "unusual_country": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "RU"
+        },
+        "unusual_tls_version": {
+          "normal_values": [
+            "TLS1.2",
+            "TLS1.3"
+          ],
+          "value": "TLS1.0"
+        }
+      },
+      "reconstruction_error": 0.22158207,
+      "records_accessed": 14,
+      "scenario": "foreign_country_login",
+      "src_ip": "91.207.174.9",
+      "src_ip_redacted": "91.207.x.x",
+      "timestamp": "2026-04-06T00:40:18+00:00",
+      "tls_version": "TLS1.0",
+      "user_agent": "Mozilla/5.0 Linux Firefox",
+      "user_agent_redacted": "Mozilla/x.y Linux Firefox",
+      "user_id": "u_nightowl_noah_003"
+    },
+    {
+      "city": "Denver",
+      "country": "US",
+      "device_type": "desktop",
+      "domain_name": "login.salesforce.com",
+      "event_id": "evt_test_01088",
+      "event_name": "SOQLQuery",
+      "event_type": "query",
+      "interestingness_score": 70.03,
+      "is_admin_action": false,
+      "is_interesting": true,
+      "label": 0,
+      "login_type": "SSO",
+      "os": "Linux",
+      "persona": "complex_query_engineer",
+      "query_complexity": 7,
+      "reasons": "{\"model_reconstruction_error\": {\"ratio\": 1.51, \"threshold\": 0.167078, \"value\": 0.251633}}",
+      "reasons_dict": {
+        "model_reconstruction_error": {
+          "ratio": 1.51,
+          "threshold": 0.167078,
+          "value": 0.251633
+        }
+      },
+      "reconstruction_error": 0.25163257,
+      "records_accessed": 3841,
+      "scenario": "benign",
+      "src_ip": "10.51.2.62",
+      "src_ip_redacted": "10.51.x.x",
+      "timestamp": "2026-03-19T19:17:01+00:00",
+      "tls_version": "TLS1.3",
+      "user_agent": "Mozilla/5.0 Linux Firefox",
+      "user_agent_redacted": "Mozilla/x.y Linux Firefox",
+      "user_id": "u_complex_query_004"
+    },
+    {
+      "city": "Denver",
+      "country": "US",
+      "device_type": "desktop",
+      "domain_name": "login.salesforce.com",
+      "event_id": "evt_test_01125",
+      "event_name": "BulkDataExport",
+      "event_type": "data_export",
+      "interestingness_score": 100.0,
+      "is_admin_action": false,
+      "is_interesting": true,
+      "label": 1,
+      "login_type": "SSO",
+      "os": "Linux",
+      "persona": "complex_query_engineer",
+      "query_complexity": 1,
+      "reasons": "{\"high_records_accessed\": {\"normal_mean\": 1510.46, \"normal_p95\": 3080.2, \"normal_std\": 914.88, \"value\": 65000.0, \"z_score\": 69.4}, \"model_reconstruction_error\": {\"ratio\": 684.38, \"threshold\": 0.167078, \"value\": 114.344261}, \"public_or_unfamiliar_ip\": {\"normal_private_ip_rate\": 1.0, \"src_ip\": \"185.199.108.77\"}}",
+      "reasons_dict": {
+        "high_records_accessed": {
+          "normal_mean": 1510.46,
+          "normal_p95": 3080.2,
+          "normal_std": 914.88,
+          "value": 65000.0,
+          "z_score": 69.4
+        },
+        "model_reconstruction_error": {
+          "ratio": 684.38,
+          "threshold": 0.167078,
+          "value": 114.344261
+        },
+        "public_or_unfamiliar_ip": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "185.199.108.77"
+        }
+      },
+      "reconstruction_error": 114.34426,
+      "records_accessed": 65000,
+      "scenario": "simple_user_mass_export",
+      "src_ip": "185.199.108.77",
+      "src_ip_redacted": "185.199.x.x",
+      "timestamp": "2026-03-30T15:16:56+00:00",
+      "tls_version": "TLS1.3",
+      "user_agent": "Mozilla/5.0 Linux Firefox",
+      "user_agent_redacted": "Mozilla/x.y Linux Firefox",
+      "user_id": "u_complex_query_004"
+    },
+    {
+      "city": "Sao Paulo",
+      "country": "BR",
+      "device_type": "desktop",
+      "domain_name": "mycompany.my.salesforce.com",
+      "event_id": "evt_test_01126",
+      "event_name": "SOQLQuery",
+      "event_type": "query",
+      "interestingness_score": 100.0,
+      "is_admin_action": false,
+      "is_interesting": true,
+      "label": 1,
+      "login_type": "SSO",
+      "os": "Linux",
+      "persona": "complex_query_engineer",
+      "query_complexity": 14,
+      "reasons": "{\"high_records_accessed\": {\"normal_mean\": 1510.46, \"normal_p95\": 3080.2, \"normal_std\": 914.88, \"value\": 18000.0, \"z_score\": 18.02}, \"model_reconstruction_error\": {\"ratio\": 48.38, \"threshold\": 0.167078, \"value\": 8.082987}, \"unusual_city\": {\"normal_values\": [\"Denver\"], \"value\": \"Sao Paulo\"}, \"unusual_country\": {\"normal_values\": [\"US\"], \"value\": \"BR\"}}",
+      "reasons_dict": {
+        "high_records_accessed": {
+          "normal_mean": 1510.46,
+          "normal_p95": 3080.2,
+          "normal_std": 914.88,
+          "value": 18000.0,
+          "z_score": 18.02
+        },
+        "model_reconstruction_error": {
+          "ratio": 48.38,
+          "threshold": 0.167078,
+          "value": 8.082987
+        },
+        "unusual_city": {
+          "normal_values": [
+            "Denver"
+          ],
+          "value": "Sao Paulo"
+        },
+        "unusual_country": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "BR"
+        }
+      },
+      "reconstruction_error": 8.082987,
+      "records_accessed": 18000,
+      "scenario": "new_country_query_burst",
+      "src_ip": "198.51.100.19",
+      "src_ip_redacted": "198.51.x.x",
+      "timestamp": "2026-03-31T19:22:13+00:00",
+      "tls_version": "TLS1.3",
+      "user_agent": "Mozilla/5.0 Linux Firefox",
+      "user_agent_redacted": "Mozilla/x.y Linux Firefox",
+      "user_id": "u_complex_query_004"
+    },
+    {
+      "city": "Denver",
+      "country": "US",
+      "device_type": "laptop",
+      "domain_name": "mycompany.my.salesforce.com",
+      "event_id": "evt_test_01128",
+      "event_name": "BulkDataExport",
+      "event_type": "data_export",
+      "interestingness_score": 100.0,
+      "is_admin_action": false,
+      "is_interesting": true,
+      "label": 1,
+      "login_type": "SSO",
+      "os": "Linux",
+      "persona": "complex_query_engineer",
+      "query_complexity": 1,
+      "reasons": "{\"high_records_accessed\": {\"normal_mean\": 1510.46, \"normal_p95\": 3080.2, \"normal_std\": 914.88, \"value\": 65000.0, \"z_score\": 69.4}, \"model_reconstruction_error\": {\"ratio\": 685.23, \"threshold\": 0.167078, \"value\": 114.486465}, \"public_or_unfamiliar_ip\": {\"normal_private_ip_rate\": 1.0, \"src_ip\": \"91.207.174.9\"}}",
+      "reasons_dict": {
+        "high_records_accessed": {
+          "normal_mean": 1510.46,
+          "normal_p95": 3080.2,
+          "normal_std": 914.88,
+          "value": 65000.0,
+          "z_score": 69.4
+        },
+        "model_reconstruction_error": {
+          "ratio": 685.23,
+          "threshold": 0.167078,
+          "value": 114.486465
+        },
+        "public_or_unfamiliar_ip": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "91.207.174.9"
+        }
+      },
+      "reconstruction_error": 114.486465,
+      "records_accessed": 65000,
+      "scenario": "simple_user_mass_export",
+      "src_ip": "91.207.174.9",
+      "src_ip_redacted": "91.207.x.x",
+      "timestamp": "2026-04-02T12:25:09+00:00",
+      "tls_version": "TLS1.3",
+      "user_agent": "Mozilla/5.0 Linux Firefox",
+      "user_agent_redacted": "Mozilla/x.y Linux Firefox",
+      "user_id": "u_complex_query_004"
+    },
+    {
+      "city": "Sao Paulo",
+      "country": "BR",
+      "device_type": "laptop",
+      "domain_name": "mycompany.my.salesforce.com",
+      "event_id": "evt_test_01129",
+      "event_name": "SOQLQuery",
+      "event_type": "query",
+      "interestingness_score": 100.0,
+      "is_admin_action": false,
+      "is_interesting": true,
+      "label": 1,
+      "login_type": "SSO",
+      "os": "Linux",
+      "persona": "complex_query_engineer",
+      "query_complexity": 14,
+      "reasons": "{\"high_records_accessed\": {\"normal_mean\": 1510.46, \"normal_p95\": 3080.2, \"normal_std\": 914.88, \"value\": 18000.0, \"z_score\": 18.02}, \"model_reconstruction_error\": {\"ratio\": 48.31, \"threshold\": 0.167078, \"value\": 8.071365}, \"public_or_unfamiliar_ip\": {\"normal_private_ip_rate\": 1.0, \"src_ip\": \"45.83.12.44\"}, \"unusual_city\": {\"normal_values\": [\"Denver\"], \"value\": \"Sao Paulo\"}, \"unusual_country\": {\"normal_values\": [\"US\"], \"value\": \"BR\"}}",
+      "reasons_dict": {
+        "high_records_accessed": {
+          "normal_mean": 1510.46,
+          "normal_p95": 3080.2,
+          "normal_std": 914.88,
+          "value": 18000.0,
+          "z_score": 18.02
+        },
+        "model_reconstruction_error": {
+          "ratio": 48.31,
+          "threshold": 0.167078,
+          "value": 8.071365
+        },
+        "public_or_unfamiliar_ip": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "45.83.12.44"
+        },
+        "unusual_city": {
+          "normal_values": [
+            "Denver"
+          ],
+          "value": "Sao Paulo"
+        },
+        "unusual_country": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "BR"
+        }
+      },
+      "reconstruction_error": 8.071365,
+      "records_accessed": 18000,
+      "scenario": "new_country_query_burst",
+      "src_ip": "45.83.12.44",
+      "src_ip_redacted": "45.83.x.x",
+      "timestamp": "2026-04-03T17:56:10+00:00",
+      "tls_version": "TLS1.3",
+      "user_agent": "Mozilla/5.0 Linux Firefox",
+      "user_agent_redacted": "Mozilla/x.y Linux Firefox",
+      "user_id": "u_complex_query_004"
+    },
+    {
+      "city": "Denver",
+      "country": "US",
+      "device_type": "laptop",
+      "domain_name": "login.salesforce.com",
+      "event_id": "evt_test_01131",
+      "event_name": "BulkDataExport",
+      "event_type": "data_export",
+      "interestingness_score": 100.0,
+      "is_admin_action": false,
+      "is_interesting": true,
+      "label": 1,
+      "login_type": "SSO",
+      "os": "Linux",
+      "persona": "complex_query_engineer",
+      "query_complexity": 1,
+      "reasons": "{\"high_records_accessed\": {\"normal_mean\": 1510.46, \"normal_p95\": 3080.2, \"normal_std\": 914.88, \"value\": 65000.0, \"z_score\": 69.4}, \"model_reconstruction_error\": {\"ratio\": 684.72, \"threshold\": 0.167078, \"value\": 114.401321}, \"public_or_unfamiliar_ip\": {\"normal_private_ip_rate\": 1.0, \"src_ip\": \"45.83.12.44\"}}",
+      "reasons_dict": {
+        "high_records_accessed": {
+          "normal_mean": 1510.46,
+          "normal_p95": 3080.2,
+          "normal_std": 914.88,
+          "value": 65000.0,
+          "z_score": 69.4
+        },
+        "model_reconstruction_error": {
+          "ratio": 684.72,
+          "threshold": 0.167078,
+          "value": 114.401321
+        },
+        "public_or_unfamiliar_ip": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "45.83.12.44"
+        }
+      },
+      "reconstruction_error": 114.40132,
+      "records_accessed": 65000,
+      "scenario": "simple_user_mass_export",
+      "src_ip": "45.83.12.44",
+      "src_ip_redacted": "45.83.x.x",
+      "timestamp": "2026-04-05T14:39:59+00:00",
+      "tls_version": "TLS1.2",
+      "user_agent": "Mozilla/5.0 Linux Firefox",
+      "user_agent_redacted": "Mozilla/x.y Linux Firefox",
+      "user_id": "u_complex_query_004"
+    },
+    {
+      "city": "Sao Paulo",
+      "country": "BR",
+      "device_type": "laptop",
+      "domain_name": "login.salesforce.com",
+      "event_id": "evt_test_01132",
+      "event_name": "SOQLQuery",
+      "event_type": "query",
+      "interestingness_score": 100.0,
+      "is_admin_action": false,
+      "is_interesting": true,
+      "label": 1,
+      "login_type": "SSO",
+      "os": "Linux",
+      "persona": "complex_query_engineer",
+      "query_complexity": 14,
+      "reasons": "{\"high_records_accessed\": {\"normal_mean\": 1510.46, \"normal_p95\": 3080.2, \"normal_std\": 914.88, \"value\": 18000.0, \"z_score\": 18.02}, \"model_reconstruction_error\": {\"ratio\": 48.16, \"threshold\": 0.167078, \"value\": 8.046175}, \"unusual_city\": {\"normal_values\": [\"Denver\"], \"value\": \"Sao Paulo\"}, \"unusual_country\": {\"normal_values\": [\"US\"], \"value\": \"BR\"}}",
+      "reasons_dict": {
+        "high_records_accessed": {
+          "normal_mean": 1510.46,
+          "normal_p95": 3080.2,
+          "normal_std": 914.88,
+          "value": 18000.0,
+          "z_score": 18.02
+        },
+        "model_reconstruction_error": {
+          "ratio": 48.16,
+          "threshold": 0.167078,
+          "value": 8.046175
+        },
+        "unusual_city": {
+          "normal_values": [
+            "Denver"
+          ],
+          "value": "Sao Paulo"
+        },
+        "unusual_country": {
+          "normal_values": [
+            "US"
+          ],
+          "value": "BR"
+        }
+      },
+      "reconstruction_error": 8.046175,
+      "records_accessed": 18000,
+      "scenario": "new_country_query_burst",
+      "src_ip": "203.0.113.42",
+      "src_ip_redacted": "203.0.x.x",
+      "timestamp": "2026-04-06T12:47:09+00:00",
+      "tls_version": "TLS1.3",
+      "user_agent": "Mozilla/5.0 Linux Firefox",
+      "user_agent_redacted": "Mozilla/x.y Linux Firefox",
+      "user_id": "u_complex_query_004"
+    },
+    {
+      "city": "Atlanta",
+      "country": "US",
+      "device_type": "laptop",
+      "domain_name": "login.salesforce.com",
+      "event_id": "evt_test_01410",
+      "event_name": "BulkDataExport",
+      "event_type": "data_export",
+      "interestingness_score": 100.0,
+      "is_admin_action": false,
+      "is_interesting": true,
+      "label": 1,
+      "login_type": "MFA",
+      "os": "Windows",
+      "persona": "salesforce_admin",
+      "query_complexity": 4,
+      "reasons": "{\"high_records_accessed\": {\"normal_mean\": 114.85, \"normal_p95\": 413.6, \"normal_std\": 159.39, \"value\": 120000.0, \"z_score\": 752.15}, \"login_hour_deviation\": {\"circular_hour_distance\": 6.08, \"normal_mean_hour\": 12.92, \"value\": 19}, \"model_reconstruction_error\": {\"ratio\": 2374.03, \"threshold\": 0.167078, \"value\": 396.648071}, \"public_or_unfamiliar_ip\": {\"normal_private_ip_rate\": 1.0, \"src_ip\": \"185.199.108.77\"}}",
+      "reasons_dict": {
+        "high_records_accessed": {
+          "normal_mean": 114.85,
+          "normal_p95": 413.6,
+          "normal_std": 159.39,
+          "value": 120000.0,
+          "z_score": 752.15
+        },
+        "login_hour_deviation": {
+          "circular_hour_distance": 6.08,
+          "normal_mean_hour": 12.92,
+          "value": 19
+        },
+        "model_reconstruction_error": {
+          "ratio": 2374.03,
+          "threshold": 0.167078,
+          "value": 396.648071
+        },
+        "public_or_unfamiliar_ip": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "185.199.108.77"
+        }
+      },
+      "reconstruction_error": 396.64807,
+      "records_accessed": 120000,
+      "scenario": "bulk_export_after_admin_change",
+      "src_ip": "185.199.108.77",
+      "src_ip_redacted": "185.199.x.x",
+      "timestamp": "2026-04-01T19:53:59+00:00",
+      "tls_version": "TLS1.3",
+      "user_agent": "Mozilla/5.0 Windows Chrome",
+      "user_agent_redacted": "Mozilla/x.y Windows Chrome",
+      "user_id": "u_admin_005"
+    },
+    {
+      "city": "Atlanta",
+      "country": "US",
+      "device_type": "laptop",
+      "domain_name": "login.salesforce.com",
+      "event_id": "evt_test_01413",
+      "event_name": "BulkDataExport",
+      "event_type": "data_export",
+      "interestingness_score": 100.0,
+      "is_admin_action": true,
+      "is_interesting": true,
+      "label": 1,
+      "login_type": "SSO",
+      "os": "Windows",
+      "persona": "salesforce_admin",
+      "query_complexity": 4,
+      "reasons": "{\"high_records_accessed\": {\"normal_mean\": 114.85, \"normal_p95\": 413.6, \"normal_std\": 159.39, \"value\": 120000.0, \"z_score\": 752.15}, \"model_reconstruction_error\": {\"ratio\": 2373.11, \"threshold\": 0.167078, \"value\": 396.493774}, \"public_or_unfamiliar_ip\": {\"normal_private_ip_rate\": 1.0, \"src_ip\": \"45.83.12.44\"}}",
+      "reasons_dict": {
+        "high_records_accessed": {
+          "normal_mean": 114.85,
+          "normal_p95": 413.6,
+          "normal_std": 159.39,
+          "value": 120000.0,
+          "z_score": 752.15
+        },
+        "model_reconstruction_error": {
+          "ratio": 2373.11,
+          "threshold": 0.167078,
+          "value": 396.493774
+        },
+        "public_or_unfamiliar_ip": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "45.83.12.44"
+        }
+      },
+      "reconstruction_error": 396.49377,
+      "records_accessed": 120000,
+      "scenario": "bulk_export_after_admin_change",
+      "src_ip": "45.83.12.44",
+      "src_ip_redacted": "45.83.x.x",
+      "timestamp": "2026-04-04T13:03:40+00:00",
+      "tls_version": "TLS1.2",
+      "user_agent": "Mozilla/5.0 Windows Chrome",
+      "user_agent_redacted": "Mozilla/x.y Windows Chrome",
+      "user_id": "u_admin_005"
+    },
+    {
+      "city": "Atlanta",
+      "country": "US",
+      "device_type": "laptop",
+      "domain_name": "setup.salesforce.com",
+      "event_id": "evt_test_01415",
+      "event_name": "UserPermissionChange",
+      "event_type": "admin",
+      "interestingness_score": 83.0,
+      "is_admin_action": false,
+      "is_interesting": true,
+      "label": 1,
+      "login_type": "SSO",
+      "os": "Windows",
+      "persona": "salesforce_admin",
+      "query_complexity": 0,
+      "reasons": "{\"public_or_unfamiliar_ip\": {\"normal_private_ip_rate\": 1.0, \"src_ip\": \"91.207.174.9\"}, \"unusual_domain_name\": {\"normal_values\": [\"login.salesforce.com\", \"mycompany.my.salesforce.com\"], \"value\": \"setup.salesforce.com\"}, \"unusual_tls_version\": {\"normal_values\": [\"TLS1.2\", \"TLS1.3\"], \"value\": \"TLS1.0\"}}",
+      "reasons_dict": {
+        "public_or_unfamiliar_ip": {
+          "normal_private_ip_rate": 1.0,
+          "src_ip": "91.207.174.9"
+        },
+        "unusual_domain_name": {
+          "normal_values": [
+            "login.salesforce.com",
+            "mycompany.my.salesforce.com"
+          ],
+          "value": "setup.salesforce.com"
+        },
+        "unusual_tls_version": {
+          "normal_values": [
+            "TLS1.2",
+            "TLS1.3"
+          ],
+          "value": "TLS1.0"
+        }
+      },
+      "reconstruction_error": 0.12754859,
+      "records_accessed": 12,
+      "scenario": "disable_mfa",
+      "src_ip": "91.207.174.9",
+      "src_ip_redacted": "91.207.x.x",
+      "timestamp": "2026-04-06T18:21:42+00:00",
+      "tls_version": "TLS1.0",
+      "user_agent": "Mozilla/5.0 Windows Chrome",
+      "user_agent_redacted": "Mozilla/x.y Windows Chrome",
+      "user_id": "u_admin_005"
+    }
+  ],
+  "interesting_event_count": 29,
+  "run_id": "api_d19e2b4d76ef",
+  "source": "scored_salesforce_ueba_test.csv",
+  "total_events": 315
+}

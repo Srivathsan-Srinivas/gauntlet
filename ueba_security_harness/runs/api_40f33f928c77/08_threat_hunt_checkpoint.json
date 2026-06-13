@@ -1,0 +1,14 @@
+{
+  "created_at": "2026-06-13T16:31:46.331067+00:00",
+  "criteria": {
+    "confidence_one_of_low_medium_high": true,
+    "hypotheses_are_not_stated_as_confirmed_breach": true,
+    "no_autonomous_remediation": true
+  },
+  "details": {
+    "hunt_result_count": 32,
+    "violations": []
+  },
+  "name": "threat_hunt_checkpoint",
+  "passed": true
+}

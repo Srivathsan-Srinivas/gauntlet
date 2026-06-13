@@ -1,0 +1,14 @@
+{
+  "created_at": "2026-06-13T14:48:32.714727+00:00",
+  "criteria": {
+    "control_id_is_present": true,
+    "non_compliance_has_evidence": true,
+    "status_is_allowed_value": true
+  },
+  "details": {
+    "compliance_result_count": 32,
+    "violations": []
+  },
+  "name": "compliance_checkpoint",
+  "passed": true
+}

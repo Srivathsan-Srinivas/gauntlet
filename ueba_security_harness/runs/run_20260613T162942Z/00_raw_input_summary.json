@@ -1,0 +1,31 @@
+{
+  "columns": [
+    "event_id",
+    "event_name",
+    "event_type",
+    "timestamp",
+    "user_id",
+    "persona",
+    "src_ip",
+    "domain_name",
+    "city",
+    "country",
+    "os",
+    "user_agent",
+    "device_type",
+    "login_type",
+    "tls_version",
+    "records_accessed",
+    "query_complexity",
+    "is_admin_action",
+    "label",
+    "scenario",
+    "reconstruction_error",
+    "interestingness_score",
+    "reasons",
+    "is_interesting"
+  ],
+  "row_count": 315,
+  "run_id": "run_20260613T162942Z",
+  "scored_csv": "outputs/scored_salesforce_ueba_test.csv"
+}

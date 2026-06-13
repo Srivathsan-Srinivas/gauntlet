@@ -1,0 +1,30 @@
+event_id,user_id,persona,ueba_risk_score,ueba_finding_type,threat_hypothesis,threat_confidence,attack_stage,compliance_control_id,compliance_status,human_review_recommended
+evt_test_00276,u_normal_sql_001,normal_sql_user,89.0,unusual_authentication,Possible credential misuse or suspicious login context,high,initial_access,SF-AUTH-002,non_compliant,True
+evt_test_00277,u_normal_sql_001,normal_sql_user,99.38,unusual_data_access_or_export,Possible data staging or exfiltration through Salesforce export activity,high,collection_or_exfiltration,SF-DATA-003,needs_review,True
+evt_test_00278,u_normal_sql_001,normal_sql_user,100.0,unusual_authentication,Possible malicious OAuth consent or connected-app abuse,high,credential_access,SF-AUTH-002,non_compliant,True
+evt_test_00279,u_normal_sql_001,normal_sql_user,100.0,unusual_authentication,Possible credential misuse or suspicious login context,high,initial_access,SF-AUTH-002,non_compliant,True
+evt_test_00280,u_normal_sql_001,normal_sql_user,99.43,unusual_data_access_or_export,Possible data staging or exfiltration through Salesforce export activity,high,collection_or_exfiltration,SF-DATA-003,needs_review,True
+evt_test_00281,u_normal_sql_001,normal_sql_user,100.0,unusual_authentication,Possible malicious OAuth consent or connected-app abuse,high,credential_access,SF-AUTH-002,non_compliant,True
+evt_test_00282,u_normal_sql_001,normal_sql_user,100.0,unusual_authentication,Possible credential misuse or suspicious login context,high,initial_access,SF-AUTH-002,non_compliant,True
+evt_test_00283,u_normal_sql_001,normal_sql_user,99.43,unusual_data_access_or_export,Possible data staging or exfiltration through Salesforce export activity,high,collection_or_exfiltration,SF-DATA-003,needs_review,True
+evt_test_00559,u_sales_traveler_002,traveling_sales_rep,100.0,unusual_authentication,Possible credential misuse or suspicious login context,high,initial_access,SF-ACCESS-001,needs_review,True
+evt_test_00561,u_sales_traveler_002,traveling_sales_rep,100.0,unusual_data_access_or_export,Possible data staging or exfiltration through Salesforce export activity,high,collection_or_exfiltration,SF-DATA-003,needs_review,True
+evt_test_00562,u_sales_traveler_002,traveling_sales_rep,100.0,unusual_authentication,Possible credential misuse or suspicious login context,high,initial_access,SF-ACCESS-001,needs_review,True
+evt_test_00564,u_sales_traveler_002,traveling_sales_rep,100.0,unusual_data_access_or_export,Possible data staging or exfiltration through Salesforce export activity,high,collection_or_exfiltration,SF-DATA-003,needs_review,True
+evt_test_00565,u_sales_traveler_002,traveling_sales_rep,100.0,unusual_authentication,Possible credential misuse or suspicious login context,high,initial_access,SF-ACCESS-001,needs_review,True
+evt_test_00808,u_nightowl_noah_003,nightowl_engineer,80.0,behavioral_anomaly,Possible data staging or exfiltration through Salesforce export activity,medium,collection_or_exfiltration,SF-ACCESS-001,needs_review,True
+evt_test_00843,u_nightowl_noah_003,nightowl_engineer,100.0,unusual_authentication,Possible credential misuse or suspicious login context,high,initial_access,SF-AUTH-002,non_compliant,True
+evt_test_00844,u_nightowl_noah_003,nightowl_engineer,100.0,unusual_authentication,Possible malicious OAuth consent or connected-app abuse,high,credential_access,SF-AUTH-002,non_compliant,True
+evt_test_00846,u_nightowl_noah_003,nightowl_engineer,100.0,unusual_authentication,Possible credential misuse or suspicious login context,high,initial_access,SF-AUTH-002,non_compliant,True
+evt_test_00847,u_nightowl_noah_003,nightowl_engineer,100.0,unusual_authentication,Possible malicious OAuth consent or connected-app abuse,high,credential_access,SF-AUTH-002,non_compliant,True
+evt_test_00849,u_nightowl_noah_003,nightowl_engineer,100.0,unusual_authentication,Possible credential misuse or suspicious login context,high,initial_access,SF-AUTH-002,non_compliant,True
+evt_test_01088,u_complex_query_004,complex_query_engineer,70.03,behavioral_anomaly,Unusual Salesforce behavior requiring review,low,unknown,SF-ACCESS-001,needs_review,False
+evt_test_01125,u_complex_query_004,complex_query_engineer,100.0,unusual_data_access_or_export,Possible data staging or exfiltration through Salesforce export activity,high,collection_or_exfiltration,SF-DATA-003,non_compliant,True
+evt_test_01126,u_complex_query_004,complex_query_engineer,100.0,behavioral_anomaly,Possible data staging or exfiltration through Salesforce export activity,high,collection_or_exfiltration,SF-DATA-003,non_compliant,True
+evt_test_01128,u_complex_query_004,complex_query_engineer,100.0,unusual_data_access_or_export,Possible data staging or exfiltration through Salesforce export activity,high,collection_or_exfiltration,SF-DATA-003,non_compliant,True
+evt_test_01129,u_complex_query_004,complex_query_engineer,100.0,behavioral_anomaly,Possible data staging or exfiltration through Salesforce export activity,high,collection_or_exfiltration,SF-DATA-003,non_compliant,True
+evt_test_01131,u_complex_query_004,complex_query_engineer,100.0,unusual_data_access_or_export,Possible data staging or exfiltration through Salesforce export activity,high,collection_or_exfiltration,SF-DATA-003,non_compliant,True
+evt_test_01132,u_complex_query_004,complex_query_engineer,100.0,behavioral_anomaly,Possible data staging or exfiltration through Salesforce export activity,high,collection_or_exfiltration,SF-DATA-003,non_compliant,True
+evt_test_01410,u_admin_005,salesforce_admin,100.0,unusual_data_access_or_export,Possible data staging or exfiltration through Salesforce export activity,high,collection_or_exfiltration,SF-DATA-003,non_compliant,True
+evt_test_01413,u_admin_005,salesforce_admin,100.0,unusual_data_access_or_export,Possible privilege misuse or unauthorized admin change,high,privilege_escalation_or_defense_evasion,SF-DATA-003,non_compliant,True
+evt_test_01415,u_admin_005,salesforce_admin,83.0,behavioral_anomaly,Possible malicious OAuth consent or connected-app abuse,medium,credential_access,SF-AUTH-002,non_compliant,True

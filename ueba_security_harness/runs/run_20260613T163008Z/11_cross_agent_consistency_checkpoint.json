@@ -1,0 +1,12 @@
+{
+  "created_at": "2026-06-13T16:30:08.314320+00:00",
+  "criteria": {
+    "agent_disagreements_are_surfaced": true,
+    "high_ueba_risk_not_silently_downgraded": true
+  },
+  "details": {
+    "disagreements": []
+  },
+  "name": "cross_agent_consistency_checkpoint",
+  "passed": true
+}

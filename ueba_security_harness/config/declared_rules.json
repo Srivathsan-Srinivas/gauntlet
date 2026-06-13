@@ -1,0 +1,72 @@
+{
+  "version": "1.0",
+  "description": "Declared guardrails and escalation policy for the UEBA, Threat-Hunting, and Security Compliance harness.",
+  "required_input_columns": [
+    "event_id",
+    "event_name",
+    "event_type",
+    "timestamp",
+    "user_id",
+    "persona",
+    "src_ip",
+    "domain_name",
+    "city",
+    "country",
+    "os",
+    "user_agent",
+    "device_type",
+    "login_type",
+    "tls_version",
+    "records_accessed",
+    "query_complexity",
+    "is_admin_action",
+    "interestingness_score",
+    "reasons"
+  ],
+  "sensitive_fields": ["src_ip", "user_agent"],
+  "allowed_agent_actions": [
+    "analyze",
+    "summarize",
+    "assign_risk_score",
+    "create_hunt_hypothesis",
+    "evaluate_compliance",
+    "recommend_human_review"
+  ],
+  "blocked_agent_actions": [
+    "disable_account",
+    "delete_logs",
+    "change_permissions",
+    "approve_exception",
+    "close_incident",
+    "claim_confirmed_breach_without_evidence"
+  ],
+  "risk_thresholds": {
+    "ueba_interesting": 65,
+    "high_risk": 80,
+    "critical_risk": 90,
+    "large_export_records": 10000,
+    "extreme_export_records": 50000
+  },
+  "countries_allowed_for_most_users": ["US"],
+  "weak_tls_versions": ["TLS1.0", "TLS1.1"],
+  "suspicious_domains": ["evil-connected-app.example"],
+  "admin_event_names": ["UserPermissionChange"],
+  "data_export_event_names": ["ReportExport", "BulkDataExport"],
+  "human_review_required_when": [
+    "interestingness_score_gte_high_risk",
+    "admin_action_from_public_ip",
+    "foreign_country_login",
+    "weak_tls",
+    "suspicious_connected_app",
+    "large_data_export",
+    "compliance_non_compliant",
+    "cross_agent_disagreement",
+    "checkpoint_failed"
+  ],
+  "compliance_controls": {
+    "SF-ACCESS-001": "Unusual country or public IP access requires analyst review.",
+    "SF-AUTH-002": "Weak TLS or suspicious OAuth app usage is not allowed without approval.",
+    "SF-DATA-003": "Large exports require business justification and monitoring.",
+    "SF-ADMIN-004": "Privileged actions require expected context and human review when anomalous."
+  }
+}

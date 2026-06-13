@@ -1,0 +1,3834 @@
+{
+  "created_at": "2026-06-13T16:31:46.332233+00:00",
+  "items": [
+    {
+      "allowed_reviewer_decisions": [
+        "approve_final_report",
+        "request_more_evidence",
+        "send_back_to_agent",
+        "escalate_incident",
+        "dismiss_false_positive"
+      ],
+      "compliance_result": {
+        "agent": "security_compliance_agent",
+        "control_description": "Weak TLS or suspicious OAuth app usage is not allowed without approval.",
+        "control_id": "SF-AUTH-002",
+        "event_id": "evt_test_00276",
+        "evidence": [
+          "Authentication risk: tls=TLS1.0 domain=mycompany.my.salesforce.com"
+        ],
+        "recommended_action": "Create human review item before closure.",
+        "status": "non_compliant",
+        "user_id": "u_normal_sql_001"
+      },
+      "event_id": "evt_test_00276",
+      "persona": "normal_sql_user",
+      "reason": [
+        "UEBA risk score exceeds high-risk threshold",
+        "Threat-hunting confidence is high",
+        "Compliance agent found non-compliance",
+        "High or critical alarm references this event"
+      ],
+      "recommended_human_actions": [
+        "Validate whether the user context explains the activity.",
+        "Review adjacent Salesforce audit events for the same user and IP.",
+        "Check endpoint and identity-provider telemetry.",
+        "Decide whether containment, exception approval, or dismissal is appropriate."
+      ],
+      "review_id": "review_api_40f33f928c77_001",
+      "severity": "critical",
+      "threat_hunt": {
+        "agent": "threat_hunting_agent",
+        "attack_stage": "initial_access",
+        "confidence": "high",
+        "event_id": "evt_test_00276",
+        "evidence": [
+          {
+            "details": {
+              "ratio": 1.27,
+              "threshold": 0.076474,
+              "value": 0.097204
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Chicago"
+              ],
+              "value": "Moscow"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "RU"
+            },
+            "reason": "unusual_country"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Windows",
+                "macOS"
+              ],
+              "value": "Linux"
+            },
+            "reason": "unusual_os"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "TLS1.2",
+                "TLS1.3"
+              ],
+              "value": "TLS1.0"
+            },
+            "reason": "unusual_tls_version"
+          }
+        ],
+        "hypothesis": "Possible credential misuse or suspicious login context",
+        "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+        "user_id": "u_normal_sql_001"
+      },
+      "ueba_finding": {
+        "agent": "ueba_agent",
+        "event_id": "evt_test_00276",
+        "evidence": [
+          {
+            "details": {
+              "ratio": 1.27,
+              "threshold": 0.076474,
+              "value": 0.097204
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Chicago"
+              ],
+              "value": "Moscow"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "RU"
+            },
+            "reason": "unusual_country"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Windows",
+                "macOS"
+              ],
+              "value": "Linux"
+            },
+            "reason": "unusual_os"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "TLS1.2",
+                "TLS1.3"
+              ],
+              "value": "TLS1.0"
+            },
+            "reason": "unusual_tls_version"
+          }
+        ],
+        "finding_type": "unusual_authentication",
+        "persona": "normal_sql_user",
+        "recommended_action": "Send to threat-hunting agent for hypothesis generation.",
+        "risk_score": 100.0,
+        "user_id": "u_normal_sql_001"
+      },
+      "user_id": "u_normal_sql_001"
+    },
+    {
+      "allowed_reviewer_decisions": [
+        "approve_final_report",
+        "request_more_evidence",
+        "send_back_to_agent",
+        "escalate_incident",
+        "dismiss_false_positive"
+      ],
+      "compliance_result": {
+        "agent": "security_compliance_agent",
+        "control_description": "Large exports require business justification and monitoring.",
+        "control_id": "SF-DATA-003",
+        "event_id": "evt_test_00277",
+        "evidence": [
+          "Data access/export volume: records_accessed=6300"
+        ],
+        "recommended_action": "Create human review item before closure.",
+        "status": "needs_review",
+        "user_id": "u_normal_sql_001"
+      },
+      "event_id": "evt_test_00277",
+      "persona": "normal_sql_user",
+      "reason": [
+        "UEBA risk score exceeds high-risk threshold",
+        "Threat-hunting confidence is high",
+        "High or critical alarm references this event"
+      ],
+      "recommended_human_actions": [
+        "Validate whether the user context explains the activity.",
+        "Review adjacent Salesforce audit events for the same user and IP.",
+        "Check endpoint and identity-provider telemetry.",
+        "Decide whether containment, exception approval, or dismissal is appropriate."
+      ],
+      "review_id": "review_api_40f33f928c77_002",
+      "severity": "critical",
+      "threat_hunt": {
+        "agent": "threat_hunting_agent",
+        "attack_stage": "collection_or_exfiltration",
+        "confidence": "high",
+        "event_id": "evt_test_00277",
+        "evidence": [
+          {
+            "details": {
+              "normal_mean": 117.7,
+              "normal_p95": 349.4,
+              "normal_std": 116.0,
+              "value": 6300.0,
+              "z_score": 53.3
+            },
+            "reason": "high_records_accessed"
+          },
+          {
+            "details": {
+              "ratio": 9.51,
+              "threshold": 0.076474,
+              "value": 0.727279
+            },
+            "reason": "model_reconstruction_error"
+          }
+        ],
+        "hypothesis": "Possible data staging or exfiltration through Salesforce export activity",
+        "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+        "user_id": "u_normal_sql_001"
+      },
+      "ueba_finding": {
+        "agent": "ueba_agent",
+        "event_id": "evt_test_00277",
+        "evidence": [
+          {
+            "details": {
+              "normal_mean": 117.7,
+              "normal_p95": 349.4,
+              "normal_std": 116.0,
+              "value": 6300.0,
+              "z_score": 53.3
+            },
+            "reason": "high_records_accessed"
+          },
+          {
+            "details": {
+              "ratio": 9.51,
+              "threshold": 0.076474,
+              "value": 0.727279
+            },
+            "reason": "model_reconstruction_error"
+          }
+        ],
+        "finding_type": "unusual_data_access_or_export",
+        "persona": "normal_sql_user",
+        "recommended_action": "Send to threat-hunting agent for hypothesis generation.",
+        "risk_score": 99.95,
+        "user_id": "u_normal_sql_001"
+      },
+      "user_id": "u_normal_sql_001"
+    },
+    {
+      "allowed_reviewer_decisions": [
+        "approve_final_report",
+        "request_more_evidence",
+        "send_back_to_agent",
+        "escalate_incident",
+        "dismiss_false_positive"
+      ],
+      "compliance_result": {
+        "agent": "security_compliance_agent",
+        "control_description": "Weak TLS or suspicious OAuth app usage is not allowed without approval.",
+        "control_id": "SF-AUTH-002",
+        "event_id": "evt_test_00278",
+        "evidence": [
+          "Authentication risk: tls=TLS1.3 domain=evil-connected-app.example"
+        ],
+        "recommended_action": "Create human review item before closure.",
+        "status": "non_compliant",
+        "user_id": "u_normal_sql_001"
+      },
+      "event_id": "evt_test_00278",
+      "persona": "normal_sql_user",
+      "reason": [
+        "UEBA risk score exceeds high-risk threshold",
+        "Threat-hunting confidence is high",
+        "Compliance agent found non-compliance",
+        "High or critical alarm references this event"
+      ],
+      "recommended_human_actions": [
+        "Validate whether the user context explains the activity.",
+        "Review adjacent Salesforce audit events for the same user and IP.",
+        "Check endpoint and identity-provider telemetry.",
+        "Decide whether containment, exception approval, or dismissal is appropriate."
+      ],
+      "review_id": "review_api_40f33f928c77_003",
+      "severity": "critical",
+      "threat_hunt": {
+        "agent": "threat_hunting_agent",
+        "attack_stage": "credential_access",
+        "confidence": "high",
+        "event_id": "evt_test_00278",
+        "evidence": [
+          {
+            "details": {
+              "normal_values": [
+                "Chicago"
+              ],
+              "value": "Unknown"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "Unknown"
+            },
+            "reason": "unusual_country"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "login.salesforce.com",
+                "mycompany.my.salesforce.com"
+              ],
+              "value": "evil-connected-app.example"
+            },
+            "reason": "unusual_domain_name"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Password",
+                "SSO"
+              ],
+              "value": "OAuth"
+            },
+            "reason": "unusual_login_type"
+          }
+        ],
+        "hypothesis": "Possible malicious OAuth consent or connected-app abuse",
+        "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+        "user_id": "u_normal_sql_001"
+      },
+      "ueba_finding": {
+        "agent": "ueba_agent",
+        "event_id": "evt_test_00278",
+        "evidence": [
+          {
+            "details": {
+              "normal_values": [
+                "Chicago"
+              ],
+              "value": "Unknown"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "Unknown"
+            },
+            "reason": "unusual_country"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "login.salesforce.com",
+                "mycompany.my.salesforce.com"
+              ],
+              "value": "evil-connected-app.example"
+            },
+            "reason": "unusual_domain_name"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Password",
+                "SSO"
+              ],
+              "value": "OAuth"
+            },
+            "reason": "unusual_login_type"
+          }
+        ],
+        "finding_type": "unusual_authentication",
+        "persona": "normal_sql_user",
+        "recommended_action": "Send to threat-hunting agent for hypothesis generation.",
+        "risk_score": 100.0,
+        "user_id": "u_normal_sql_001"
+      },
+      "user_id": "u_normal_sql_001"
+    },
+    {
+      "allowed_reviewer_decisions": [
+        "approve_final_report",
+        "request_more_evidence",
+        "send_back_to_agent",
+        "escalate_incident",
+        "dismiss_false_positive"
+      ],
+      "compliance_result": {
+        "agent": "security_compliance_agent",
+        "control_description": "Weak TLS or suspicious OAuth app usage is not allowed without approval.",
+        "control_id": "SF-AUTH-002",
+        "event_id": "evt_test_00279",
+        "evidence": [
+          "Authentication risk: tls=TLS1.0 domain=mycompany.my.salesforce.com"
+        ],
+        "recommended_action": "Create human review item before closure.",
+        "status": "non_compliant",
+        "user_id": "u_normal_sql_001"
+      },
+      "event_id": "evt_test_00279",
+      "persona": "normal_sql_user",
+      "reason": [
+        "UEBA risk score exceeds high-risk threshold",
+        "Threat-hunting confidence is high",
+        "Compliance agent found non-compliance",
+        "High or critical alarm references this event"
+      ],
+      "recommended_human_actions": [
+        "Validate whether the user context explains the activity.",
+        "Review adjacent Salesforce audit events for the same user and IP.",
+        "Check endpoint and identity-provider telemetry.",
+        "Decide whether containment, exception approval, or dismissal is appropriate."
+      ],
+      "review_id": "review_api_40f33f928c77_004",
+      "severity": "critical",
+      "threat_hunt": {
+        "agent": "threat_hunting_agent",
+        "attack_stage": "initial_access",
+        "confidence": "high",
+        "event_id": "evt_test_00279",
+        "evidence": [
+          {
+            "details": {
+              "ratio": 1.4,
+              "threshold": 0.076474,
+              "value": 0.10689
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "45.83.12.44"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Chicago"
+              ],
+              "value": "Moscow"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "RU"
+            },
+            "reason": "unusual_country"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Windows",
+                "macOS"
+              ],
+              "value": "Linux"
+            },
+            "reason": "unusual_os"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "TLS1.2",
+                "TLS1.3"
+              ],
+              "value": "TLS1.0"
+            },
+            "reason": "unusual_tls_version"
+          }
+        ],
+        "hypothesis": "Possible credential misuse or suspicious login context",
+        "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+        "user_id": "u_normal_sql_001"
+      },
+      "ueba_finding": {
+        "agent": "ueba_agent",
+        "event_id": "evt_test_00279",
+        "evidence": [
+          {
+            "details": {
+              "ratio": 1.4,
+              "threshold": 0.076474,
+              "value": 0.10689
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "45.83.12.44"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Chicago"
+              ],
+              "value": "Moscow"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "RU"
+            },
+            "reason": "unusual_country"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Windows",
+                "macOS"
+              ],
+              "value": "Linux"
+            },
+            "reason": "unusual_os"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "TLS1.2",
+                "TLS1.3"
+              ],
+              "value": "TLS1.0"
+            },
+            "reason": "unusual_tls_version"
+          }
+        ],
+        "finding_type": "unusual_authentication",
+        "persona": "normal_sql_user",
+        "recommended_action": "Send to threat-hunting agent for hypothesis generation.",
+        "risk_score": 100.0,
+        "user_id": "u_normal_sql_001"
+      },
+      "user_id": "u_normal_sql_001"
+    },
+    {
+      "allowed_reviewer_decisions": [
+        "approve_final_report",
+        "request_more_evidence",
+        "send_back_to_agent",
+        "escalate_incident",
+        "dismiss_false_positive"
+      ],
+      "compliance_result": {
+        "agent": "security_compliance_agent",
+        "control_description": "Large exports require business justification and monitoring.",
+        "control_id": "SF-DATA-003",
+        "event_id": "evt_test_00280",
+        "evidence": [
+          "Data access/export volume: records_accessed=6300"
+        ],
+        "recommended_action": "Create human review item before closure.",
+        "status": "needs_review",
+        "user_id": "u_normal_sql_001"
+      },
+      "event_id": "evt_test_00280",
+      "persona": "normal_sql_user",
+      "reason": [
+        "UEBA risk score exceeds high-risk threshold",
+        "Threat-hunting confidence is high",
+        "High or critical alarm references this event"
+      ],
+      "recommended_human_actions": [
+        "Validate whether the user context explains the activity.",
+        "Review adjacent Salesforce audit events for the same user and IP.",
+        "Check endpoint and identity-provider telemetry.",
+        "Decide whether containment, exception approval, or dismissal is appropriate."
+      ],
+      "review_id": "review_api_40f33f928c77_005",
+      "severity": "critical",
+      "threat_hunt": {
+        "agent": "threat_hunting_agent",
+        "attack_stage": "collection_or_exfiltration",
+        "confidence": "high",
+        "event_id": "evt_test_00280",
+        "evidence": [
+          {
+            "details": {
+              "normal_mean": 117.7,
+              "normal_p95": 349.4,
+              "normal_std": 116.0,
+              "value": 6300.0,
+              "z_score": 53.3
+            },
+            "reason": "high_records_accessed"
+          },
+          {
+            "details": {
+              "ratio": 9.76,
+              "threshold": 0.076474,
+              "value": 0.746211
+            },
+            "reason": "model_reconstruction_error"
+          }
+        ],
+        "hypothesis": "Possible data staging or exfiltration through Salesforce export activity",
+        "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+        "user_id": "u_normal_sql_001"
+      },
+      "ueba_finding": {
+        "agent": "ueba_agent",
+        "event_id": "evt_test_00280",
+        "evidence": [
+          {
+            "details": {
+              "normal_mean": 117.7,
+              "normal_p95": 349.4,
+              "normal_std": 116.0,
+              "value": 6300.0,
+              "z_score": 53.3
+            },
+            "reason": "high_records_accessed"
+          },
+          {
+            "details": {
+              "ratio": 9.76,
+              "threshold": 0.076474,
+              "value": 0.746211
+            },
+            "reason": "model_reconstruction_error"
+          }
+        ],
+        "finding_type": "unusual_data_access_or_export",
+        "persona": "normal_sql_user",
+        "recommended_action": "Send to threat-hunting agent for hypothesis generation.",
+        "risk_score": 99.96,
+        "user_id": "u_normal_sql_001"
+      },
+      "user_id": "u_normal_sql_001"
+    },
+    {
+      "allowed_reviewer_decisions": [
+        "approve_final_report",
+        "request_more_evidence",
+        "send_back_to_agent",
+        "escalate_incident",
+        "dismiss_false_positive"
+      ],
+      "compliance_result": {
+        "agent": "security_compliance_agent",
+        "control_description": "Weak TLS or suspicious OAuth app usage is not allowed without approval.",
+        "control_id": "SF-AUTH-002",
+        "event_id": "evt_test_00281",
+        "evidence": [
+          "Authentication risk: tls=TLS1.3 domain=evil-connected-app.example"
+        ],
+        "recommended_action": "Create human review item before closure.",
+        "status": "non_compliant",
+        "user_id": "u_normal_sql_001"
+      },
+      "event_id": "evt_test_00281",
+      "persona": "normal_sql_user",
+      "reason": [
+        "UEBA risk score exceeds high-risk threshold",
+        "Threat-hunting confidence is high",
+        "Compliance agent found non-compliance",
+        "High or critical alarm references this event"
+      ],
+      "recommended_human_actions": [
+        "Validate whether the user context explains the activity.",
+        "Review adjacent Salesforce audit events for the same user and IP.",
+        "Check endpoint and identity-provider telemetry.",
+        "Decide whether containment, exception approval, or dismissal is appropriate."
+      ],
+      "review_id": "review_api_40f33f928c77_006",
+      "severity": "critical",
+      "threat_hunt": {
+        "agent": "threat_hunting_agent",
+        "attack_stage": "credential_access",
+        "confidence": "high",
+        "event_id": "evt_test_00281",
+        "evidence": [
+          {
+            "details": {
+              "ratio": 1.25,
+              "threshold": 0.076474,
+              "value": 0.095953
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "185.199.108.77"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Chicago"
+              ],
+              "value": "Unknown"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "Unknown"
+            },
+            "reason": "unusual_country"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "login.salesforce.com",
+                "mycompany.my.salesforce.com"
+              ],
+              "value": "evil-connected-app.example"
+            },
+            "reason": "unusual_domain_name"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Password",
+                "SSO"
+              ],
+              "value": "OAuth"
+            },
+            "reason": "unusual_login_type"
+          }
+        ],
+        "hypothesis": "Possible malicious OAuth consent or connected-app abuse",
+        "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+        "user_id": "u_normal_sql_001"
+      },
+      "ueba_finding": {
+        "agent": "ueba_agent",
+        "event_id": "evt_test_00281",
+        "evidence": [
+          {
+            "details": {
+              "ratio": 1.25,
+              "threshold": 0.076474,
+              "value": 0.095953
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "185.199.108.77"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Chicago"
+              ],
+              "value": "Unknown"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "Unknown"
+            },
+            "reason": "unusual_country"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "login.salesforce.com",
+                "mycompany.my.salesforce.com"
+              ],
+              "value": "evil-connected-app.example"
+            },
+            "reason": "unusual_domain_name"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Password",
+                "SSO"
+              ],
+              "value": "OAuth"
+            },
+            "reason": "unusual_login_type"
+          }
+        ],
+        "finding_type": "unusual_authentication",
+        "persona": "normal_sql_user",
+        "recommended_action": "Send to threat-hunting agent for hypothesis generation.",
+        "risk_score": 100.0,
+        "user_id": "u_normal_sql_001"
+      },
+      "user_id": "u_normal_sql_001"
+    },
+    {
+      "allowed_reviewer_decisions": [
+        "approve_final_report",
+        "request_more_evidence",
+        "send_back_to_agent",
+        "escalate_incident",
+        "dismiss_false_positive"
+      ],
+      "compliance_result": {
+        "agent": "security_compliance_agent",
+        "control_description": "Weak TLS or suspicious OAuth app usage is not allowed without approval.",
+        "control_id": "SF-AUTH-002",
+        "event_id": "evt_test_00282",
+        "evidence": [
+          "Authentication risk: tls=TLS1.0 domain=mycompany.my.salesforce.com"
+        ],
+        "recommended_action": "Create human review item before closure.",
+        "status": "non_compliant",
+        "user_id": "u_normal_sql_001"
+      },
+      "event_id": "evt_test_00282",
+      "persona": "normal_sql_user",
+      "reason": [
+        "UEBA risk score exceeds high-risk threshold",
+        "Threat-hunting confidence is high",
+        "Compliance agent found non-compliance",
+        "High or critical alarm references this event"
+      ],
+      "recommended_human_actions": [
+        "Validate whether the user context explains the activity.",
+        "Review adjacent Salesforce audit events for the same user and IP.",
+        "Check endpoint and identity-provider telemetry.",
+        "Decide whether containment, exception approval, or dismissal is appropriate."
+      ],
+      "review_id": "review_api_40f33f928c77_007",
+      "severity": "critical",
+      "threat_hunt": {
+        "agent": "threat_hunting_agent",
+        "attack_stage": "initial_access",
+        "confidence": "high",
+        "event_id": "evt_test_00282",
+        "evidence": [
+          {
+            "details": {
+              "ratio": 1.49,
+              "threshold": 0.076474,
+              "value": 0.114141
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "185.199.108.77"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Chicago"
+              ],
+              "value": "Moscow"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "RU"
+            },
+            "reason": "unusual_country"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Windows",
+                "macOS"
+              ],
+              "value": "Linux"
+            },
+            "reason": "unusual_os"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "TLS1.2",
+                "TLS1.3"
+              ],
+              "value": "TLS1.0"
+            },
+            "reason": "unusual_tls_version"
+          }
+        ],
+        "hypothesis": "Possible credential misuse or suspicious login context",
+        "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+        "user_id": "u_normal_sql_001"
+      },
+      "ueba_finding": {
+        "agent": "ueba_agent",
+        "event_id": "evt_test_00282",
+        "evidence": [
+          {
+            "details": {
+              "ratio": 1.49,
+              "threshold": 0.076474,
+              "value": 0.114141
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "185.199.108.77"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Chicago"
+              ],
+              "value": "Moscow"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "RU"
+            },
+            "reason": "unusual_country"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Windows",
+                "macOS"
+              ],
+              "value": "Linux"
+            },
+            "reason": "unusual_os"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "TLS1.2",
+                "TLS1.3"
+              ],
+              "value": "TLS1.0"
+            },
+            "reason": "unusual_tls_version"
+          }
+        ],
+        "finding_type": "unusual_authentication",
+        "persona": "normal_sql_user",
+        "recommended_action": "Send to threat-hunting agent for hypothesis generation.",
+        "risk_score": 100.0,
+        "user_id": "u_normal_sql_001"
+      },
+      "user_id": "u_normal_sql_001"
+    },
+    {
+      "allowed_reviewer_decisions": [
+        "approve_final_report",
+        "request_more_evidence",
+        "send_back_to_agent",
+        "escalate_incident",
+        "dismiss_false_positive"
+      ],
+      "compliance_result": {
+        "agent": "security_compliance_agent",
+        "control_description": "Large exports require business justification and monitoring.",
+        "control_id": "SF-DATA-003",
+        "event_id": "evt_test_00283",
+        "evidence": [
+          "Data access/export volume: records_accessed=6300"
+        ],
+        "recommended_action": "Create human review item before closure.",
+        "status": "needs_review",
+        "user_id": "u_normal_sql_001"
+      },
+      "event_id": "evt_test_00283",
+      "persona": "normal_sql_user",
+      "reason": [
+        "UEBA risk score exceeds high-risk threshold",
+        "Threat-hunting confidence is high",
+        "High or critical alarm references this event"
+      ],
+      "recommended_human_actions": [
+        "Validate whether the user context explains the activity.",
+        "Review adjacent Salesforce audit events for the same user and IP.",
+        "Check endpoint and identity-provider telemetry.",
+        "Decide whether containment, exception approval, or dismissal is appropriate."
+      ],
+      "review_id": "review_api_40f33f928c77_008",
+      "severity": "critical",
+      "threat_hunt": {
+        "agent": "threat_hunting_agent",
+        "attack_stage": "collection_or_exfiltration",
+        "confidence": "high",
+        "event_id": "evt_test_00283",
+        "evidence": [
+          {
+            "details": {
+              "normal_mean": 117.7,
+              "normal_p95": 349.4,
+              "normal_std": 116.0,
+              "value": 6300.0,
+              "z_score": 53.3
+            },
+            "reason": "high_records_accessed"
+          },
+          {
+            "details": {
+              "ratio": 9.72,
+              "threshold": 0.076474,
+              "value": 0.743314
+            },
+            "reason": "model_reconstruction_error"
+          }
+        ],
+        "hypothesis": "Possible data staging or exfiltration through Salesforce export activity",
+        "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+        "user_id": "u_normal_sql_001"
+      },
+      "ueba_finding": {
+        "agent": "ueba_agent",
+        "event_id": "evt_test_00283",
+        "evidence": [
+          {
+            "details": {
+              "normal_mean": 117.7,
+              "normal_p95": 349.4,
+              "normal_std": 116.0,
+              "value": 6300.0,
+              "z_score": 53.3
+            },
+            "reason": "high_records_accessed"
+          },
+          {
+            "details": {
+              "ratio": 9.72,
+              "threshold": 0.076474,
+              "value": 0.743314
+            },
+            "reason": "model_reconstruction_error"
+          }
+        ],
+        "finding_type": "unusual_data_access_or_export",
+        "persona": "normal_sql_user",
+        "recommended_action": "Send to threat-hunting agent for hypothesis generation.",
+        "risk_score": 99.96,
+        "user_id": "u_normal_sql_001"
+      },
+      "user_id": "u_normal_sql_001"
+    },
+    {
+      "allowed_reviewer_decisions": [
+        "approve_final_report",
+        "request_more_evidence",
+        "send_back_to_agent",
+        "escalate_incident",
+        "dismiss_false_positive"
+      ],
+      "compliance_result": {
+        "agent": "security_compliance_agent",
+        "control_description": "Unusual country or public IP access requires analyst review.",
+        "control_id": "SF-ACCESS-001",
+        "event_id": "evt_test_00559",
+        "evidence": [
+          "Unexpected country: SG"
+        ],
+        "recommended_action": "Create human review item before closure.",
+        "status": "needs_review",
+        "user_id": "u_sales_traveler_002"
+      },
+      "event_id": "evt_test_00559",
+      "persona": "traveling_sales_rep",
+      "reason": [
+        "UEBA risk score exceeds high-risk threshold",
+        "Threat-hunting confidence is high",
+        "High or critical alarm references this event"
+      ],
+      "recommended_human_actions": [
+        "Validate whether the user context explains the activity.",
+        "Review adjacent Salesforce audit events for the same user and IP.",
+        "Check endpoint and identity-provider telemetry.",
+        "Decide whether containment, exception approval, or dismissal is appropriate."
+      ],
+      "review_id": "review_api_40f33f928c77_009",
+      "severity": "critical",
+      "threat_hunt": {
+        "agent": "threat_hunting_agent",
+        "attack_stage": "initial_access",
+        "confidence": "high",
+        "event_id": "evt_test_00559",
+        "evidence": [
+          {
+            "details": {
+              "ratio": 1.22,
+              "threshold": 0.076474,
+              "value": 0.09313
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "185.199.108.77"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Austin",
+                "Boston",
+                "New York",
+                "San Francisco"
+              ],
+              "value": "Singapore"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "SG"
+            },
+            "reason": "unusual_country"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "laptop",
+                "mobile"
+              ],
+              "value": "desktop"
+            },
+            "reason": "unusual_device_type"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "iOS",
+                "macOS"
+              ],
+              "value": "Windows"
+            },
+            "reason": "unusual_os"
+          }
+        ],
+        "hypothesis": "Possible credential misuse or suspicious login context",
+        "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+        "user_id": "u_sales_traveler_002"
+      },
+      "ueba_finding": {
+        "agent": "ueba_agent",
+        "event_id": "evt_test_00559",
+        "evidence": [
+          {
+            "details": {
+              "ratio": 1.22,
+              "threshold": 0.076474,
+              "value": 0.09313
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "185.199.108.77"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Austin",
+                "Boston",
+                "New York",
+                "San Francisco"
+              ],
+              "value": "Singapore"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "SG"
+            },
+            "reason": "unusual_country"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "laptop",
+                "mobile"
+              ],
+              "value": "desktop"
+            },
+            "reason": "unusual_device_type"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "iOS",
+                "macOS"
+              ],
+              "value": "Windows"
+            },
+            "reason": "unusual_os"
+          }
+        ],
+        "finding_type": "unusual_authentication",
+        "persona": "traveling_sales_rep",
+        "recommended_action": "Send to threat-hunting agent for hypothesis generation.",
+        "risk_score": 100.0,
+        "user_id": "u_sales_traveler_002"
+      },
+      "user_id": "u_sales_traveler_002"
+    },
+    {
+      "allowed_reviewer_decisions": [
+        "approve_final_report",
+        "request_more_evidence",
+        "send_back_to_agent",
+        "escalate_incident",
+        "dismiss_false_positive"
+      ],
+      "compliance_result": {
+        "agent": "security_compliance_agent",
+        "control_description": "Large exports require business justification and monitoring.",
+        "control_id": "SF-DATA-003",
+        "event_id": "evt_test_00561",
+        "evidence": [
+          "Data access/export volume: records_accessed=9500"
+        ],
+        "recommended_action": "Create human review item before closure.",
+        "status": "needs_review",
+        "user_id": "u_sales_traveler_002"
+      },
+      "event_id": "evt_test_00561",
+      "persona": "traveling_sales_rep",
+      "reason": [
+        "UEBA risk score exceeds high-risk threshold",
+        "Threat-hunting confidence is high",
+        "High or critical alarm references this event"
+      ],
+      "recommended_human_actions": [
+        "Validate whether the user context explains the activity.",
+        "Review adjacent Salesforce audit events for the same user and IP.",
+        "Check endpoint and identity-provider telemetry.",
+        "Decide whether containment, exception approval, or dismissal is appropriate."
+      ],
+      "review_id": "review_api_40f33f928c77_010",
+      "severity": "critical",
+      "threat_hunt": {
+        "agent": "threat_hunting_agent",
+        "attack_stage": "collection_or_exfiltration",
+        "confidence": "high",
+        "event_id": "evt_test_00561",
+        "evidence": [
+          {
+            "details": {
+              "normal_mean": 34.75,
+              "normal_p95": 111.35,
+              "normal_std": 37.14,
+              "value": 9500.0,
+              "z_score": 254.88
+            },
+            "reason": "high_records_accessed"
+          },
+          {
+            "details": {
+              "circular_hour_distance": 7.11,
+              "normal_mean_hour": 13.89,
+              "value": 21
+            },
+            "reason": "login_hour_deviation"
+          },
+          {
+            "details": {
+              "ratio": 23.46,
+              "threshold": 0.076474,
+              "value": 1.793782
+            },
+            "reason": "model_reconstruction_error"
+          }
+        ],
+        "hypothesis": "Possible data staging or exfiltration through Salesforce export activity",
+        "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+        "user_id": "u_sales_traveler_002"
+      },
+      "ueba_finding": {
+        "agent": "ueba_agent",
+        "event_id": "evt_test_00561",
+        "evidence": [
+          {
+            "details": {
+              "normal_mean": 34.75,
+              "normal_p95": 111.35,
+              "normal_std": 37.14,
+              "value": 9500.0,
+              "z_score": 254.88
+            },
+            "reason": "high_records_accessed"
+          },
+          {
+            "details": {
+              "circular_hour_distance": 7.11,
+              "normal_mean_hour": 13.89,
+              "value": 21
+            },
+            "reason": "login_hour_deviation"
+          },
+          {
+            "details": {
+              "ratio": 23.46,
+              "threshold": 0.076474,
+              "value": 1.793782
+            },
+            "reason": "model_reconstruction_error"
+          }
+        ],
+        "finding_type": "unusual_data_access_or_export",
+        "persona": "traveling_sales_rep",
+        "recommended_action": "Send to threat-hunting agent for hypothesis generation.",
+        "risk_score": 100.0,
+        "user_id": "u_sales_traveler_002"
+      },
+      "user_id": "u_sales_traveler_002"
+    },
+    {
+      "allowed_reviewer_decisions": [
+        "approve_final_report",
+        "request_more_evidence",
+        "send_back_to_agent",
+        "escalate_incident",
+        "dismiss_false_positive"
+      ],
+      "compliance_result": {
+        "agent": "security_compliance_agent",
+        "control_description": "Unusual country or public IP access requires analyst review.",
+        "control_id": "SF-ACCESS-001",
+        "event_id": "evt_test_00562",
+        "evidence": [
+          "Unexpected country: SG"
+        ],
+        "recommended_action": "Create human review item before closure.",
+        "status": "needs_review",
+        "user_id": "u_sales_traveler_002"
+      },
+      "event_id": "evt_test_00562",
+      "persona": "traveling_sales_rep",
+      "reason": [
+        "UEBA risk score exceeds high-risk threshold",
+        "Threat-hunting confidence is high",
+        "High or critical alarm references this event"
+      ],
+      "recommended_human_actions": [
+        "Validate whether the user context explains the activity.",
+        "Review adjacent Salesforce audit events for the same user and IP.",
+        "Check endpoint and identity-provider telemetry.",
+        "Decide whether containment, exception approval, or dismissal is appropriate."
+      ],
+      "review_id": "review_api_40f33f928c77_011",
+      "severity": "critical",
+      "threat_hunt": {
+        "agent": "threat_hunting_agent",
+        "attack_stage": "initial_access",
+        "confidence": "high",
+        "event_id": "evt_test_00562",
+        "evidence": [
+          {
+            "details": {
+              "circular_hour_distance": 7.89,
+              "normal_mean_hour": 13.89,
+              "value": 6
+            },
+            "reason": "login_hour_deviation"
+          },
+          {
+            "details": {
+              "ratio": 1.35,
+              "threshold": 0.076474,
+              "value": 0.102885
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "185.199.108.77"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Austin",
+                "Boston",
+                "New York",
+                "San Francisco"
+              ],
+              "value": "Singapore"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "SG"
+            },
+            "reason": "unusual_country"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "laptop",
+                "mobile"
+              ],
+              "value": "desktop"
+            },
+            "reason": "unusual_device_type"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "iOS",
+                "macOS"
+              ],
+              "value": "Windows"
+            },
+            "reason": "unusual_os"
+          }
+        ],
+        "hypothesis": "Possible credential misuse or suspicious login context",
+        "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+        "user_id": "u_sales_traveler_002"
+      },
+      "ueba_finding": {
+        "agent": "ueba_agent",
+        "event_id": "evt_test_00562",
+        "evidence": [
+          {
+            "details": {
+              "circular_hour_distance": 7.89,
+              "normal_mean_hour": 13.89,
+              "value": 6
+            },
+            "reason": "login_hour_deviation"
+          },
+          {
+            "details": {
+              "ratio": 1.35,
+              "threshold": 0.076474,
+              "value": 0.102885
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "185.199.108.77"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Austin",
+                "Boston",
+                "New York",
+                "San Francisco"
+              ],
+              "value": "Singapore"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "SG"
+            },
+            "reason": "unusual_country"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "laptop",
+                "mobile"
+              ],
+              "value": "desktop"
+            },
+            "reason": "unusual_device_type"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "iOS",
+                "macOS"
+              ],
+              "value": "Windows"
+            },
+            "reason": "unusual_os"
+          }
+        ],
+        "finding_type": "unusual_authentication",
+        "persona": "traveling_sales_rep",
+        "recommended_action": "Send to threat-hunting agent for hypothesis generation.",
+        "risk_score": 100.0,
+        "user_id": "u_sales_traveler_002"
+      },
+      "user_id": "u_sales_traveler_002"
+    },
+    {
+      "allowed_reviewer_decisions": [
+        "approve_final_report",
+        "request_more_evidence",
+        "send_back_to_agent",
+        "escalate_incident",
+        "dismiss_false_positive"
+      ],
+      "compliance_result": {
+        "agent": "security_compliance_agent",
+        "control_description": "Large exports require business justification and monitoring.",
+        "control_id": "SF-DATA-003",
+        "event_id": "evt_test_00564",
+        "evidence": [
+          "Data access/export volume: records_accessed=9500"
+        ],
+        "recommended_action": "Create human review item before closure.",
+        "status": "needs_review",
+        "user_id": "u_sales_traveler_002"
+      },
+      "event_id": "evt_test_00564",
+      "persona": "traveling_sales_rep",
+      "reason": [
+        "UEBA risk score exceeds high-risk threshold",
+        "Threat-hunting confidence is high",
+        "High or critical alarm references this event"
+      ],
+      "recommended_human_actions": [
+        "Validate whether the user context explains the activity.",
+        "Review adjacent Salesforce audit events for the same user and IP.",
+        "Check endpoint and identity-provider telemetry.",
+        "Decide whether containment, exception approval, or dismissal is appropriate."
+      ],
+      "review_id": "review_api_40f33f928c77_012",
+      "severity": "critical",
+      "threat_hunt": {
+        "agent": "threat_hunting_agent",
+        "attack_stage": "collection_or_exfiltration",
+        "confidence": "high",
+        "event_id": "evt_test_00564",
+        "evidence": [
+          {
+            "details": {
+              "normal_mean": 34.75,
+              "normal_p95": 111.35,
+              "normal_std": 37.14,
+              "value": 9500.0,
+              "z_score": 254.88
+            },
+            "reason": "high_records_accessed"
+          },
+          {
+            "details": {
+              "ratio": 24.76,
+              "threshold": 0.076474,
+              "value": 1.893285
+            },
+            "reason": "model_reconstruction_error"
+          }
+        ],
+        "hypothesis": "Possible data staging or exfiltration through Salesforce export activity",
+        "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+        "user_id": "u_sales_traveler_002"
+      },
+      "ueba_finding": {
+        "agent": "ueba_agent",
+        "event_id": "evt_test_00564",
+        "evidence": [
+          {
+            "details": {
+              "normal_mean": 34.75,
+              "normal_p95": 111.35,
+              "normal_std": 37.14,
+              "value": 9500.0,
+              "z_score": 254.88
+            },
+            "reason": "high_records_accessed"
+          },
+          {
+            "details": {
+              "ratio": 24.76,
+              "threshold": 0.076474,
+              "value": 1.893285
+            },
+            "reason": "model_reconstruction_error"
+          }
+        ],
+        "finding_type": "unusual_data_access_or_export",
+        "persona": "traveling_sales_rep",
+        "recommended_action": "Send to threat-hunting agent for hypothesis generation.",
+        "risk_score": 100.0,
+        "user_id": "u_sales_traveler_002"
+      },
+      "user_id": "u_sales_traveler_002"
+    },
+    {
+      "allowed_reviewer_decisions": [
+        "approve_final_report",
+        "request_more_evidence",
+        "send_back_to_agent",
+        "escalate_incident",
+        "dismiss_false_positive"
+      ],
+      "compliance_result": {
+        "agent": "security_compliance_agent",
+        "control_description": "Unusual country or public IP access requires analyst review.",
+        "control_id": "SF-ACCESS-001",
+        "event_id": "evt_test_00565",
+        "evidence": [
+          "Unexpected country: SG"
+        ],
+        "recommended_action": "Create human review item before closure.",
+        "status": "needs_review",
+        "user_id": "u_sales_traveler_002"
+      },
+      "event_id": "evt_test_00565",
+      "persona": "traveling_sales_rep",
+      "reason": [
+        "UEBA risk score exceeds high-risk threshold",
+        "Threat-hunting confidence is high",
+        "High or critical alarm references this event"
+      ],
+      "recommended_human_actions": [
+        "Validate whether the user context explains the activity.",
+        "Review adjacent Salesforce audit events for the same user and IP.",
+        "Check endpoint and identity-provider telemetry.",
+        "Decide whether containment, exception approval, or dismissal is appropriate."
+      ],
+      "review_id": "review_api_40f33f928c77_013",
+      "severity": "critical",
+      "threat_hunt": {
+        "agent": "threat_hunting_agent",
+        "attack_stage": "initial_access",
+        "confidence": "high",
+        "event_id": "evt_test_00565",
+        "evidence": [
+          {
+            "details": {
+              "circular_hour_distance": 6.11,
+              "normal_mean_hour": 13.89,
+              "value": 20
+            },
+            "reason": "login_hour_deviation"
+          },
+          {
+            "details": {
+              "ratio": 1.1,
+              "threshold": 0.076474,
+              "value": 0.083818
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Austin",
+                "Boston",
+                "New York",
+                "San Francisco"
+              ],
+              "value": "Singapore"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "SG"
+            },
+            "reason": "unusual_country"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "laptop",
+                "mobile"
+              ],
+              "value": "desktop"
+            },
+            "reason": "unusual_device_type"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "iOS",
+                "macOS"
+              ],
+              "value": "Windows"
+            },
+            "reason": "unusual_os"
+          }
+        ],
+        "hypothesis": "Possible credential misuse or suspicious login context",
+        "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+        "user_id": "u_sales_traveler_002"
+      },
+      "ueba_finding": {
+        "agent": "ueba_agent",
+        "event_id": "evt_test_00565",
+        "evidence": [
+          {
+            "details": {
+              "circular_hour_distance": 6.11,
+              "normal_mean_hour": 13.89,
+              "value": 20
+            },
+            "reason": "login_hour_deviation"
+          },
+          {
+            "details": {
+              "ratio": 1.1,
+              "threshold": 0.076474,
+              "value": 0.083818
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Austin",
+                "Boston",
+                "New York",
+                "San Francisco"
+              ],
+              "value": "Singapore"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "SG"
+            },
+            "reason": "unusual_country"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "laptop",
+                "mobile"
+              ],
+              "value": "desktop"
+            },
+            "reason": "unusual_device_type"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "iOS",
+                "macOS"
+              ],
+              "value": "Windows"
+            },
+            "reason": "unusual_os"
+          }
+        ],
+        "finding_type": "unusual_authentication",
+        "persona": "traveling_sales_rep",
+        "recommended_action": "Send to threat-hunting agent for hypothesis generation.",
+        "risk_score": 100.0,
+        "user_id": "u_sales_traveler_002"
+      },
+      "user_id": "u_sales_traveler_002"
+    },
+    {
+      "allowed_reviewer_decisions": [
+        "approve_final_report",
+        "request_more_evidence",
+        "send_back_to_agent",
+        "escalate_incident",
+        "dismiss_false_positive"
+      ],
+      "compliance_result": {
+        "agent": "security_compliance_agent",
+        "control_description": "Unusual country or public IP access requires analyst review.",
+        "control_id": "SF-ACCESS-001",
+        "event_id": "evt_test_00808",
+        "evidence": [
+          "No direct compliance violation, but UEBA marked behavior as interesting"
+        ],
+        "recommended_action": "Create human review item before closure.",
+        "status": "needs_review",
+        "user_id": "u_nightowl_noah_003"
+      },
+      "event_id": "evt_test_00808",
+      "persona": "nightowl_engineer",
+      "reason": [
+        "UEBA risk score exceeds high-risk threshold",
+        "High or critical alarm references this event"
+      ],
+      "recommended_human_actions": [
+        "Validate whether the user context explains the activity.",
+        "Review adjacent Salesforce audit events for the same user and IP.",
+        "Check endpoint and identity-provider telemetry.",
+        "Decide whether containment, exception approval, or dismissal is appropriate."
+      ],
+      "review_id": "review_api_40f33f928c77_014",
+      "severity": "high",
+      "threat_hunt": {
+        "agent": "threat_hunting_agent",
+        "attack_stage": "collection_or_exfiltration",
+        "confidence": "medium",
+        "event_id": "evt_test_00808",
+        "evidence": [
+          {
+            "details": {
+              "normal_mean": 296.39,
+              "normal_p95": 770.85,
+              "normal_std": 252.02,
+              "value": 1472.0,
+              "z_score": 4.66
+            },
+            "reason": "high_records_accessed"
+          },
+          {
+            "details": {
+              "circular_hour_distance": 7.57,
+              "normal_mean_hour": 11.57,
+              "value": 4
+            },
+            "reason": "login_hour_deviation"
+          }
+        ],
+        "hypothesis": "Possible data staging or exfiltration through Salesforce export activity",
+        "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+        "user_id": "u_nightowl_noah_003"
+      },
+      "ueba_finding": {
+        "agent": "ueba_agent",
+        "event_id": "evt_test_00808",
+        "evidence": [
+          {
+            "details": {
+              "normal_mean": 296.39,
+              "normal_p95": 770.85,
+              "normal_std": 252.02,
+              "value": 1472.0,
+              "z_score": 4.66
+            },
+            "reason": "high_records_accessed"
+          },
+          {
+            "details": {
+              "circular_hour_distance": 7.57,
+              "normal_mean_hour": 11.57,
+              "value": 4
+            },
+            "reason": "login_hour_deviation"
+          }
+        ],
+        "finding_type": "behavioral_anomaly",
+        "persona": "nightowl_engineer",
+        "recommended_action": "Send to threat-hunting agent for hypothesis generation.",
+        "risk_score": 80.0,
+        "user_id": "u_nightowl_noah_003"
+      },
+      "user_id": "u_nightowl_noah_003"
+    },
+    {
+      "allowed_reviewer_decisions": [
+        "approve_final_report",
+        "request_more_evidence",
+        "send_back_to_agent",
+        "escalate_incident",
+        "dismiss_false_positive"
+      ],
+      "compliance_result": {
+        "agent": "security_compliance_agent",
+        "control_description": "Weak TLS or suspicious OAuth app usage is not allowed without approval.",
+        "control_id": "SF-AUTH-002",
+        "event_id": "evt_test_00843",
+        "evidence": [
+          "Authentication risk: tls=TLS1.0 domain=mycompany.my.salesforce.com"
+        ],
+        "recommended_action": "Create human review item before closure.",
+        "status": "non_compliant",
+        "user_id": "u_nightowl_noah_003"
+      },
+      "event_id": "evt_test_00843",
+      "persona": "nightowl_engineer",
+      "reason": [
+        "UEBA risk score exceeds high-risk threshold",
+        "Threat-hunting confidence is high",
+        "Compliance agent found non-compliance",
+        "High or critical alarm references this event"
+      ],
+      "recommended_human_actions": [
+        "Validate whether the user context explains the activity.",
+        "Review adjacent Salesforce audit events for the same user and IP.",
+        "Check endpoint and identity-provider telemetry.",
+        "Decide whether containment, exception approval, or dismissal is appropriate."
+      ],
+      "review_id": "review_api_40f33f928c77_015",
+      "severity": "critical",
+      "threat_hunt": {
+        "agent": "threat_hunting_agent",
+        "attack_stage": "initial_access",
+        "confidence": "high",
+        "event_id": "evt_test_00843",
+        "evidence": [
+          {
+            "details": {
+              "circular_hour_distance": 9.57,
+              "normal_mean_hour": 11.57,
+              "value": 2
+            },
+            "reason": "login_hour_deviation"
+          },
+          {
+            "details": {
+              "ratio": 1.19,
+              "threshold": 0.076474,
+              "value": 0.090727
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Seattle"
+              ],
+              "value": "Moscow"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "RU"
+            },
+            "reason": "unusual_country"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "TLS1.2",
+                "TLS1.3"
+              ],
+              "value": "TLS1.0"
+            },
+            "reason": "unusual_tls_version"
+          }
+        ],
+        "hypothesis": "Possible credential misuse or suspicious login context",
+        "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+        "user_id": "u_nightowl_noah_003"
+      },
+      "ueba_finding": {
+        "agent": "ueba_agent",
+        "event_id": "evt_test_00843",
+        "evidence": [
+          {
+            "details": {
+              "circular_hour_distance": 9.57,
+              "normal_mean_hour": 11.57,
+              "value": 2
+            },
+            "reason": "login_hour_deviation"
+          },
+          {
+            "details": {
+              "ratio": 1.19,
+              "threshold": 0.076474,
+              "value": 0.090727
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Seattle"
+              ],
+              "value": "Moscow"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "RU"
+            },
+            "reason": "unusual_country"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "TLS1.2",
+                "TLS1.3"
+              ],
+              "value": "TLS1.0"
+            },
+            "reason": "unusual_tls_version"
+          }
+        ],
+        "finding_type": "unusual_authentication",
+        "persona": "nightowl_engineer",
+        "recommended_action": "Send to threat-hunting agent for hypothesis generation.",
+        "risk_score": 100.0,
+        "user_id": "u_nightowl_noah_003"
+      },
+      "user_id": "u_nightowl_noah_003"
+    },
+    {
+      "allowed_reviewer_decisions": [
+        "approve_final_report",
+        "request_more_evidence",
+        "send_back_to_agent",
+        "escalate_incident",
+        "dismiss_false_positive"
+      ],
+      "compliance_result": {
+        "agent": "security_compliance_agent",
+        "control_description": "Weak TLS or suspicious OAuth app usage is not allowed without approval.",
+        "control_id": "SF-AUTH-002",
+        "event_id": "evt_test_00844",
+        "evidence": [
+          "Authentication risk: tls=TLS1.2 domain=evil-connected-app.example"
+        ],
+        "recommended_action": "Create human review item before closure.",
+        "status": "non_compliant",
+        "user_id": "u_nightowl_noah_003"
+      },
+      "event_id": "evt_test_00844",
+      "persona": "nightowl_engineer",
+      "reason": [
+        "UEBA risk score exceeds high-risk threshold",
+        "Threat-hunting confidence is high",
+        "Compliance agent found non-compliance",
+        "High or critical alarm references this event"
+      ],
+      "recommended_human_actions": [
+        "Validate whether the user context explains the activity.",
+        "Review adjacent Salesforce audit events for the same user and IP.",
+        "Check endpoint and identity-provider telemetry.",
+        "Decide whether containment, exception approval, or dismissal is appropriate."
+      ],
+      "review_id": "review_api_40f33f928c77_016",
+      "severity": "critical",
+      "threat_hunt": {
+        "agent": "threat_hunting_agent",
+        "attack_stage": "credential_access",
+        "confidence": "high",
+        "event_id": "evt_test_00844",
+        "evidence": [
+          {
+            "details": {
+              "circular_hour_distance": 9.57,
+              "normal_mean_hour": 11.57,
+              "value": 2
+            },
+            "reason": "login_hour_deviation"
+          },
+          {
+            "details": {
+              "ratio": 1.52,
+              "threshold": 0.076474,
+              "value": 0.116158
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "45.83.12.44"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Seattle"
+              ],
+              "value": "Unknown"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "Unknown"
+            },
+            "reason": "unusual_country"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "login.salesforce.com",
+                "mycompany.my.salesforce.com"
+              ],
+              "value": "evil-connected-app.example"
+            },
+            "reason": "unusual_domain_name"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Password",
+                "SSO"
+              ],
+              "value": "OAuth"
+            },
+            "reason": "unusual_login_type"
+          }
+        ],
+        "hypothesis": "Possible malicious OAuth consent or connected-app abuse",
+        "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+        "user_id": "u_nightowl_noah_003"
+      },
+      "ueba_finding": {
+        "agent": "ueba_agent",
+        "event_id": "evt_test_00844",
+        "evidence": [
+          {
+            "details": {
+              "circular_hour_distance": 9.57,
+              "normal_mean_hour": 11.57,
+              "value": 2
+            },
+            "reason": "login_hour_deviation"
+          },
+          {
+            "details": {
+              "ratio": 1.52,
+              "threshold": 0.076474,
+              "value": 0.116158
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "45.83.12.44"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Seattle"
+              ],
+              "value": "Unknown"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "Unknown"
+            },
+            "reason": "unusual_country"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "login.salesforce.com",
+                "mycompany.my.salesforce.com"
+              ],
+              "value": "evil-connected-app.example"
+            },
+            "reason": "unusual_domain_name"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Password",
+                "SSO"
+              ],
+              "value": "OAuth"
+            },
+            "reason": "unusual_login_type"
+          }
+        ],
+        "finding_type": "unusual_authentication",
+        "persona": "nightowl_engineer",
+        "recommended_action": "Send to threat-hunting agent for hypothesis generation.",
+        "risk_score": 100.0,
+        "user_id": "u_nightowl_noah_003"
+      },
+      "user_id": "u_nightowl_noah_003"
+    },
+    {
+      "allowed_reviewer_decisions": [
+        "approve_final_report",
+        "request_more_evidence",
+        "send_back_to_agent",
+        "escalate_incident",
+        "dismiss_false_positive"
+      ],
+      "compliance_result": {
+        "agent": "security_compliance_agent",
+        "control_description": "Weak TLS or suspicious OAuth app usage is not allowed without approval.",
+        "control_id": "SF-AUTH-002",
+        "event_id": "evt_test_00846",
+        "evidence": [
+          "Authentication risk: tls=TLS1.0 domain=mycompany.my.salesforce.com"
+        ],
+        "recommended_action": "Create human review item before closure.",
+        "status": "non_compliant",
+        "user_id": "u_nightowl_noah_003"
+      },
+      "event_id": "evt_test_00846",
+      "persona": "nightowl_engineer",
+      "reason": [
+        "UEBA risk score exceeds high-risk threshold",
+        "Threat-hunting confidence is high",
+        "Compliance agent found non-compliance",
+        "High or critical alarm references this event"
+      ],
+      "recommended_human_actions": [
+        "Validate whether the user context explains the activity.",
+        "Review adjacent Salesforce audit events for the same user and IP.",
+        "Check endpoint and identity-provider telemetry.",
+        "Decide whether containment, exception approval, or dismissal is appropriate."
+      ],
+      "review_id": "review_api_40f33f928c77_017",
+      "severity": "critical",
+      "threat_hunt": {
+        "agent": "threat_hunting_agent",
+        "attack_stage": "initial_access",
+        "confidence": "high",
+        "event_id": "evt_test_00846",
+        "evidence": [
+          {
+            "details": {
+              "circular_hour_distance": 11.43,
+              "normal_mean_hour": 11.57,
+              "value": 23
+            },
+            "reason": "login_hour_deviation"
+          },
+          {
+            "details": {
+              "ratio": 1.46,
+              "threshold": 0.076474,
+              "value": 0.111527
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "185.199.108.77"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Seattle"
+              ],
+              "value": "Moscow"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "RU"
+            },
+            "reason": "unusual_country"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "TLS1.2",
+                "TLS1.3"
+              ],
+              "value": "TLS1.0"
+            },
+            "reason": "unusual_tls_version"
+          }
+        ],
+        "hypothesis": "Possible credential misuse or suspicious login context",
+        "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+        "user_id": "u_nightowl_noah_003"
+      },
+      "ueba_finding": {
+        "agent": "ueba_agent",
+        "event_id": "evt_test_00846",
+        "evidence": [
+          {
+            "details": {
+              "circular_hour_distance": 11.43,
+              "normal_mean_hour": 11.57,
+              "value": 23
+            },
+            "reason": "login_hour_deviation"
+          },
+          {
+            "details": {
+              "ratio": 1.46,
+              "threshold": 0.076474,
+              "value": 0.111527
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "185.199.108.77"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Seattle"
+              ],
+              "value": "Moscow"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "RU"
+            },
+            "reason": "unusual_country"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "TLS1.2",
+                "TLS1.3"
+              ],
+              "value": "TLS1.0"
+            },
+            "reason": "unusual_tls_version"
+          }
+        ],
+        "finding_type": "unusual_authentication",
+        "persona": "nightowl_engineer",
+        "recommended_action": "Send to threat-hunting agent for hypothesis generation.",
+        "risk_score": 100.0,
+        "user_id": "u_nightowl_noah_003"
+      },
+      "user_id": "u_nightowl_noah_003"
+    },
+    {
+      "allowed_reviewer_decisions": [
+        "approve_final_report",
+        "request_more_evidence",
+        "send_back_to_agent",
+        "escalate_incident",
+        "dismiss_false_positive"
+      ],
+      "compliance_result": {
+        "agent": "security_compliance_agent",
+        "control_description": "Weak TLS or suspicious OAuth app usage is not allowed without approval.",
+        "control_id": "SF-AUTH-002",
+        "event_id": "evt_test_00847",
+        "evidence": [
+          "Authentication risk: tls=TLS1.2 domain=evil-connected-app.example"
+        ],
+        "recommended_action": "Create human review item before closure.",
+        "status": "non_compliant",
+        "user_id": "u_nightowl_noah_003"
+      },
+      "event_id": "evt_test_00847",
+      "persona": "nightowl_engineer",
+      "reason": [
+        "UEBA risk score exceeds high-risk threshold",
+        "Threat-hunting confidence is high",
+        "Compliance agent found non-compliance",
+        "High or critical alarm references this event"
+      ],
+      "recommended_human_actions": [
+        "Validate whether the user context explains the activity.",
+        "Review adjacent Salesforce audit events for the same user and IP.",
+        "Check endpoint and identity-provider telemetry.",
+        "Decide whether containment, exception approval, or dismissal is appropriate."
+      ],
+      "review_id": "review_api_40f33f928c77_018",
+      "severity": "critical",
+      "threat_hunt": {
+        "agent": "threat_hunting_agent",
+        "attack_stage": "credential_access",
+        "confidence": "high",
+        "event_id": "evt_test_00847",
+        "evidence": [
+          {
+            "details": {
+              "circular_hour_distance": 8.43,
+              "normal_mean_hour": 11.57,
+              "value": 20
+            },
+            "reason": "login_hour_deviation"
+          },
+          {
+            "details": {
+              "ratio": 1.81,
+              "threshold": 0.076474,
+              "value": 0.138311
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "45.83.12.44"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Seattle"
+              ],
+              "value": "Unknown"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "Unknown"
+            },
+            "reason": "unusual_country"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "login.salesforce.com",
+                "mycompany.my.salesforce.com"
+              ],
+              "value": "evil-connected-app.example"
+            },
+            "reason": "unusual_domain_name"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Password",
+                "SSO"
+              ],
+              "value": "OAuth"
+            },
+            "reason": "unusual_login_type"
+          }
+        ],
+        "hypothesis": "Possible malicious OAuth consent or connected-app abuse",
+        "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+        "user_id": "u_nightowl_noah_003"
+      },
+      "ueba_finding": {
+        "agent": "ueba_agent",
+        "event_id": "evt_test_00847",
+        "evidence": [
+          {
+            "details": {
+              "circular_hour_distance": 8.43,
+              "normal_mean_hour": 11.57,
+              "value": 20
+            },
+            "reason": "login_hour_deviation"
+          },
+          {
+            "details": {
+              "ratio": 1.81,
+              "threshold": 0.076474,
+              "value": 0.138311
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "45.83.12.44"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Seattle"
+              ],
+              "value": "Unknown"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "Unknown"
+            },
+            "reason": "unusual_country"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "login.salesforce.com",
+                "mycompany.my.salesforce.com"
+              ],
+              "value": "evil-connected-app.example"
+            },
+            "reason": "unusual_domain_name"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Password",
+                "SSO"
+              ],
+              "value": "OAuth"
+            },
+            "reason": "unusual_login_type"
+          }
+        ],
+        "finding_type": "unusual_authentication",
+        "persona": "nightowl_engineer",
+        "recommended_action": "Send to threat-hunting agent for hypothesis generation.",
+        "risk_score": 100.0,
+        "user_id": "u_nightowl_noah_003"
+      },
+      "user_id": "u_nightowl_noah_003"
+    },
+    {
+      "allowed_reviewer_decisions": [
+        "approve_final_report",
+        "request_more_evidence",
+        "send_back_to_agent",
+        "escalate_incident",
+        "dismiss_false_positive"
+      ],
+      "compliance_result": {
+        "agent": "security_compliance_agent",
+        "control_description": "Weak TLS or suspicious OAuth app usage is not allowed without approval.",
+        "control_id": "SF-AUTH-002",
+        "event_id": "evt_test_00849",
+        "evidence": [
+          "Authentication risk: tls=TLS1.0 domain=login.salesforce.com"
+        ],
+        "recommended_action": "Create human review item before closure.",
+        "status": "non_compliant",
+        "user_id": "u_nightowl_noah_003"
+      },
+      "event_id": "evt_test_00849",
+      "persona": "nightowl_engineer",
+      "reason": [
+        "UEBA risk score exceeds high-risk threshold",
+        "Threat-hunting confidence is high",
+        "Compliance agent found non-compliance",
+        "High or critical alarm references this event"
+      ],
+      "recommended_human_actions": [
+        "Validate whether the user context explains the activity.",
+        "Review adjacent Salesforce audit events for the same user and IP.",
+        "Check endpoint and identity-provider telemetry.",
+        "Decide whether containment, exception approval, or dismissal is appropriate."
+      ],
+      "review_id": "review_api_40f33f928c77_019",
+      "severity": "critical",
+      "threat_hunt": {
+        "agent": "threat_hunting_agent",
+        "attack_stage": "initial_access",
+        "confidence": "high",
+        "event_id": "evt_test_00849",
+        "evidence": [
+          {
+            "details": {
+              "circular_hour_distance": 11.57,
+              "normal_mean_hour": 11.57,
+              "value": 0
+            },
+            "reason": "login_hour_deviation"
+          },
+          {
+            "details": {
+              "ratio": 1.36,
+              "threshold": 0.076474,
+              "value": 0.104188
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "91.207.174.9"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Seattle"
+              ],
+              "value": "Moscow"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "RU"
+            },
+            "reason": "unusual_country"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "TLS1.2",
+                "TLS1.3"
+              ],
+              "value": "TLS1.0"
+            },
+            "reason": "unusual_tls_version"
+          }
+        ],
+        "hypothesis": "Possible credential misuse or suspicious login context",
+        "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+        "user_id": "u_nightowl_noah_003"
+      },
+      "ueba_finding": {
+        "agent": "ueba_agent",
+        "event_id": "evt_test_00849",
+        "evidence": [
+          {
+            "details": {
+              "circular_hour_distance": 11.57,
+              "normal_mean_hour": 11.57,
+              "value": 0
+            },
+            "reason": "login_hour_deviation"
+          },
+          {
+            "details": {
+              "ratio": 1.36,
+              "threshold": 0.076474,
+              "value": 0.104188
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "91.207.174.9"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Seattle"
+              ],
+              "value": "Moscow"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "RU"
+            },
+            "reason": "unusual_country"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "TLS1.2",
+                "TLS1.3"
+              ],
+              "value": "TLS1.0"
+            },
+            "reason": "unusual_tls_version"
+          }
+        ],
+        "finding_type": "unusual_authentication",
+        "persona": "nightowl_engineer",
+        "recommended_action": "Send to threat-hunting agent for hypothesis generation.",
+        "risk_score": 100.0,
+        "user_id": "u_nightowl_noah_003"
+      },
+      "user_id": "u_nightowl_noah_003"
+    },
+    {
+      "allowed_reviewer_decisions": [
+        "approve_final_report",
+        "request_more_evidence",
+        "send_back_to_agent",
+        "escalate_incident",
+        "dismiss_false_positive"
+      ],
+      "compliance_result": {
+        "agent": "security_compliance_agent",
+        "control_description": "Large exports require business justification and monitoring.",
+        "control_id": "SF-DATA-003",
+        "event_id": "evt_test_01125",
+        "evidence": [
+          "Data access/export volume: records_accessed=65000"
+        ],
+        "recommended_action": "Create human review item before closure.",
+        "status": "non_compliant",
+        "user_id": "u_complex_query_004"
+      },
+      "event_id": "evt_test_01125",
+      "persona": "complex_query_engineer",
+      "reason": [
+        "UEBA risk score exceeds high-risk threshold",
+        "Threat-hunting confidence is high",
+        "Compliance agent found non-compliance",
+        "High or critical alarm references this event"
+      ],
+      "recommended_human_actions": [
+        "Validate whether the user context explains the activity.",
+        "Review adjacent Salesforce audit events for the same user and IP.",
+        "Check endpoint and identity-provider telemetry.",
+        "Decide whether containment, exception approval, or dismissal is appropriate."
+      ],
+      "review_id": "review_api_40f33f928c77_020",
+      "severity": "critical",
+      "threat_hunt": {
+        "agent": "threat_hunting_agent",
+        "attack_stage": "collection_or_exfiltration",
+        "confidence": "high",
+        "event_id": "evt_test_01125",
+        "evidence": [
+          {
+            "details": {
+              "normal_mean": 1510.46,
+              "normal_p95": 3080.2,
+              "normal_std": 914.88,
+              "value": 65000.0,
+              "z_score": 69.4
+            },
+            "reason": "high_records_accessed"
+          },
+          {
+            "details": {
+              "ratio": 1135.81,
+              "threshold": 0.076474,
+              "value": 86.859947
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "185.199.108.77"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          }
+        ],
+        "hypothesis": "Possible data staging or exfiltration through Salesforce export activity",
+        "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+        "user_id": "u_complex_query_004"
+      },
+      "ueba_finding": {
+        "agent": "ueba_agent",
+        "event_id": "evt_test_01125",
+        "evidence": [
+          {
+            "details": {
+              "normal_mean": 1510.46,
+              "normal_p95": 3080.2,
+              "normal_std": 914.88,
+              "value": 65000.0,
+              "z_score": 69.4
+            },
+            "reason": "high_records_accessed"
+          },
+          {
+            "details": {
+              "ratio": 1135.81,
+              "threshold": 0.076474,
+              "value": 86.859947
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "185.199.108.77"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          }
+        ],
+        "finding_type": "unusual_data_access_or_export",
+        "persona": "complex_query_engineer",
+        "recommended_action": "Send to threat-hunting agent for hypothesis generation.",
+        "risk_score": 100.0,
+        "user_id": "u_complex_query_004"
+      },
+      "user_id": "u_complex_query_004"
+    },
+    {
+      "allowed_reviewer_decisions": [
+        "approve_final_report",
+        "request_more_evidence",
+        "send_back_to_agent",
+        "escalate_incident",
+        "dismiss_false_positive"
+      ],
+      "compliance_result": {
+        "agent": "security_compliance_agent",
+        "control_description": "Large exports require business justification and monitoring.",
+        "control_id": "SF-DATA-003",
+        "event_id": "evt_test_01126",
+        "evidence": [
+          "Data access/export volume: records_accessed=18000"
+        ],
+        "recommended_action": "Create human review item before closure.",
+        "status": "non_compliant",
+        "user_id": "u_complex_query_004"
+      },
+      "event_id": "evt_test_01126",
+      "persona": "complex_query_engineer",
+      "reason": [
+        "UEBA risk score exceeds high-risk threshold",
+        "Threat-hunting confidence is high",
+        "Compliance agent found non-compliance",
+        "High or critical alarm references this event"
+      ],
+      "recommended_human_actions": [
+        "Validate whether the user context explains the activity.",
+        "Review adjacent Salesforce audit events for the same user and IP.",
+        "Check endpoint and identity-provider telemetry.",
+        "Decide whether containment, exception approval, or dismissal is appropriate."
+      ],
+      "review_id": "review_api_40f33f928c77_021",
+      "severity": "critical",
+      "threat_hunt": {
+        "agent": "threat_hunting_agent",
+        "attack_stage": "collection_or_exfiltration",
+        "confidence": "high",
+        "event_id": "evt_test_01126",
+        "evidence": [
+          {
+            "details": {
+              "normal_mean": 1510.46,
+              "normal_p95": 3080.2,
+              "normal_std": 914.88,
+              "value": 18000.0,
+              "z_score": 18.02
+            },
+            "reason": "high_records_accessed"
+          },
+          {
+            "details": {
+              "ratio": 69.32,
+              "threshold": 0.076474,
+              "value": 5.301136
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Denver"
+              ],
+              "value": "Sao Paulo"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "BR"
+            },
+            "reason": "unusual_country"
+          }
+        ],
+        "hypothesis": "Possible data staging or exfiltration through Salesforce export activity",
+        "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+        "user_id": "u_complex_query_004"
+      },
+      "ueba_finding": {
+        "agent": "ueba_agent",
+        "event_id": "evt_test_01126",
+        "evidence": [
+          {
+            "details": {
+              "normal_mean": 1510.46,
+              "normal_p95": 3080.2,
+              "normal_std": 914.88,
+              "value": 18000.0,
+              "z_score": 18.02
+            },
+            "reason": "high_records_accessed"
+          },
+          {
+            "details": {
+              "ratio": 69.32,
+              "threshold": 0.076474,
+              "value": 5.301136
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Denver"
+              ],
+              "value": "Sao Paulo"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "BR"
+            },
+            "reason": "unusual_country"
+          }
+        ],
+        "finding_type": "behavioral_anomaly",
+        "persona": "complex_query_engineer",
+        "recommended_action": "Send to threat-hunting agent for hypothesis generation.",
+        "risk_score": 100.0,
+        "user_id": "u_complex_query_004"
+      },
+      "user_id": "u_complex_query_004"
+    },
+    {
+      "allowed_reviewer_decisions": [
+        "approve_final_report",
+        "request_more_evidence",
+        "send_back_to_agent",
+        "escalate_incident",
+        "dismiss_false_positive"
+      ],
+      "compliance_result": {
+        "agent": "security_compliance_agent",
+        "control_description": "Large exports require business justification and monitoring.",
+        "control_id": "SF-DATA-003",
+        "event_id": "evt_test_01128",
+        "evidence": [
+          "Data access/export volume: records_accessed=65000"
+        ],
+        "recommended_action": "Create human review item before closure.",
+        "status": "non_compliant",
+        "user_id": "u_complex_query_004"
+      },
+      "event_id": "evt_test_01128",
+      "persona": "complex_query_engineer",
+      "reason": [
+        "UEBA risk score exceeds high-risk threshold",
+        "Threat-hunting confidence is high",
+        "Compliance agent found non-compliance",
+        "High or critical alarm references this event"
+      ],
+      "recommended_human_actions": [
+        "Validate whether the user context explains the activity.",
+        "Review adjacent Salesforce audit events for the same user and IP.",
+        "Check endpoint and identity-provider telemetry.",
+        "Decide whether containment, exception approval, or dismissal is appropriate."
+      ],
+      "review_id": "review_api_40f33f928c77_022",
+      "severity": "critical",
+      "threat_hunt": {
+        "agent": "threat_hunting_agent",
+        "attack_stage": "collection_or_exfiltration",
+        "confidence": "high",
+        "event_id": "evt_test_01128",
+        "evidence": [
+          {
+            "details": {
+              "normal_mean": 1510.46,
+              "normal_p95": 3080.2,
+              "normal_std": 914.88,
+              "value": 65000.0,
+              "z_score": 69.4
+            },
+            "reason": "high_records_accessed"
+          },
+          {
+            "details": {
+              "ratio": 1135.23,
+              "threshold": 0.076474,
+              "value": 86.815804
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "91.207.174.9"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          }
+        ],
+        "hypothesis": "Possible data staging or exfiltration through Salesforce export activity",
+        "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+        "user_id": "u_complex_query_004"
+      },
+      "ueba_finding": {
+        "agent": "ueba_agent",
+        "event_id": "evt_test_01128",
+        "evidence": [
+          {
+            "details": {
+              "normal_mean": 1510.46,
+              "normal_p95": 3080.2,
+              "normal_std": 914.88,
+              "value": 65000.0,
+              "z_score": 69.4
+            },
+            "reason": "high_records_accessed"
+          },
+          {
+            "details": {
+              "ratio": 1135.23,
+              "threshold": 0.076474,
+              "value": 86.815804
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "91.207.174.9"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          }
+        ],
+        "finding_type": "unusual_data_access_or_export",
+        "persona": "complex_query_engineer",
+        "recommended_action": "Send to threat-hunting agent for hypothesis generation.",
+        "risk_score": 100.0,
+        "user_id": "u_complex_query_004"
+      },
+      "user_id": "u_complex_query_004"
+    },
+    {
+      "allowed_reviewer_decisions": [
+        "approve_final_report",
+        "request_more_evidence",
+        "send_back_to_agent",
+        "escalate_incident",
+        "dismiss_false_positive"
+      ],
+      "compliance_result": {
+        "agent": "security_compliance_agent",
+        "control_description": "Large exports require business justification and monitoring.",
+        "control_id": "SF-DATA-003",
+        "event_id": "evt_test_01129",
+        "evidence": [
+          "Data access/export volume: records_accessed=18000"
+        ],
+        "recommended_action": "Create human review item before closure.",
+        "status": "non_compliant",
+        "user_id": "u_complex_query_004"
+      },
+      "event_id": "evt_test_01129",
+      "persona": "complex_query_engineer",
+      "reason": [
+        "UEBA risk score exceeds high-risk threshold",
+        "Threat-hunting confidence is high",
+        "Compliance agent found non-compliance",
+        "High or critical alarm references this event"
+      ],
+      "recommended_human_actions": [
+        "Validate whether the user context explains the activity.",
+        "Review adjacent Salesforce audit events for the same user and IP.",
+        "Check endpoint and identity-provider telemetry.",
+        "Decide whether containment, exception approval, or dismissal is appropriate."
+      ],
+      "review_id": "review_api_40f33f928c77_023",
+      "severity": "critical",
+      "threat_hunt": {
+        "agent": "threat_hunting_agent",
+        "attack_stage": "collection_or_exfiltration",
+        "confidence": "high",
+        "event_id": "evt_test_01129",
+        "evidence": [
+          {
+            "details": {
+              "normal_mean": 1510.46,
+              "normal_p95": 3080.2,
+              "normal_std": 914.88,
+              "value": 18000.0,
+              "z_score": 18.02
+            },
+            "reason": "high_records_accessed"
+          },
+          {
+            "details": {
+              "ratio": 68.92,
+              "threshold": 0.076474,
+              "value": 5.270309
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "45.83.12.44"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Denver"
+              ],
+              "value": "Sao Paulo"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "BR"
+            },
+            "reason": "unusual_country"
+          }
+        ],
+        "hypothesis": "Possible data staging or exfiltration through Salesforce export activity",
+        "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+        "user_id": "u_complex_query_004"
+      },
+      "ueba_finding": {
+        "agent": "ueba_agent",
+        "event_id": "evt_test_01129",
+        "evidence": [
+          {
+            "details": {
+              "normal_mean": 1510.46,
+              "normal_p95": 3080.2,
+              "normal_std": 914.88,
+              "value": 18000.0,
+              "z_score": 18.02
+            },
+            "reason": "high_records_accessed"
+          },
+          {
+            "details": {
+              "ratio": 68.92,
+              "threshold": 0.076474,
+              "value": 5.270309
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "45.83.12.44"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Denver"
+              ],
+              "value": "Sao Paulo"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "BR"
+            },
+            "reason": "unusual_country"
+          }
+        ],
+        "finding_type": "behavioral_anomaly",
+        "persona": "complex_query_engineer",
+        "recommended_action": "Send to threat-hunting agent for hypothesis generation.",
+        "risk_score": 100.0,
+        "user_id": "u_complex_query_004"
+      },
+      "user_id": "u_complex_query_004"
+    },
+    {
+      "allowed_reviewer_decisions": [
+        "approve_final_report",
+        "request_more_evidence",
+        "send_back_to_agent",
+        "escalate_incident",
+        "dismiss_false_positive"
+      ],
+      "compliance_result": {
+        "agent": "security_compliance_agent",
+        "control_description": "Large exports require business justification and monitoring.",
+        "control_id": "SF-DATA-003",
+        "event_id": "evt_test_01131",
+        "evidence": [
+          "Data access/export volume: records_accessed=65000"
+        ],
+        "recommended_action": "Create human review item before closure.",
+        "status": "non_compliant",
+        "user_id": "u_complex_query_004"
+      },
+      "event_id": "evt_test_01131",
+      "persona": "complex_query_engineer",
+      "reason": [
+        "UEBA risk score exceeds high-risk threshold",
+        "Threat-hunting confidence is high",
+        "Compliance agent found non-compliance",
+        "High or critical alarm references this event"
+      ],
+      "recommended_human_actions": [
+        "Validate whether the user context explains the activity.",
+        "Review adjacent Salesforce audit events for the same user and IP.",
+        "Check endpoint and identity-provider telemetry.",
+        "Decide whether containment, exception approval, or dismissal is appropriate."
+      ],
+      "review_id": "review_api_40f33f928c77_024",
+      "severity": "critical",
+      "threat_hunt": {
+        "agent": "threat_hunting_agent",
+        "attack_stage": "collection_or_exfiltration",
+        "confidence": "high",
+        "event_id": "evt_test_01131",
+        "evidence": [
+          {
+            "details": {
+              "normal_mean": 1510.46,
+              "normal_p95": 3080.2,
+              "normal_std": 914.88,
+              "value": 65000.0,
+              "z_score": 69.4
+            },
+            "reason": "high_records_accessed"
+          },
+          {
+            "details": {
+              "ratio": 1138.12,
+              "threshold": 0.076474,
+              "value": 87.036552
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "45.83.12.44"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          }
+        ],
+        "hypothesis": "Possible data staging or exfiltration through Salesforce export activity",
+        "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+        "user_id": "u_complex_query_004"
+      },
+      "ueba_finding": {
+        "agent": "ueba_agent",
+        "event_id": "evt_test_01131",
+        "evidence": [
+          {
+            "details": {
+              "normal_mean": 1510.46,
+              "normal_p95": 3080.2,
+              "normal_std": 914.88,
+              "value": 65000.0,
+              "z_score": 69.4
+            },
+            "reason": "high_records_accessed"
+          },
+          {
+            "details": {
+              "ratio": 1138.12,
+              "threshold": 0.076474,
+              "value": 87.036552
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "45.83.12.44"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          }
+        ],
+        "finding_type": "unusual_data_access_or_export",
+        "persona": "complex_query_engineer",
+        "recommended_action": "Send to threat-hunting agent for hypothesis generation.",
+        "risk_score": 100.0,
+        "user_id": "u_complex_query_004"
+      },
+      "user_id": "u_complex_query_004"
+    },
+    {
+      "allowed_reviewer_decisions": [
+        "approve_final_report",
+        "request_more_evidence",
+        "send_back_to_agent",
+        "escalate_incident",
+        "dismiss_false_positive"
+      ],
+      "compliance_result": {
+        "agent": "security_compliance_agent",
+        "control_description": "Large exports require business justification and monitoring.",
+        "control_id": "SF-DATA-003",
+        "event_id": "evt_test_01132",
+        "evidence": [
+          "Data access/export volume: records_accessed=18000"
+        ],
+        "recommended_action": "Create human review item before closure.",
+        "status": "non_compliant",
+        "user_id": "u_complex_query_004"
+      },
+      "event_id": "evt_test_01132",
+      "persona": "complex_query_engineer",
+      "reason": [
+        "UEBA risk score exceeds high-risk threshold",
+        "Threat-hunting confidence is high",
+        "Compliance agent found non-compliance",
+        "High or critical alarm references this event"
+      ],
+      "recommended_human_actions": [
+        "Validate whether the user context explains the activity.",
+        "Review adjacent Salesforce audit events for the same user and IP.",
+        "Check endpoint and identity-provider telemetry.",
+        "Decide whether containment, exception approval, or dismissal is appropriate."
+      ],
+      "review_id": "review_api_40f33f928c77_025",
+      "severity": "critical",
+      "threat_hunt": {
+        "agent": "threat_hunting_agent",
+        "attack_stage": "collection_or_exfiltration",
+        "confidence": "high",
+        "event_id": "evt_test_01132",
+        "evidence": [
+          {
+            "details": {
+              "normal_mean": 1510.46,
+              "normal_p95": 3080.2,
+              "normal_std": 914.88,
+              "value": 18000.0,
+              "z_score": 18.02
+            },
+            "reason": "high_records_accessed"
+          },
+          {
+            "details": {
+              "ratio": 69.17,
+              "threshold": 0.076474,
+              "value": 5.289484
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Denver"
+              ],
+              "value": "Sao Paulo"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "BR"
+            },
+            "reason": "unusual_country"
+          }
+        ],
+        "hypothesis": "Possible data staging or exfiltration through Salesforce export activity",
+        "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+        "user_id": "u_complex_query_004"
+      },
+      "ueba_finding": {
+        "agent": "ueba_agent",
+        "event_id": "evt_test_01132",
+        "evidence": [
+          {
+            "details": {
+              "normal_mean": 1510.46,
+              "normal_p95": 3080.2,
+              "normal_std": 914.88,
+              "value": 18000.0,
+              "z_score": 18.02
+            },
+            "reason": "high_records_accessed"
+          },
+          {
+            "details": {
+              "ratio": 69.17,
+              "threshold": 0.076474,
+              "value": 5.289484
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "Denver"
+              ],
+              "value": "Sao Paulo"
+            },
+            "reason": "unusual_city"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "US"
+              ],
+              "value": "BR"
+            },
+            "reason": "unusual_country"
+          }
+        ],
+        "finding_type": "behavioral_anomaly",
+        "persona": "complex_query_engineer",
+        "recommended_action": "Send to threat-hunting agent for hypothesis generation.",
+        "risk_score": 100.0,
+        "user_id": "u_complex_query_004"
+      },
+      "user_id": "u_complex_query_004"
+    },
+    {
+      "allowed_reviewer_decisions": [
+        "approve_final_report",
+        "request_more_evidence",
+        "send_back_to_agent",
+        "escalate_incident",
+        "dismiss_false_positive"
+      ],
+      "compliance_result": {
+        "agent": "security_compliance_agent",
+        "control_description": "Large exports require business justification and monitoring.",
+        "control_id": "SF-DATA-003",
+        "event_id": "evt_test_01410",
+        "evidence": [
+          "Data access/export volume: records_accessed=120000"
+        ],
+        "recommended_action": "Create human review item before closure.",
+        "status": "non_compliant",
+        "user_id": "u_admin_005"
+      },
+      "event_id": "evt_test_01410",
+      "persona": "salesforce_admin",
+      "reason": [
+        "UEBA risk score exceeds high-risk threshold",
+        "Threat-hunting confidence is high",
+        "Compliance agent found non-compliance",
+        "High or critical alarm references this event"
+      ],
+      "recommended_human_actions": [
+        "Validate whether the user context explains the activity.",
+        "Review adjacent Salesforce audit events for the same user and IP.",
+        "Check endpoint and identity-provider telemetry.",
+        "Decide whether containment, exception approval, or dismissal is appropriate."
+      ],
+      "review_id": "review_api_40f33f928c77_026",
+      "severity": "critical",
+      "threat_hunt": {
+        "agent": "threat_hunting_agent",
+        "attack_stage": "collection_or_exfiltration",
+        "confidence": "high",
+        "event_id": "evt_test_01410",
+        "evidence": [
+          {
+            "details": {
+              "normal_mean": 114.85,
+              "normal_p95": 413.6,
+              "normal_std": 159.39,
+              "value": 120000.0,
+              "z_score": 752.15
+            },
+            "reason": "high_records_accessed"
+          },
+          {
+            "details": {
+              "circular_hour_distance": 6.08,
+              "normal_mean_hour": 12.92,
+              "value": 19
+            },
+            "reason": "login_hour_deviation"
+          },
+          {
+            "details": {
+              "ratio": 3973.19,
+              "threshold": 0.076474,
+              "value": 303.846008
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "185.199.108.77"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          }
+        ],
+        "hypothesis": "Possible data staging or exfiltration through Salesforce export activity",
+        "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+        "user_id": "u_admin_005"
+      },
+      "ueba_finding": {
+        "agent": "ueba_agent",
+        "event_id": "evt_test_01410",
+        "evidence": [
+          {
+            "details": {
+              "normal_mean": 114.85,
+              "normal_p95": 413.6,
+              "normal_std": 159.39,
+              "value": 120000.0,
+              "z_score": 752.15
+            },
+            "reason": "high_records_accessed"
+          },
+          {
+            "details": {
+              "circular_hour_distance": 6.08,
+              "normal_mean_hour": 12.92,
+              "value": 19
+            },
+            "reason": "login_hour_deviation"
+          },
+          {
+            "details": {
+              "ratio": 3973.19,
+              "threshold": 0.076474,
+              "value": 303.846008
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "185.199.108.77"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          }
+        ],
+        "finding_type": "unusual_data_access_or_export",
+        "persona": "salesforce_admin",
+        "recommended_action": "Send to threat-hunting agent for hypothesis generation.",
+        "risk_score": 100.0,
+        "user_id": "u_admin_005"
+      },
+      "user_id": "u_admin_005"
+    },
+    {
+      "allowed_reviewer_decisions": [
+        "approve_final_report",
+        "request_more_evidence",
+        "send_back_to_agent",
+        "escalate_incident",
+        "dismiss_false_positive"
+      ],
+      "compliance_result": {
+        "agent": "security_compliance_agent",
+        "control_description": "Large exports require business justification and monitoring.",
+        "control_id": "SF-DATA-003",
+        "event_id": "evt_test_01413",
+        "evidence": [
+          "Data access/export volume: records_accessed=120000"
+        ],
+        "recommended_action": "Create human review item before closure.",
+        "status": "non_compliant",
+        "user_id": "u_admin_005"
+      },
+      "event_id": "evt_test_01413",
+      "persona": "salesforce_admin",
+      "reason": [
+        "UEBA risk score exceeds high-risk threshold",
+        "Threat-hunting confidence is high",
+        "Compliance agent found non-compliance",
+        "High or critical alarm references this event"
+      ],
+      "recommended_human_actions": [
+        "Validate whether the user context explains the activity.",
+        "Review adjacent Salesforce audit events for the same user and IP.",
+        "Check endpoint and identity-provider telemetry.",
+        "Decide whether containment, exception approval, or dismissal is appropriate."
+      ],
+      "review_id": "review_api_40f33f928c77_027",
+      "severity": "critical",
+      "threat_hunt": {
+        "agent": "threat_hunting_agent",
+        "attack_stage": "privilege_escalation_or_defense_evasion",
+        "confidence": "high",
+        "event_id": "evt_test_01413",
+        "evidence": [
+          {
+            "details": {
+              "normal_mean": 114.85,
+              "normal_p95": 413.6,
+              "normal_std": 159.39,
+              "value": 120000.0,
+              "z_score": 752.15
+            },
+            "reason": "high_records_accessed"
+          },
+          {
+            "details": {
+              "ratio": 3977.25,
+              "threshold": 0.076474,
+              "value": 304.156555
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "45.83.12.44"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          }
+        ],
+        "hypothesis": "Possible privilege misuse or unauthorized admin change",
+        "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+        "user_id": "u_admin_005"
+      },
+      "ueba_finding": {
+        "agent": "ueba_agent",
+        "event_id": "evt_test_01413",
+        "evidence": [
+          {
+            "details": {
+              "normal_mean": 114.85,
+              "normal_p95": 413.6,
+              "normal_std": 159.39,
+              "value": 120000.0,
+              "z_score": 752.15
+            },
+            "reason": "high_records_accessed"
+          },
+          {
+            "details": {
+              "ratio": 3977.25,
+              "threshold": 0.076474,
+              "value": 304.156555
+            },
+            "reason": "model_reconstruction_error"
+          },
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "45.83.12.44"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          }
+        ],
+        "finding_type": "unusual_data_access_or_export",
+        "persona": "salesforce_admin",
+        "recommended_action": "Send to threat-hunting agent for hypothesis generation.",
+        "risk_score": 100.0,
+        "user_id": "u_admin_005"
+      },
+      "user_id": "u_admin_005"
+    },
+    {
+      "allowed_reviewer_decisions": [
+        "approve_final_report",
+        "request_more_evidence",
+        "send_back_to_agent",
+        "escalate_incident",
+        "dismiss_false_positive"
+      ],
+      "compliance_result": {
+        "agent": "security_compliance_agent",
+        "control_description": "Weak TLS or suspicious OAuth app usage is not allowed without approval.",
+        "control_id": "SF-AUTH-002",
+        "event_id": "evt_test_01415",
+        "evidence": [
+          "Authentication risk: tls=TLS1.0 domain=setup.salesforce.com"
+        ],
+        "recommended_action": "Create human review item before closure.",
+        "status": "non_compliant",
+        "user_id": "u_admin_005"
+      },
+      "event_id": "evt_test_01415",
+      "persona": "salesforce_admin",
+      "reason": [
+        "UEBA risk score exceeds high-risk threshold",
+        "Compliance agent found non-compliance",
+        "High or critical alarm references this event"
+      ],
+      "recommended_human_actions": [
+        "Validate whether the user context explains the activity.",
+        "Review adjacent Salesforce audit events for the same user and IP.",
+        "Check endpoint and identity-provider telemetry.",
+        "Decide whether containment, exception approval, or dismissal is appropriate."
+      ],
+      "review_id": "review_api_40f33f928c77_028",
+      "severity": "critical",
+      "threat_hunt": {
+        "agent": "threat_hunting_agent",
+        "attack_stage": "credential_access",
+        "confidence": "medium",
+        "event_id": "evt_test_01415",
+        "evidence": [
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "91.207.174.9"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "login.salesforce.com",
+                "mycompany.my.salesforce.com"
+              ],
+              "value": "setup.salesforce.com"
+            },
+            "reason": "unusual_domain_name"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "TLS1.2",
+                "TLS1.3"
+              ],
+              "value": "TLS1.0"
+            },
+            "reason": "unusual_tls_version"
+          }
+        ],
+        "hypothesis": "Possible malicious OAuth consent or connected-app abuse",
+        "recommended_action": "Request human analyst review and gather related auth, endpoint, and audit events.",
+        "user_id": "u_admin_005"
+      },
+      "ueba_finding": {
+        "agent": "ueba_agent",
+        "event_id": "evt_test_01415",
+        "evidence": [
+          {
+            "details": {
+              "normal_private_ip_rate": 1.0,
+              "src_ip": "91.207.174.9"
+            },
+            "reason": "public_or_unfamiliar_ip"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "login.salesforce.com",
+                "mycompany.my.salesforce.com"
+              ],
+              "value": "setup.salesforce.com"
+            },
+            "reason": "unusual_domain_name"
+          },
+          {
+            "details": {
+              "normal_values": [
+                "TLS1.2",
+                "TLS1.3"
+              ],
+              "value": "TLS1.0"
+            },
+            "reason": "unusual_tls_version"
+          }
+        ],
+        "finding_type": "behavioral_anomaly",
+        "persona": "salesforce_admin",
+        "recommended_action": "Send to threat-hunting agent for hypothesis generation.",
+        "risk_score": 83.0,
+        "user_id": "u_admin_005"
+      },
+      "user_id": "u_admin_005"
+    }
+  ],
+  "run_id": "api_40f33f928c77",
+  "status": "human_review_required"
+}

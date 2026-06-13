@@ -1,0 +1,386 @@
+[
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Weak TLS or suspicious OAuth app usage is not allowed without approval.",
+    "control_id": "SF-AUTH-002",
+    "event_id": "evt_test_00276",
+    "evidence": [
+      "Authentication risk: tls=TLS1.0 domain=mycompany.my.salesforce.com"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "non_compliant",
+    "user_id": "u_normal_sql_001"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Large exports require business justification and monitoring.",
+    "control_id": "SF-DATA-003",
+    "event_id": "evt_test_00277",
+    "evidence": [
+      "Data access/export volume: records_accessed=6300"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "needs_review",
+    "user_id": "u_normal_sql_001"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Weak TLS or suspicious OAuth app usage is not allowed without approval.",
+    "control_id": "SF-AUTH-002",
+    "event_id": "evt_test_00278",
+    "evidence": [
+      "Authentication risk: tls=TLS1.3 domain=evil-connected-app.example"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "non_compliant",
+    "user_id": "u_normal_sql_001"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Weak TLS or suspicious OAuth app usage is not allowed without approval.",
+    "control_id": "SF-AUTH-002",
+    "event_id": "evt_test_00279",
+    "evidence": [
+      "Authentication risk: tls=TLS1.0 domain=mycompany.my.salesforce.com"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "non_compliant",
+    "user_id": "u_normal_sql_001"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Large exports require business justification and monitoring.",
+    "control_id": "SF-DATA-003",
+    "event_id": "evt_test_00280",
+    "evidence": [
+      "Data access/export volume: records_accessed=6300"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "needs_review",
+    "user_id": "u_normal_sql_001"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Weak TLS or suspicious OAuth app usage is not allowed without approval.",
+    "control_id": "SF-AUTH-002",
+    "event_id": "evt_test_00281",
+    "evidence": [
+      "Authentication risk: tls=TLS1.3 domain=evil-connected-app.example"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "non_compliant",
+    "user_id": "u_normal_sql_001"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Weak TLS or suspicious OAuth app usage is not allowed without approval.",
+    "control_id": "SF-AUTH-002",
+    "event_id": "evt_test_00282",
+    "evidence": [
+      "Authentication risk: tls=TLS1.0 domain=mycompany.my.salesforce.com"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "non_compliant",
+    "user_id": "u_normal_sql_001"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Large exports require business justification and monitoring.",
+    "control_id": "SF-DATA-003",
+    "event_id": "evt_test_00283",
+    "evidence": [
+      "Data access/export volume: records_accessed=6300"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "needs_review",
+    "user_id": "u_normal_sql_001"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Unusual country or public IP access requires analyst review.",
+    "control_id": "SF-ACCESS-001",
+    "event_id": "evt_test_00559",
+    "evidence": [
+      "Unexpected country: SG"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "needs_review",
+    "user_id": "u_sales_traveler_002"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Large exports require business justification and monitoring.",
+    "control_id": "SF-DATA-003",
+    "event_id": "evt_test_00561",
+    "evidence": [
+      "Data access/export volume: records_accessed=9500"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "needs_review",
+    "user_id": "u_sales_traveler_002"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Unusual country or public IP access requires analyst review.",
+    "control_id": "SF-ACCESS-001",
+    "event_id": "evt_test_00562",
+    "evidence": [
+      "Unexpected country: SG"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "needs_review",
+    "user_id": "u_sales_traveler_002"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Large exports require business justification and monitoring.",
+    "control_id": "SF-DATA-003",
+    "event_id": "evt_test_00564",
+    "evidence": [
+      "Data access/export volume: records_accessed=9500"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "needs_review",
+    "user_id": "u_sales_traveler_002"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Unusual country or public IP access requires analyst review.",
+    "control_id": "SF-ACCESS-001",
+    "event_id": "evt_test_00565",
+    "evidence": [
+      "Unexpected country: SG"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "needs_review",
+    "user_id": "u_sales_traveler_002"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Unusual country or public IP access requires analyst review.",
+    "control_id": "SF-ACCESS-001",
+    "event_id": "evt_test_00566",
+    "evidence": [
+      "No direct compliance violation, but UEBA marked behavior as interesting"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "needs_review",
+    "user_id": "u_sales_traveler_002"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Unusual country or public IP access requires analyst review.",
+    "control_id": "SF-ACCESS-001",
+    "event_id": "evt_test_00808",
+    "evidence": [
+      "No direct compliance violation, but UEBA marked behavior as interesting"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "needs_review",
+    "user_id": "u_nightowl_noah_003"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Weak TLS or suspicious OAuth app usage is not allowed without approval.",
+    "control_id": "SF-AUTH-002",
+    "event_id": "evt_test_00843",
+    "evidence": [
+      "Authentication risk: tls=TLS1.0 domain=mycompany.my.salesforce.com"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "non_compliant",
+    "user_id": "u_nightowl_noah_003"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Weak TLS or suspicious OAuth app usage is not allowed without approval.",
+    "control_id": "SF-AUTH-002",
+    "event_id": "evt_test_00844",
+    "evidence": [
+      "Authentication risk: tls=TLS1.2 domain=evil-connected-app.example"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "non_compliant",
+    "user_id": "u_nightowl_noah_003"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Weak TLS or suspicious OAuth app usage is not allowed without approval.",
+    "control_id": "SF-AUTH-002",
+    "event_id": "evt_test_00846",
+    "evidence": [
+      "Authentication risk: tls=TLS1.0 domain=mycompany.my.salesforce.com"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "non_compliant",
+    "user_id": "u_nightowl_noah_003"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Weak TLS or suspicious OAuth app usage is not allowed without approval.",
+    "control_id": "SF-AUTH-002",
+    "event_id": "evt_test_00847",
+    "evidence": [
+      "Authentication risk: tls=TLS1.2 domain=evil-connected-app.example"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "non_compliant",
+    "user_id": "u_nightowl_noah_003"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Privileged actions require expected context and human review when anomalous.",
+    "control_id": "SF-ADMIN-004",
+    "event_id": "evt_test_00848",
+    "evidence": [
+      "Admin action occurred in anomalous context"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "needs_review",
+    "user_id": "u_nightowl_noah_003"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Weak TLS or suspicious OAuth app usage is not allowed without approval.",
+    "control_id": "SF-AUTH-002",
+    "event_id": "evt_test_00849",
+    "evidence": [
+      "Authentication risk: tls=TLS1.0 domain=login.salesforce.com"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "non_compliant",
+    "user_id": "u_nightowl_noah_003"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Unusual country or public IP access requires analyst review.",
+    "control_id": "SF-ACCESS-001",
+    "event_id": "evt_test_01088",
+    "evidence": [
+      "No direct compliance violation, but UEBA marked behavior as interesting"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "needs_review",
+    "user_id": "u_complex_query_004"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Large exports require business justification and monitoring.",
+    "control_id": "SF-DATA-003",
+    "event_id": "evt_test_01125",
+    "evidence": [
+      "Data access/export volume: records_accessed=65000"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "non_compliant",
+    "user_id": "u_complex_query_004"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Large exports require business justification and monitoring.",
+    "control_id": "SF-DATA-003",
+    "event_id": "evt_test_01126",
+    "evidence": [
+      "Data access/export volume: records_accessed=18000"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "non_compliant",
+    "user_id": "u_complex_query_004"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Large exports require business justification and monitoring.",
+    "control_id": "SF-DATA-003",
+    "event_id": "evt_test_01128",
+    "evidence": [
+      "Data access/export volume: records_accessed=65000"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "non_compliant",
+    "user_id": "u_complex_query_004"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Large exports require business justification and monitoring.",
+    "control_id": "SF-DATA-003",
+    "event_id": "evt_test_01129",
+    "evidence": [
+      "Data access/export volume: records_accessed=18000"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "non_compliant",
+    "user_id": "u_complex_query_004"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Unusual country or public IP access requires analyst review.",
+    "control_id": "SF-ACCESS-001",
+    "event_id": "evt_test_01130",
+    "evidence": [
+      "No direct compliance violation, but UEBA marked behavior as interesting"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "needs_review",
+    "user_id": "u_complex_query_004"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Large exports require business justification and monitoring.",
+    "control_id": "SF-DATA-003",
+    "event_id": "evt_test_01131",
+    "evidence": [
+      "Data access/export volume: records_accessed=65000"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "non_compliant",
+    "user_id": "u_complex_query_004"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Large exports require business justification and monitoring.",
+    "control_id": "SF-DATA-003",
+    "event_id": "evt_test_01132",
+    "evidence": [
+      "Data access/export volume: records_accessed=18000"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "non_compliant",
+    "user_id": "u_complex_query_004"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Large exports require business justification and monitoring.",
+    "control_id": "SF-DATA-003",
+    "event_id": "evt_test_01410",
+    "evidence": [
+      "Data access/export volume: records_accessed=120000"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "non_compliant",
+    "user_id": "u_admin_005"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Large exports require business justification and monitoring.",
+    "control_id": "SF-DATA-003",
+    "event_id": "evt_test_01413",
+    "evidence": [
+      "Data access/export volume: records_accessed=120000"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "non_compliant",
+    "user_id": "u_admin_005"
+  },
+  {
+    "agent": "security_compliance_agent",
+    "control_description": "Weak TLS or suspicious OAuth app usage is not allowed without approval.",
+    "control_id": "SF-AUTH-002",
+    "event_id": "evt_test_01415",
+    "evidence": [
+      "Authentication risk: tls=TLS1.0 domain=setup.salesforce.com"
+    ],
+    "recommended_action": "Create human review item before closure.",
+    "status": "non_compliant",
+    "user_id": "u_admin_005"
+  }
+]

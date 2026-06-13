@@ -1,0 +1,29 @@
+version: "1"
+services:
+  - type: web
+    name: ueba-security-harness
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /healthz
+    envVars:
+      - key: PORT
+        value: "10000"
+      - key: APP_ROOT
+        value: /app
+      - key: DATA_DIR
+        value: /app/data
+      - key: MODEL_DIR
+        value: /app/models
+      - key: OUTPUTS_DIR
+        value: /app/outputs
+      - key: RUNS_DIR
+        value: /app/runs
+      - key: RULES_PATH
+        value: /app/config/declared_rules.json
+      - key: MAX_UPLOAD_BYTES
+        value: "10485760"
+    disk:
+      name: harness-artifacts
+      mountPath: /app/runs
+      sizeGB: 1

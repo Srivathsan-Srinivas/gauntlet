@@ -1,0 +1,18 @@
+{
+  "redaction_policy": [
+    "src_ip",
+    "user_agent"
+  ],
+  "suspicious_domains": [
+    "evil-connected-app.example"
+  ],
+  "unexpected_countries": [
+    "BR",
+    "RU",
+    "SG",
+    "Unknown"
+  ],
+  "weak_tls_versions": [
+    "TLS1.0"
+  ]
+}

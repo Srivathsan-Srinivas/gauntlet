@@ -1,0 +1,21 @@
+[project]
+name = "ueba-security-harness"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.111",
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "python-multipart>=0.0.9",
+    "torch>=2.0",
+    "uvicorn[standard]>=0.30",
+]
+
+
+[tool.uv]
+managed = true
+package = false
+
+
